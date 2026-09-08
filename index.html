@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>I Komang Sunarka — Blog & Logbook Magang</title>
-  <meta name="description" content="Personal portfolio dan logbook resmi magang I Komang Sunarka (S1 Ilmu Komputer Undiksha) di PT Laksita Emi Saguna.">
+  <title>I Komang Sunarka — Logbook Magang</title>
+  <meta name="description" content="Logbook & dokumentasi magang I Komang Sunarka di PT Laksita Emi Saguna.">
   
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d6efd'/><path d='M9 13.5L16 9l7 4.5-7 4.5-7-4.5z M10 16.5v3.5c0 1.5 2.7 3 6 3s6-1.5 6-3v-3.5l-6 3.5-6-3.5z' fill='white'/></svg>">
@@ -20,7 +20,6 @@
             brand: {
               blue: '#0d6efd',
               darkblue: '#0b5ed7',
-              jumbotron: '#eaf2ff',
             }
           }
         }
@@ -29,41 +28,32 @@
   </script>
 
   <!-- Google Fonts & Custom CSS -->
-  <link rel="stylesheet" href="assets/css/style.css?v=5">
+  <link rel="stylesheet" href="assets/css/style.css?v=6">
 </head>
-<body class="bg-slate-50/60 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col selection:bg-brand-blue selection:text-white relative">
-
-  <!-- TOP SCROLL PROGRESS BAR -->
-  <div id="scroll-progress"></div>
+<body class="bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col selection:bg-brand-blue selection:text-white">
 
   <!-- TOP NAVBAR -->
-  <nav class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800 sticky top-0 z-40">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+  <nav class="bg-white/80 dark:bg-slate-950/80 backdrop-blur border-b border-slate-100 dark:border-slate-800/80 sticky top-0 z-40">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
       
       <!-- Brand -->
-      <a href="#home" class="font-bold text-sm sm:text-base text-slate-900 dark:text-white tracking-tight flex items-center gap-2.5 hover:text-brand-blue transition-colors">
-        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+      <a href="#home" class="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-2 hover:text-brand-blue transition-colors">
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
         <span>I Komang Sunarka</span>
       </a>
 
-      <!-- Nav Links Desktop -->
-      <div class="hidden md:flex items-center gap-6 text-xs font-semibold text-slate-600 dark:text-slate-300">
-        <a href="#tentang" class="hover:text-brand-blue transition-colors">Tentang</a>
-        <a href="#fokus" class="hover:text-brand-blue transition-colors">Fokus Penugasan</a>
+      <!-- Nav Links -->
+      <div class="flex items-center gap-4 sm:gap-6 text-xs font-medium text-slate-600 dark:text-slate-300">
         <a href="#logbook" class="hover:text-brand-blue transition-colors">Logbook</a>
-        <a href="#skenario" class="hover:text-brand-blue transition-colors">Matriks Pengujian</a>
-        <a href="#keahlian" class="hover:text-brand-blue transition-colors">Keahlian & Refleksi</a>
+        <a href="#fokus" class="hover:text-brand-blue transition-colors">Keahlian</a>
         <a href="#dokumentasi" class="hover:text-brand-blue transition-colors">Dokumentasi</a>
-      </div>
-
-      <!-- Action Buttons -->
-      <div class="flex items-center gap-2">
-        <!-- Salin Link Button -->
+        
+        <!-- Salin Link -->
         <button 
           onclick="copyUrl()" 
-          title="Salin Tautan Website"
-          class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold flex items-center gap-1.5 transition-all active:scale-95 border border-slate-200/80 dark:border-slate-700">
-          <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+          title="Salin Link"
+          class="p-1.5 sm:px-2.5 sm:py-1 rounded-lg bg-slate-100 dark:bg-slate-850 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 text-xs flex items-center gap-1.5 transition-colors">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
           <span class="hidden sm:inline">Salin Link</span>
         </button>
 
@@ -71,234 +61,170 @@
         <button 
           id="theme-btn" 
           aria-label="Ganti Tema"
-          class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs transition-all flex items-center justify-center active:scale-95 border border-slate-200/80 dark:border-slate-700">
-          <svg class="w-4 h-4 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
-          <svg class="w-4 h-4 hidden dark:block text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-        </button>
-
-        <!-- Mobile Menu Hamburger -->
-        <button 
-          id="mobile-menu-btn" 
-          aria-label="Menu Navigasi"
-          aria-expanded="false"
-          class="md:hidden p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs border border-slate-200/80 dark:border-slate-700">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          class="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-850 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition-colors flex items-center justify-center">
+          <svg class="w-3.5 h-3.5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+          <svg class="w-3.5 h-3.5 hidden dark:block text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
         </button>
       </div>
 
-    </div>
-
-    <!-- Mobile Drawer Menu -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-3 space-y-2 text-xs font-semibold">
-      <a href="#tentang" class="block py-2 text-slate-700 dark:text-slate-300 hover:text-brand-blue">Tentang Magang</a>
-      <a href="#fokus" class="block py-2 text-slate-700 dark:text-slate-300 hover:text-brand-blue">Fokus Penugasan</a>
-      <a href="#logbook" class="block py-2 text-slate-700 dark:text-slate-300 hover:text-brand-blue">Logbook Mingguan</a>
-      <a href="#skenario" class="block py-2 text-slate-700 dark:text-slate-300 hover:text-brand-blue">Matriks Pengujian</a>
-      <a href="#keahlian" class="block py-2 text-slate-700 dark:text-slate-300 hover:text-brand-blue">Keahlian & Refleksi</a>
-      <a href="#dokumentasi" class="block py-2 text-slate-700 dark:text-slate-300 hover:text-brand-blue">Dokumentasi</a>
     </div>
   </nav>
 
-  <!-- HERO SECTION -->
-  <section id="home" class="py-12 sm:py-16 bg-white dark:bg-slate-950 border-b border-slate-200/80 dark:border-slate-800">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+  <!-- HERO SECTION (CLEAN, HUMAN, COMPACT) -->
+  <header id="home" class="py-10 sm:py-14 border-b border-slate-100 dark:border-slate-800/80">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
       
-      <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-8 md:gap-12">
+      <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8">
         
-        <!-- Left Column: Bio & Metadata -->
-        <div class="flex-1 text-center md:text-left space-y-4">
-          
-          <!-- Status Tag -->
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800 text-emerald-700 dark:text-emerald-300 text-xs font-semibold">
-            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-            <span>Magang Reguler Ganjil 2026/2027</span>
-          </div>
+        <!-- Profile Avatar -->
+        <img 
+          src="assets/images/profile.png" 
+          alt="I Komang Sunarka" 
+          class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl object-cover object-top border-2 border-slate-200 dark:border-slate-700 shadow-sm flex-shrink-0">
 
-          <!-- Name & Title -->
+        <!-- Info -->
+        <div class="space-y-3 text-center sm:text-left flex-1">
           <div>
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-[11px] font-medium mb-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              <span>Magang Reguler 2026</span>
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               I Komang Sunarka
             </h1>
-            <p class="text-base sm:text-lg font-semibold text-brand-blue dark:text-blue-400 mt-1">
-              Blog & Logbook Magang
+            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-mono mt-0.5">
+              NIM: 2315101063 • S1 Ilmu Komputer Undiksha
             </p>
           </div>
 
-          <!-- Narrative Bio -->
-          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
-            Mahasiswa S1 Ilmu Komputer Universitas Pendidikan Ganesha (Undiksha) yang sedang melaksanakan program magang di <strong>PT Laksita Emi Saguna</strong>, Denpasar. Bertanggung jawab dalam pengujian kualitas web (Software QA), verifikasi hak akses RBAC multi-tingkat, dan penulisan panduan pengguna (User Guide) teknis sistem perguruan tinggi.
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-xl">
+            Logbook dan dokumentasi kegiatan magang di <strong>PT Laksita Emi Saguna</strong> (Denpasar, Bali). Fokus pada <em>Software QA Web Testing</em> (SIM Keuangan) dan penyusunan <em>User Guide</em> sistem informasi kampus.
           </p>
 
-          <!-- Key Info Pills Grid -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2 text-xs text-left">
-            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
-              <span class="text-slate-400 block text-[11px] font-medium">Instansi Tempat Magang:</span>
-              <span class="font-bold text-slate-800 dark:text-slate-100">PT Laksita Emi Saguna</span>
-              <span class="text-slate-500 dark:text-slate-400 block text-[11px]">Jl. Himalaya Raya No 8a, Denpasar</span>
-            </div>
-            
-            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
-              <span class="text-slate-400 block text-[11px] font-medium">Perguruan Tinggi & Prodi:</span>
-              <span class="font-bold text-slate-800 dark:text-slate-100">Universitas Pendidikan Ganesha</span>
-              <span class="text-slate-500 dark:text-slate-400 block text-[11px]">S1 Ilmu Komputer • NIM: 2315101063</span>
-            </div>
-
-            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
-              <span class="text-slate-400 block text-[11px] font-medium">Periode Pelaksanaan:</span>
-              <span class="font-bold text-slate-800 dark:text-slate-100">24 Agustus – 31 Desember 2026</span>
-              <span class="text-slate-500 dark:text-slate-400 block text-[11px]">Durasi: 19 Minggu Kalender</span>
-            </div>
-
-            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
-              <span class="text-slate-400 block text-[11px] font-medium">Fokus Penugasan:</span>
-              <span class="font-bold text-slate-800 dark:text-slate-100">Web QA Testing & User Guide</span>
-              <span class="text-slate-500 dark:text-slate-400 block text-[11px]">SIM Keuangan, Prestasi & Feeder</span>
-            </div>
-          </div>
-
-          <!-- CTAs -->
-          <div class="flex flex-wrap items-center justify-center md:justify-start gap-3 pt-3">
-            <a 
-              href="#logbook" 
-              class="px-5 py-2.5 rounded-xl bg-brand-blue text-white font-semibold text-xs sm:text-sm hover:bg-brand-darkblue transition-all shadow-sm active:scale-95 flex items-center gap-2">
-              <span>Lihat Logbook Mingguan</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-            </a>
-
-            <a 
-              href="#dokumentasi" 
-              class="px-5 py-2.5 rounded-xl bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 font-semibold text-xs sm:text-sm hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-all shadow-sm active:scale-95 flex items-center gap-2">
-              <span>Dokumentasi Kegiatan</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-            </a>
-          </div>
-
-        </div>
-
-        <!-- Right Column: Profile Avatar -->
-        <div class="flex-shrink-0">
-          <div class="relative group">
-            <img 
-              src="assets/images/profile.png" 
-              alt="I Komang Sunarka" 
-              class="w-40 h-40 sm:w-48 sm:h-48 rounded-3xl object-cover object-top border-4 border-white dark:border-slate-800 shadow-xl ring-1 ring-slate-200 dark:ring-slate-700">
-            <div class="absolute -bottom-2 -right-2 px-3 py-1 rounded-full bg-emerald-500 text-white text-[11px] font-bold shadow-md flex items-center gap-1.5 border-2 border-white dark:border-slate-900">
-              <span class="w-2 h-2 rounded-full bg-white"></span>
-              <span>Aktif Magang</span>
-            </div>
+          <!-- Compact Badges -->
+          <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-1 text-[11px] text-slate-500 dark:text-slate-400 font-mono">
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800">📍 Denpasar, Bali</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800">📅 24 Agt – 31 Des 2026</span>
+            <span class="px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950/60 text-brand-blue dark:text-blue-300 border border-blue-100 dark:border-blue-900/60">14 Skenario QA (100% Passed)</span>
           </div>
         </div>
 
       </div>
 
     </div>
-  </section>
+  </header>
 
-  <!-- SECTION: RINGKASAN & PROGRES MAGANG -->
-  <section class="py-10 bg-slate-50/60 dark:bg-slate-900/40 border-b border-slate-200/80 dark:border-slate-800">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-6">
-      
-      <!-- Progress Bar Widget -->
-      <div class="p-5 sm:p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-          <div>
-            <h3 class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
-              <span>Progres Pelaksanaan Magang</span>
-            </h3>
-            <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5" id="progress-days-text">
-              24 Agustus – 31 Desember 2026
-            </p>
-          </div>
-          <span id="progress-percent-text" class="text-xs font-bold font-mono px-2.5 py-1 rounded-lg bg-blue-50 dark:bg-blue-950 text-brand-blue dark:text-blue-300 border border-blue-200/60 dark:border-blue-800/60 self-start sm:self-auto">
-            16% Selesai
-          </span>
+  <!-- QUICK STATS BAR -->
+  <section class="py-4 bg-slate-50/60 dark:bg-slate-900/40 border-b border-slate-100 dark:border-slate-800/80">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-3 gap-2 text-center text-xs">
+        <div class="py-1.5">
+          <div class="font-extrabold text-slate-900 dark:text-white text-sm sm:text-base">3 Minggu</div>
+          <div class="text-[11px] text-slate-400">Durasi Tercatat</div>
         </div>
-
-        <div class="w-full bg-slate-100 dark:bg-slate-800 h-2.5 rounded-full overflow-hidden">
-          <div id="progress-bar-fill" class="bg-brand-blue h-full rounded-full transition-all duration-1000 ease-out" style="width: 16%;"></div>
+        <div class="py-1.5 border-x border-slate-200/60 dark:border-slate-800">
+          <div class="font-extrabold text-brand-blue dark:text-blue-400 text-sm sm:text-base">14 SN</div>
+          <div class="text-[11px] text-slate-400">Pengujian QA SIM</div>
+        </div>
+        <div class="py-1.5">
+          <div class="font-extrabold text-slate-900 dark:text-white text-sm sm:text-base">3 Modul</div>
+          <div class="text-[11px] text-slate-400">User Guide Sistem</div>
         </div>
       </div>
-
-      <!-- 4 Stat Counters -->
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        
-        <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 clean-card">
-          <span class="text-xs font-medium text-slate-500 dark:text-slate-400 block mb-1">Durasi Terisi</span>
-          <div id="stat-weeks" class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">3 Minggu</div>
-          <span class="text-[11px] text-slate-400 block mt-1">Logbook aktif terupdate</span>
-        </div>
-
-        <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 clean-card">
-          <span class="text-xs font-medium text-slate-500 dark:text-slate-400 block mb-1">Skenario QA Teruji</span>
-          <div id="stat-scenarios" class="text-2xl sm:text-3xl font-extrabold text-brand-blue dark:text-blue-400">14 SN</div>
-          <span class="text-[11px] text-emerald-600 dark:text-emerald-400 font-semibold block mt-1">100% Passed (SIM Keuangan)</span>
-        </div>
-
-        <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 clean-card">
-          <span class="text-xs font-medium text-slate-500 dark:text-slate-400 block mb-1">Modul Panduan</span>
-          <div id="stat-guides" class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">3 Modul</div>
-          <span class="text-[11px] text-slate-400 block mt-1">Feeder, Prestasi, Konseling</span>
-        </div>
-
-        <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 clean-card">
-          <span class="text-xs font-medium text-slate-500 dark:text-slate-400 block mb-1">Dokumentasi Foto</span>
-          <div id="stat-docs" class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">4 Catatan</div>
-          <span class="text-[11px] text-slate-400 block mt-1">Aktivitas teknis & mentoring</span>
-        </div>
-
-      </div>
-
     </div>
   </section>
 
-  <!-- SECTION: TENTANG MAGANG (ABOUT) -->
-  <section id="tentang" class="py-12 sm:py-16 bg-white dark:bg-slate-950 border-b border-slate-200/80 dark:border-slate-800">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      
-      <div class="max-w-3xl mb-8">
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-          Tentang Program Magang
+  <!-- MAIN SECTION: LOGBOOK MINGGUAN (THE STAR OF THE PAGE) -->
+  <main id="logbook" class="flex-1 py-10 sm:py-12 max-w-4xl w-full mx-auto px-4 sm:px-6 space-y-6">
+    
+    <!-- Section Header & Filter Toolbar -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div>
+        <h2 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white tracking-tight">
+          Logbook Mingguan
         </h2>
-        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
-          Konteks pelaksanaan, ruang lingkup instansi, dan tujuan akademik magang industri.
+        <p class="text-xs text-slate-500 dark:text-slate-400">
+          Catatan pengujian dan progres pengerjaan di tempat magang.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+      <!-- Filter Tabs -->
+      <div class="inline-flex bg-slate-100 dark:bg-slate-900 p-1 rounded-xl text-xs font-medium gap-1 self-start sm:self-auto" id="filter-tabs">
+        <button data-filter="all" class="tab-btn px-3 py-1 rounded-lg bg-brand-blue text-white shadow-sm font-semibold transition-all">Semua (3)</button>
+        <button data-filter="Testing Web" class="tab-btn px-3 py-1 rounded-lg text-slate-600 dark:text-slate-400 hover:text-brand-blue transition-all">Testing Web</button>
+        <button data-filter="User Guide" class="tab-btn px-3 py-1 rounded-lg text-slate-600 dark:text-slate-400 hover:text-brand-blue transition-all">User Guide</button>
+      </div>
+    </div>
+
+    <!-- Live Search -->
+    <div class="relative">
+      <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+      </div>
+      <input 
+        type="text" 
+        id="search-input" 
+        placeholder="Cari catatan, topik, atau kata kunci..." 
+        class="w-full pl-9 pr-8 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-xs text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-brand-blue transition-all">
+      <button 
+        id="search-clear-btn" 
+        class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xs">
+        ✕
+      </button>
+    </div>
+
+    <!-- Cards Grid -->
+    <div id="posts-container" class="space-y-4">
+      <!-- Rendered via app.js -->
+    </div>
+
+  </main>
+
+  <!-- SECTION: KEAHLIAN & FOKUS (CLEAN PILLS) -->
+  <section id="fokus" class="py-10 border-t border-slate-100 dark:border-slate-800/80 bg-slate-50/40 dark:bg-slate-950">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-6">
+      
+      <div>
+        <h2 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+          Fokus Penugasan & Keahlian
+        </h2>
+        <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+          Aktivitas pengujian sistem dan modul panduan yang dikerjakan.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
         
-        <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 space-y-3">
-          <h3 class="font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
-            <svg class="w-4 h-4 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-            <span>Lingkup Instansi & Proyek</span>
-          </h3>
-          <p>
-            <strong>PT Laksita Emi Saguna</strong> merupakan perusahaan konsultan teknologi informasi dan pengembang perangkat lunak yang berlokasi di Denpasar, Bali. Perusahaan ini berfokus pada penyediaan solusi digital dan sistem informasi manajemen untuk institusi pendidikan tinggi di Bali dan nasional.
+        <!-- Box 1: QA Testing -->
+        <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 space-y-2">
+          <div class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+            <span>Software QA & Web Testing</span>
+          </div>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+            Pengujian fungsional modul Perencanaan & Pengajuan SIM Keuangan Unmas (14 Skenario SN-01 s/d SN-14), verifikasi RBAC 8 level role, dan keamanan parameter ID URL (HTTP 403).
           </p>
-          <p>
-            Selama magang, saya ditempatkan pada divisi pengujian sistem dan dokumentasi teknis yang berinteraksi langsung dengan aplikasi web enterprise kampus seperti SIM Keuangan Universitas Mahasaraswati, integrasi Feeder PDDIKTI, serta modul SIM Prestasi dan Konseling Mahasiswa.
-          </p>
+          <div class="flex flex-wrap gap-1.5 pt-1">
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-[10px]">Black Box Testing</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-[10px]">RBAC Multi-Level</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-[10px]">URL Security (403)</span>
+          </div>
         </div>
 
-        <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 space-y-3">
-          <h3 class="font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
-            <svg class="w-4 h-4 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            <span>Tujuan & Sasaran Pembelajaran</span>
-          </h3>
-          <ul class="space-y-2">
-            <li class="flex items-start gap-2">
-              <span class="text-brand-blue font-bold">•</span>
-              <span>Menerapkan metodologi <em>Black Box QA Testing</em> nyata pada sistem enterprise berskala universitas dengan berbagai level pengguna (RBAC).</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-brand-blue font-bold">•</span>
-              <span>Melatih kemampuan <em>Technical Writing</em> dalam menyusun dokumen User Guide yang mudah dipahami oleh civitas akademika.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-brand-blue font-bold">•</span>
-              <span>Memenuhi persyaratan kurikulum mata kuliah Magang Program Studi S1 Ilmu Komputer Universitas Pendidikan Ganesha.</span>
-            </li>
-          </ul>
+        <!-- Box 2: User Guide -->
+        <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 space-y-2">
+          <div class="font-bold text-slate-900 dark:text-white flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+            <span>Technical User Guide</span>
+          </div>
+          <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+            Menyusun panduan langkah demi langkah (step-by-step) beserta tangkapan layar beranotasi untuk modul Feeder PDDIKTI, SIM Prestasi, dan Sistem Konseling Mahasiswa.
+          </p>
+          <div class="flex flex-wrap gap-1.5 pt-1">
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-[10px]">Feeder PDDIKTI</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-[10px]">SIM Prestasi</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-mono text-[10px]">Sistem Konseling</span>
+          </div>
         </div>
 
       </div>
@@ -306,408 +232,67 @@
     </div>
   </section>
 
-  <!-- SECTION: FOKUS PENUGASAN (WORK FOCUS) -->
-  <section id="fokus" class="py-12 sm:py-16 bg-slate-50/60 dark:bg-slate-900/40 border-b border-slate-200/80 dark:border-slate-800">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+  <!-- SECTION: DOKUMENTASI KEGIATAN -->
+  <section id="dokumentasi" class="py-10 border-t border-slate-100 dark:border-slate-800/80 bg-white dark:bg-slate-950">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-6">
       
-      <div class="max-w-3xl mb-8">
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-          Fokus Penugasan & Tanggung Jawab
+      <div>
+        <h2 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+          Dokumentasi Kegiatan
         </h2>
-        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
-          3 pilar utama tanggung jawab teknis selama melaksanakan magang industri di PT Laksita Emi Saguna.
+        <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+          Catatan aktivitas pengujian dan suasana kerja di PT Laksita Emi Saguna.
         </p>
       </div>
 
-      <div id="work-focus-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div id="gallery-container" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
         <!-- Rendered via app.js -->
       </div>
 
     </div>
   </section>
 
-  <!-- SECTION: LOGBOOK & JURNAL MINGGUAN (CORE) -->
-  <section id="logbook" class="py-12 sm:py-16 bg-white dark:bg-slate-950 border-b border-slate-200/80 dark:border-slate-800">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      
-      <!-- Section Header -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
-        <div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            Logbook & Jurnal Mingguan
-          </h2>
-          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
-            Catatan berkala aktivitas pengujian, penulisan panduan, dan progres penugasan magang.
-          </p>
-        </div>
-
-        <!-- Filter Tabs -->
-        <div class="inline-flex bg-slate-100 dark:bg-slate-900 p-1 rounded-xl border border-slate-200/80 dark:border-slate-800 text-xs font-semibold gap-1" id="filter-tabs">
-          <button data-filter="all" class="tab-btn px-4 py-1.5 rounded-lg bg-brand-blue text-white shadow-sm transition-all font-semibold text-xs">Semua</button>
-          <button data-filter="Testing Web" class="tab-btn px-4 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-brand-blue transition-all font-medium text-xs">Testing Web</button>
-          <button data-filter="User Guide" class="tab-btn px-4 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-brand-blue transition-all font-medium text-xs">User Guide</button>
-        </div>
-      </div>
-
-      <!-- Search Toolbar -->
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-3 mb-6">
-        <div class="relative w-full sm:w-80">
-          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-          </div>
-          <input 
-            type="text" 
-            id="search-input" 
-            placeholder="Cari aktivitas, topik, kata kunci..." 
-            class="w-full pl-9 pr-8 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-xs text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-blue">
-          <button 
-            id="search-clear-btn" 
-            class="hidden absolute inset-y-0 right-0 pr-2.5 flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xs">
-            ✕
-          </button>
-        </div>
-
-        <span id="posts-count-badge" class="text-xs font-medium text-slate-500 dark:text-slate-400 self-start sm:self-auto">
-          Menampilkan entri logbook
-        </span>
-      </div>
-
-      <!-- Cards Grid -->
-      <div id="posts-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Rendered via app.js -->
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SECTION: MATRIKS 14 SKENARIO PENGUJIAN QA -->
-  <section id="skenario" class="py-12 sm:py-16 bg-slate-50/60 dark:bg-slate-900/40 border-b border-slate-200/80 dark:border-slate-800">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
-        <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-brand-blue dark:text-blue-300 text-xs font-semibold mb-2">
-            <span>Matriks Verifikasi QA</span>
-          </div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            14 Skenario Pengujian SIM Keuangan
-          </h2>
-          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
-            Daftar pengujian fungsional, otorisasi RBAC multi-level, dan keamanan parameter URL (HTTP 403) pada sistem Unmas.
-          </p>
-        </div>
-
-        <a 
-          href="post.html?id=minggu-01-testing-sim-keuangan-unmas" 
-          class="text-xs font-bold text-brand-blue dark:text-blue-400 hover:underline flex items-center gap-1.5 self-start md:self-auto">
-          <span>Lihat Laporan Lengkap Minggu 1</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-        </a>
-      </div>
-
-      <!-- Scenarios Table Container -->
-      <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200/80 dark:border-slate-800 overflow-hidden shadow-sm">
-        <div class="overflow-x-auto">
-          <table class="w-full text-left text-xs border-collapse">
-            <thead>
-              <tr class="bg-slate-50 dark:bg-slate-800/80 border-b border-slate-200/80 dark:border-slate-700 text-slate-600 dark:text-slate-300 font-bold">
-                <th class="p-3.5 pl-4 sm:pl-6">Kode</th>
-                <th class="p-3.5">Role Pengguna</th>
-                <th class="p-3.5">Tipe Pengujian</th>
-                <th class="p-3.5">Aksi / Skenario</th>
-                <th class="p-3.5">Hasil yang Diharapkan</th>
-                <th class="p-3.5 pr-4 sm:pr-6 text-right">Status</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-100 dark:divide-slate-800 text-slate-700 dark:text-slate-300">
-              <tr class="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
-                <td class="p-3.5 pl-4 sm:pl-6 font-mono font-bold text-brand-blue">SN-01</td>
-                <td class="p-3.5 font-semibold">Rektor / WR</td>
-                <td class="p-3.5"><span class="px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950 text-brand-blue dark:text-blue-300 text-[11px] font-medium">Role Access</span></td>
-                <td class="p-3.5">Buka dropdown Tingkatan dengan akun Rektor/WR</td>
-                <td class="p-3.5">3 opsi tersedia: Universitas, Fakultas, & Prodi</td>
-                <td class="p-3.5 pr-4 sm:pr-6 text-right"><span class="px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold text-[11px]">PASSED</span></td>
-              </tr>
-              <tr class="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
-                <td class="p-3.5 pl-4 sm:pl-6 font-mono font-bold text-brand-blue">SN-02</td>
-                <td class="p-3.5 font-semibold">Staff Universitas</td>
-                <td class="p-3.5"><span class="px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950 text-brand-blue dark:text-blue-300 text-[11px] font-medium">Role Access</span></td>
-                <td class="p-3.5">Buka dropdown Tingkatan via URL dengan role Staf Univ</td>
-                <td class="p-3.5">Hanya opsi Universitas yang ditampilkan</td>
-                <td class="p-3.5 pr-4 sm:pr-6 text-right"><span class="px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold text-[11px]">PASSED</span></td>
-              </tr>
-              <tr class="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
-                <td class="p-3.5 pl-4 sm:pl-6 font-mono font-bold text-brand-blue">SN-03</td>
-                <td class="p-3.5 font-semibold">Dekan / WD</td>
-                <td class="p-3.5"><span class="px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950 text-brand-blue dark:text-blue-300 text-[11px] font-medium">Role Access</span></td>
-                <td class="p-3.5">Buka dropdown Tingkatan & Fakultas dengan role Dekan/WD</td>
-                <td class="p-3.5">Tingkatan berisi Fakultas & Prodi; Fakultas terkunci otomatis</td>
-                <td class="p-3.5 pr-4 sm:pr-6 text-right"><span class="px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold text-[11px]">PASSED</span></td>
-              </tr>
-              <tr class="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
-                <td class="p-3.5 pl-4 sm:pl-6 font-mono font-bold text-brand-blue">SN-04</td>
-                <td class="p-3.5 font-semibold">Staff Fakultas</td>
-                <td class="p-3.5"><span class="px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950 text-brand-blue dark:text-blue-300 text-[11px] font-medium">Role Access</span></td>
-                <td class="p-3.5">Buka dropdown Tingkatan dengan role Staf Fakultas</td>
-                <td class="p-3.5">Hanya opsi Fakultas (TIDAK ada Prodi); terkunci ke fakultas sendiri</td>
-                <td class="p-3.5 pr-4 sm:pr-6 text-right"><span class="px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold text-[11px]">PASSED</span></td>
-              </tr>
-              <tr class="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
-                <td class="p-3.5 pl-4 sm:pl-6 font-mono font-bold text-brand-blue">SN-05</td>
-                <td class="p-3.5 font-semibold">Koorprodi / Staf</td>
-                <td class="p-3.5"><span class="px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950 text-brand-blue dark:text-blue-300 text-[11px] font-medium">Role Access</span></td>
-                <td class="p-3.5">Buka dropdown Tingkatan, Fakultas, Prodi dengan role Prodi</td>
-                <td class="p-3.5">Hanya opsi Prodi; Fakultas & Prodi terkunci ke milik sendiri</td>
-                <td class="p-3.5 pr-4 sm:pr-6 text-right"><span class="px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold text-[11px]">PASSED</span></td>
-              </tr>
-              <tr class="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
-                <td class="p-3.5 pl-4 sm:pl-6 font-mono font-bold text-brand-blue">SN-09</td>
-                <td class="p-3.5 font-semibold">Security / URL</td>
-                <td class="p-3.5"><span class="px-2 py-0.5 rounded bg-amber-50 dark:bg-amber-950 text-amber-700 dark:text-amber-300 text-[11px] font-medium">Security</span></td>
-                <td class="p-3.5">Manipulasi ganti ID pos di URL ke Prodi lain</td>
-                <td class="p-3.5">Ditolak HTTP 403 (Hanya bisa akses pos prodi sendiri)</td>
-                <td class="p-3.5 pr-4 sm:pr-6 text-right"><span class="px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold text-[11px]">PASSED</span></td>
-              </tr>
-              <tr class="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
-                <td class="p-3.5 pl-4 sm:pl-6 font-mono font-bold text-brand-blue">SN-10</td>
-                <td class="p-3.5 font-semibold">Security / URL</td>
-                <td class="p-3.5"><span class="px-2 py-0.5 rounded bg-amber-50 dark:bg-amber-950 text-amber-700 dark:text-amber-300 text-[11px] font-medium">Security</span></td>
-                <td class="p-3.5">Manipulasi ganti ID pos di URL ke Fakultas lain</td>
-                <td class="p-3.5">Ditolak HTTP 403 (Hanya bisa akses pos fakultas sendiri)</td>
-                <td class="p-3.5 pr-4 sm:pr-6 text-right"><span class="px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold text-[11px]">PASSED</span></td>
-              </tr>
-              <tr class="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
-                <td class="p-3.5 pl-4 sm:pl-6 font-mono font-bold text-brand-blue">SN-14</td>
-                <td class="p-3.5 font-semibold">Submission</td>
-                <td class="p-3.5"><span class="px-2 py-0.5 rounded bg-indigo-50 dark:bg-indigo-950 text-indigo-700 dark:text-indigo-300 text-[11px] font-medium">Workflow</span></td>
-                <td class="p-3.5">Submit final pengajuan pos pagu anggaran</td>
-                <td class="p-3.5">Status berubah 'Menunggu' & terkunci dari modifikasi</td>
-                <td class="p-3.5 pr-4 sm:pr-6 text-right"><span class="px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold text-[11px]">PASSED</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        
-        <div class="p-4 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-200/80 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
-          <span>Menampilkan cuplikan skenario kritis (SN-01 s/d SN-14 telah teruji 100%).</span>
-          <a href="post.html?id=minggu-01-testing-sim-keuangan-unmas" class="font-semibold text-brand-blue hover:underline">Lihat Semua 14 Skenario →</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SECTION: KEAHLIAN & REFLEKSI (SKILLS & LEARNINGS) -->
-  <section id="keahlian" class="py-12 sm:py-16 bg-white dark:bg-slate-950 border-b border-slate-200/80 dark:border-slate-800">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 space-y-12">
-      
-      <!-- Skills Matrix -->
-      <div>
-        <div class="max-w-3xl mb-8">
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            Keahlian & Domain Sistem
-          </h2>
-          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
-            Kompetensi teknis dan domain pengetahuan sistem informasi perguruan tinggi yang diasah selama magang.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          
-          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 space-y-4">
-            <h3 class="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-brand-blue"></span>
-              <span>QA & Web Testing</span>
-            </h3>
-            <div id="skills-testing-list" class="flex flex-wrap gap-2">
-              <!-- Rendered via app.js -->
-            </div>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 space-y-4">
-            <h3 class="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
-              <span>Dokumentasi & Penulisan</span>
-            </h3>
-            <div id="skills-doc-list" class="flex flex-wrap gap-2">
-              <!-- Rendered via app.js -->
-            </div>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 space-y-4">
-            <h3 class="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
-              <span>Domain Sistem Kampus</span>
-            </h3>
-            <div id="skills-domain-list" class="flex flex-wrap gap-2">
-              <!-- Rendered via app.js -->
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Kendala & Solusi -->
-      <div>
-        <div class="max-w-3xl mb-6">
-          <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            Kendala Teknis & Solusi Nyata
-          </h3>
-          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
-            Contoh tantangan yang dihadapi selama proses pengujian dan penyusunan panduan serta penanganannya.
-          </p>
-        </div>
-
-        <div id="challenges-container" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <!-- Rendered via app.js -->
-        </div>
-      </div>
-
-      <!-- Learnings / Refleksi -->
-      <div>
-        <div class="max-w-3xl mb-6">
-          <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            Pembelajaran & Pengalaman Berharga
-          </h3>
-          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
-            Poin-poin wawasan teknis dan pengembangan soft skills yang diperoleh di lingkungan kerja industri.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 space-y-3">
-            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Wawasan Teknis (Technical Takeaways)</h4>
-            <ul id="learnings-tech-list" class="space-y-2">
-              <!-- Rendered via app.js -->
-            </ul>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 space-y-3">
-            <h4 class="font-bold text-sm text-slate-900 dark:text-white">Pengembangan Soft Skills</h4>
-            <ul id="learnings-soft-list" class="space-y-2">
-              <!-- Rendered via app.js -->
-            </ul>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SECTION: DOKUMENTASI KEGIATAN (GALLERY) -->
-  <section id="dokumentasi" class="py-12 sm:py-16 bg-slate-50/60 dark:bg-slate-900/40 border-b border-slate-200/80 dark:border-slate-800">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      
-      <div class="max-w-3xl mb-8">
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-          Dokumentasi Kegiatan Magang
-        </h2>
-        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
-          Catatan visual pelaksanaan aktivitas teknis dan koordinasi kerja di kantor PT Laksita Emi Saguna.
-        </p>
-      </div>
-
-      <div id="gallery-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <!-- Rendered via app.js -->
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SECTION: REFLEKSI AKHIR MAGANG (READY TEMPLATE) -->
-  <section class="py-12 sm:py-16 bg-white dark:bg-slate-950 border-b border-slate-200/80 dark:border-slate-800">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      
-      <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-blue-50/70 via-slate-50 to-indigo-50/70 dark:from-slate-900 dark:via-slate-900/90 dark:to-slate-900 border border-blue-200/80 dark:border-slate-800 space-y-4">
-        <div class="flex items-center gap-2">
-          <span class="px-2.5 py-0.5 rounded-md bg-brand-blue text-white text-xs font-bold">Refleksi Akhir</span>
-          <span class="text-xs font-mono text-slate-400">Siap untuk evaluasi akhir magang</span>
-        </div>
-
-        <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white">
-          Sintesis Pengalaman & Kontribusi Magang di PT Laksita Emi Saguna
-        </h3>
-
-        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-4xl">
-          Program magang ini memberikan wawasan mendalam mengenai siklus penjaminan kualitas perangkat lunak (QA Lifecycle) dan perancangan dokumentasi teknis pada skala enterprise. Pengetahuan akademis dari Program Studi S1 Ilmu Komputer Universitas Pendidikan Ganesha berhasil diintegrasikan dengan standar operasional industri di PT Laksita Emi Saguna.
-        </p>
-
-        <div class="pt-2 flex flex-wrap items-center gap-4 text-xs font-medium text-slate-500 dark:text-slate-400">
-          <span>• Terverifikasi oleh Pembimbing Lapangan</span>
-          <span>• Berkas Laporan Terbuka untuk Civitas Undiksha</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ACCESSIBLE PHOTO MODAL (NO DUMMY IMAGE, CLEAN METADATA) -->
+  <!-- PHOTO MODAL -->
   <div id="photo-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
-    <div class="relative max-w-lg w-full bg-white dark:bg-slate-900 text-slate-900 dark:text-white rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 animate-fade-in-up">
+    <div class="relative max-w-md w-full bg-white dark:bg-slate-900 text-slate-900 dark:text-white rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
       
-      <!-- Top Bar: Counter & Close -->
-      <div class="flex items-center justify-between p-4 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/50">
+      <div class="flex items-center justify-between p-3.5 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/50">
         <span id="modal-counter" class="text-xs font-mono text-slate-500 dark:text-slate-400 font-bold"></span>
         <button 
           onclick="closePhotoModal()" 
-          class="w-7 h-7 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center justify-center text-slate-500 text-sm font-bold transition-colors">
+          class="w-6 h-6 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center justify-center text-slate-500 text-xs font-bold transition-colors">
           ✕
         </button>
       </div>
 
-      <div class="p-6 space-y-4">
-        <h3 id="modal-title" class="font-bold text-base text-slate-900 dark:text-white"></h3>
-        <p id="modal-caption" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed"></p>
-        <div id="modal-date" class="text-xs text-slate-400 font-mono pt-2 border-t border-slate-100 dark:border-slate-800"></div>
+      <div class="p-5 space-y-3">
+        <h3 id="modal-title" class="font-bold text-sm sm:text-base text-slate-900 dark:text-white"></h3>
+        <p id="modal-caption" class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+        <div id="modal-date" class="text-[11px] text-slate-400 font-mono pt-2 border-t border-slate-100 dark:border-slate-800"></div>
       </div>
 
-      <div class="p-4 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
-        <button 
-          onclick="prevPhoto()" 
-          class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-xs font-semibold hover:bg-slate-100 transition-colors">
-          ← Sebelumnya
-        </button>
-        <button 
-          onclick="nextPhoto()" 
-          class="px-3 py-1.5 rounded-lg bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-xs font-semibold hover:bg-slate-100 transition-colors">
-          Berikutnya →
-        </button>
+      <div class="p-3 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+        <button onclick="prevPhoto()" class="px-3 py-1 rounded-lg bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 font-medium hover:bg-slate-100 transition-colors">← Sebelumnya</button>
+        <button onclick="nextPhoto()" class="px-3 py-1 rounded-lg bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 font-medium hover:bg-slate-100 transition-colors">Berikutnya →</button>
       </div>
 
     </div>
   </div>
 
-  <!-- FLOATING BACK-TO-TOP BUTTON -->
-  <button 
-    id="back-to-top" 
-    aria-label="Kembali ke Atas"
-    class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-white dark:bg-slate-800 text-brand-blue dark:text-blue-400 shadow-lg border border-slate-200 dark:border-slate-700 flex items-center justify-center hidden-btn hover:scale-110 active:scale-95 transition-all">
-    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path></svg>
-  </button>
-
   <!-- FOOTER -->
-  <footer class="bg-white dark:bg-slate-950 border-t border-slate-200/80 dark:border-slate-800 py-8 text-xs text-slate-500 dark:text-slate-400">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div class="text-center sm:text-left space-y-1">
-        <p class="font-semibold text-slate-800 dark:text-slate-200">
-          © 2026 I Komang Sunarka • NIM: 2315101063
-        </p>
-        <p class="text-[11px]">
-          S1 Ilmu Komputer, Universitas Pendidikan Ganesha • Magang di PT Laksita Emi Saguna (Denpasar, Bali)
-        </p>
-      </div>
-
-      <div class="flex items-center gap-4 text-xs font-semibold">
-        <a href="https://github.com/Sunarka/blog-magang" target="_blank" rel="noopener noreferrer" class="hover:text-brand-blue transition-colors flex items-center gap-1">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-          <span>GitHub Repository</span>
-        </a>
-      </div>
+  <footer class="bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800/80 py-6 text-xs text-slate-500 dark:text-slate-400 mt-auto">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+      <p>
+        © 2026 I Komang Sunarka • S1 Ilmu Komputer Undiksha • Magang di PT Laksita Emi Saguna
+      </p>
+      <a href="https://github.com/Sunarka/blog-magang" target="_blank" rel="noopener noreferrer" class="hover:text-brand-blue transition-colors font-medium">
+        GitHub Repository →
+      </a>
     </div>
   </footer>
 
-  <!-- Scripts with cache buster -->
-  <script src="assets/js/posts-data.js?v=5"></script>
-  <script src="assets/js/app.js?v=5"></script>
+  <!-- Scripts -->
+  <script src="assets/js/posts-data.js?v=6"></script>
+  <script src="assets/js/app.js?v=6"></script>
 </body>
 </html>
