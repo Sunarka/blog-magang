@@ -2,9 +2,9 @@
 <html lang="id" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>I Komang Sunarka — Blog & Logbook Magang</title>
-  <meta name="description" content="Logbook & dokumentasi magang I Komang Sunarka di PT Laksita Emi Saguna.">
+  <meta name="description" content="Logbook & dokumentasi resmi magang I Komang Sunarka di PT Laksita Emi Saguna.">
   
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d6efd'/><path d='M9 13.5L16 9l7 4.5-7 4.5-7-4.5z M10 16.5v3.5c0 1.5 2.7 3 6 3s6-1.5 6-3v-3.5l-6 3.5-6-3.5z' fill='white'/></svg>">
@@ -29,35 +29,38 @@
   </script>
 
   <!-- Google Fonts & Custom CSS -->
-  <link rel="stylesheet" href="assets/css/style.css?v=7">
+  <link rel="stylesheet" href="assets/css/style.css?v=8">
 </head>
-<body class="bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col selection:bg-brand-blue selection:text-white">
+<body class="bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col selection:bg-brand-blue selection:text-white antialiased">
 
   <!-- TOP SCROLL PROGRESS BAR -->
   <div id="scroll-progress"></div>
 
-  <!-- TOP NAVBAR (SANDHIKA GALIH BLUE) -->
+  <!-- TOP NAVBAR (RESPONSIVE & MOBILE-ADAPTIVE) -->
   <nav class="bg-[#0d6efd] text-white sticky top-0 z-40 shadow-sm">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-2">
       
       <!-- Brand -->
-      <a href="#home" class="font-bold text-base tracking-tight hover:opacity-90 transition-opacity">
+      <a href="#home" class="font-bold text-sm sm:text-base tracking-tight hover:opacity-90 transition-opacity truncate max-w-[180px] sm:max-w-none flex-shrink-0">
         I Komang Sunarka
       </a>
 
-      <!-- Nav Links -->
-      <div class="flex items-center gap-3 sm:gap-6 text-xs sm:text-sm font-medium">
-        <a href="#home" class="hover:text-blue-100 transition-colors hidden sm:inline">Home</a>
+      <!-- Desktop Nav Links -->
+      <div class="hidden sm:flex items-center gap-5 text-xs sm:text-sm font-medium">
+        <a href="#home" class="hover:text-blue-100 transition-colors">Home</a>
         <a href="#logbook" class="hover:text-blue-100 transition-colors">Logbook</a>
         <a href="#dokumentasi" class="hover:text-blue-100 transition-colors">Dokumentasi</a>
-        
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center gap-1.5 sm:gap-2">
         <!-- Salin Link -->
         <button 
           onclick="copyUrl()" 
           title="Salin Link Website"
-          class="px-2.5 py-1 rounded-lg bg-white/15 hover:bg-white/25 border border-white/20 text-xs font-semibold flex items-center gap-1.5 transition-all active:scale-95">
+          class="px-2.5 py-1.5 rounded-lg bg-white/15 hover:bg-white/25 border border-white/20 text-xs font-semibold flex items-center gap-1.5 transition-all active:scale-95">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
-          <span class="hidden sm:inline">Salin Link</span>
+          <span class="hidden md:inline">Salin Link</span>
         </button>
 
         <!-- Theme Toggle -->
@@ -65,45 +68,61 @@
           id="theme-btn" 
           aria-label="Ganti Tema"
           class="p-1.5 rounded-lg bg-white/15 hover:bg-white/25 border border-white/20 text-xs transition-all flex items-center justify-center">
-          <svg class="w-3.5 h-3.5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
-          <svg class="w-3.5 h-3.5 hidden dark:block text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+          <svg class="w-4 h-4 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+          <svg class="w-4 h-4 hidden dark:block text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button 
+          id="mobile-menu-btn" 
+          aria-label="Buka Menu"
+          aria-expanded="false"
+          class="sm:hidden p-1.5 rounded-lg bg-white/15 hover:bg-white/25 border border-white/20 text-xs transition-all flex items-center justify-center">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
         </button>
       </div>
 
     </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden sm:hidden border-t border-white/15 bg-[#0b5ed7] px-4 py-2.5 space-y-1 text-xs font-medium">
+      <a href="#home" class="block py-2 text-white hover:text-blue-100">Home</a>
+      <a href="#logbook" class="block py-2 text-white hover:text-blue-100">Logbook Mingguan</a>
+      <a href="#dokumentasi" class="block py-2 text-white hover:text-blue-100">Dokumentasi</a>
+    </div>
   </nav>
 
-  <!-- JUMBOTRON / HERO (SANDHIKA GALIH COLOR & LAYOUT) -->
-  <section id="home" class="bg-[#e2edff] dark:bg-slate-900 text-center pt-12 sm:pt-16 relative">
+  <!-- JUMBOTRON / HERO (RESPONSIVE SANDHIKA GALIH STYLE) -->
+  <header id="home" class="bg-[#e2edff] dark:bg-slate-900 text-center pt-8 sm:pt-14 relative">
     <div class="max-w-4xl mx-auto px-4 relative z-10">
       
       <!-- Circular Avatar -->
       <img 
         src="assets/images/profile.png" 
         alt="I Komang Sunarka" 
-        class="w-36 h-36 sm:w-40 sm:h-40 rounded-full object-cover object-top border-4 border-white dark:border-slate-800 shadow-md mx-auto">
+        class="w-28 h-28 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full object-cover object-top border-4 border-white dark:border-slate-800 shadow-md mx-auto">
 
       <!-- Name Heading -->
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-4 tracking-tight">
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mt-3.5 sm:mt-4 tracking-tight px-2 break-words">
         I Komang Sunarka
       </h1>
 
       <!-- Subtitle -->
-      <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 font-medium mt-1">
+      <p class="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-300 font-medium mt-1 px-4 max-w-xl mx-auto leading-relaxed">
         Mahasiswa S1 Ilmu Komputer Undiksha | PT Laksita Emi Saguna
       </p>
 
     </div>
 
     <!-- Wave SVG Transition -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220" class="w-full mt-6 -mb-1 block">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220" class="w-full mt-4 sm:mt-6 -mb-1 block">
       <path 
         fill="#ffffff" 
         fill-opacity="1" 
         d="M0,96L48,112C96,128,192,160,288,165.3C384,171,480,149,576,128C672,107,768,85,864,96C960,107,1056,149,1152,154.7C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
         class="dark:fill-slate-950 transition-colors"></path>
     </svg>
-  </section>
+  </header>
 
   <!-- MAIN SECTION: LOGBOOK MINGGUAN -->
   <main id="logbook" class="flex-1 py-8 sm:py-12 max-w-4xl w-full mx-auto px-4 sm:px-6 space-y-6">
@@ -119,16 +138,16 @@
         </p>
       </div>
 
-      <!-- Filter Tabs -->
-      <div class="inline-flex bg-slate-100 dark:bg-slate-900 p-1 rounded-xl text-xs font-medium gap-1 self-start sm:self-auto" id="filter-tabs">
-        <button data-filter="all" class="tab-btn px-3 py-1 rounded-lg bg-brand-blue text-white shadow-sm font-semibold transition-all">Semua (3)</button>
-        <button data-filter="Testing Web" class="tab-btn px-3 py-1 rounded-lg text-slate-600 dark:text-slate-400 hover:text-brand-blue transition-all">Testing Web</button>
-        <button data-filter="User Guide" class="tab-btn px-3 py-1 rounded-lg text-slate-600 dark:text-slate-400 hover:text-brand-blue transition-all">User Guide</button>
+      <!-- Filter Tabs (Horizontal Scrollable on Mobile) -->
+      <div class="inline-flex bg-slate-100 dark:bg-slate-900 p-1 rounded-xl text-xs font-medium gap-1 self-start sm:self-auto overflow-x-auto max-w-full" id="filter-tabs">
+        <button data-filter="all" class="tab-btn px-3 py-1.5 rounded-lg bg-brand-blue text-white shadow-sm font-semibold transition-all whitespace-nowrap">Semua (3)</button>
+        <button data-filter="Testing Web" class="tab-btn px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-brand-blue transition-all whitespace-nowrap">Testing Web</button>
+        <button data-filter="User Guide" class="tab-btn px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-brand-blue transition-all whitespace-nowrap">User Guide</button>
       </div>
     </div>
 
     <!-- Live Search -->
-    <div class="relative">
+    <div class="relative w-full">
       <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
       </div>
@@ -136,7 +155,7 @@
         type="text" 
         id="search-input" 
         placeholder="Cari catatan, topik, atau kata kunci..." 
-        class="w-full pl-9 pr-8 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-xs text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-brand-blue transition-all">
+        class="w-full pl-9 pr-8 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-xs sm:text-sm text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-brand-blue transition-all">
       <button 
         id="search-clear-btn" 
         class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xs">
@@ -145,7 +164,7 @@
     </div>
 
     <!-- Cards Grid -->
-    <div id="posts-container" class="space-y-4">
+    <div id="posts-container" class="space-y-3.5 sm:space-y-4">
       <!-- Rendered via app.js -->
     </div>
 
@@ -164,41 +183,41 @@
         </p>
       </div>
 
-      <div id="gallery-container" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div id="gallery-container" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
         <!-- Rendered via app.js -->
       </div>
 
     </div>
   </section>
 
-  <!-- PHOTO MODAL -->
-  <div id="photo-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
-    <div class="relative max-w-md w-full bg-white dark:bg-slate-900 text-slate-900 dark:text-white rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800">
+  <!-- PHOTO LIGHTBOX MODAL (MOBILE RESPONSIVE) -->
+  <div id="photo-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-3 sm:p-4">
+    <div class="relative max-w-md w-full bg-white dark:bg-slate-900 text-slate-900 dark:text-white rounded-2xl overflow-hidden shadow-2xl border border-slate-200 dark:border-slate-800 animate-fade-in-up">
       
       <div class="flex items-center justify-between p-3.5 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/50">
         <span id="modal-counter" class="text-xs font-mono text-slate-500 dark:text-slate-400 font-bold"></span>
         <button 
           onclick="closePhotoModal()" 
-          class="w-6 h-6 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center justify-center text-slate-500 text-xs font-bold transition-colors">
+          class="w-7 h-7 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center justify-center text-slate-500 text-sm font-bold transition-colors">
           ✕
         </button>
       </div>
 
-      <div class="p-5 space-y-3">
-        <h3 id="modal-title" class="font-bold text-sm sm:text-base text-slate-900 dark:text-white"></h3>
-        <p id="modal-caption" class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+      <div class="p-4 sm:p-5 space-y-3">
+        <h3 id="modal-title" class="font-bold text-sm sm:text-base text-slate-900 dark:text-white leading-snug"></h3>
+        <p id="modal-caption" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed"></p>
         <div id="modal-date" class="text-[11px] text-slate-400 font-mono pt-2 border-t border-slate-100 dark:border-slate-800"></div>
       </div>
 
       <div class="p-3 bg-slate-50 dark:bg-slate-800/50 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
-        <button onclick="prevPhoto()" class="px-3 py-1 rounded-lg bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 font-medium hover:bg-slate-100 transition-colors">← Sebelumnya</button>
-        <button onclick="nextPhoto()" class="px-3 py-1 rounded-lg bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 font-medium hover:bg-slate-100 transition-colors">Berikutnya →</button>
+        <button onclick="prevPhoto()" class="px-3.5 py-1.5 rounded-lg bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 font-medium hover:bg-slate-100 transition-colors">← Sebelumnya</button>
+        <button onclick="nextPhoto()" class="px-3.5 py-1.5 rounded-lg bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 font-medium hover:bg-slate-100 transition-colors">Berikutnya →</button>
       </div>
 
     </div>
   </div>
 
-  <!-- FOOTER (SANDHIKA GALIH BLUE FOOTER) -->
+  <!-- FOOTER -->
   <footer class="bg-[#0d6efd] text-white py-6 text-xs text-center mt-auto">
     <div class="max-w-4xl mx-auto px-4 space-y-1">
       <p class="font-medium">
@@ -211,7 +230,7 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="assets/js/posts-data.js?v=7"></script>
-  <script src="assets/js/app.js?v=7"></script>
+  <script src="assets/js/posts-data.js?v=8"></script>
+  <script src="assets/js/app.js?v=8"></script>
 </body>
 </html>

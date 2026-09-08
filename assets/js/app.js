@@ -9,6 +9,7 @@ let currentPhotoIdx = 0;
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
+  initMobileMenu();
   initSearchAndFilter();
   initKeyboardNav();
   renderPosts();
@@ -38,7 +39,30 @@ function initTheme() {
 }
 
 /* ========================================================
-   2. Search & Filter
+   2. Mobile Drawer Menu Navigation
+   ======================================================== */
+function initMobileMenu() {
+  const toggleBtn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  if (!toggleBtn || !menu) return;
+
+  toggleBtn.addEventListener('click', () => {
+    const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+    toggleBtn.setAttribute('aria-expanded', !isExpanded);
+    menu.classList.toggle('hidden');
+  });
+
+  const links = menu.querySelectorAll('a');
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+/* ========================================================
+   3. Search & Filter
    ======================================================== */
 function initSearchAndFilter() {
   const searchInput = document.getElementById('search-input');
@@ -76,9 +100,9 @@ function updateFilterTabsUI() {
   const tabButtons = document.querySelectorAll('#filter-tabs .tab-btn');
   tabButtons.forEach(b => {
     if (b.dataset.filter === activeCategory) {
-      b.className = 'tab-btn px-3 py-1 rounded-lg bg-brand-blue text-white shadow-sm font-semibold transition-all text-xs';
+      b.className = 'tab-btn px-3 py-1.5 rounded-lg bg-brand-blue text-white shadow-sm font-semibold transition-all whitespace-nowrap text-xs';
     } else {
-      b.className = 'tab-btn px-3 py-1 rounded-lg text-slate-600 dark:text-slate-400 hover:text-brand-blue transition-all text-xs';
+      b.className = 'tab-btn px-3 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-brand-blue transition-all whitespace-nowrap text-xs';
     }
   });
 }
@@ -111,7 +135,7 @@ function resetFilters() {
 }
 
 /* ========================================================
-   3. Render Logbook Entries (Clean Human Card Style)
+   4. Render Logbook Entries (Responsive Mobile + Desktop)
    ======================================================== */
 function renderPosts() {
   const container = document.getElementById('posts-container');
@@ -140,7 +164,7 @@ function renderPosts() {
     container.innerHTML = `
       <div class="py-8 text-center bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 p-6">
         <p class="text-xs font-semibold text-slate-700 dark:text-slate-300">Tidak ada logbook yang cocok.</p>
-        <button onclick="resetFilters()" class="mt-2 px-3 py-1 rounded-md bg-brand-blue text-white text-xs font-medium hover:bg-brand-darkblue transition-colors">
+        <button onclick="resetFilters()" class="mt-2 px-3 py-1.5 rounded-md bg-brand-blue text-white text-xs font-medium hover:bg-brand-darkblue transition-colors">
           Reset Filter
         </button>
       </div>
@@ -149,9 +173,9 @@ function renderPosts() {
   }
 
   container.innerHTML = filtered.map(post => `
-    <article class="p-4 sm:p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-      <div class="space-y-1.5 flex-1">
-        <div class="flex items-center gap-2 text-[11px]">
+    <article class="p-4 sm:p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3.5 sm:gap-4">
+      <div class="space-y-1.5 flex-1 min-w-0">
+        <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 text-[11px]">
           <span class="px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950/80 text-brand-blue dark:text-blue-300 font-bold font-mono">
             Minggu ${post.week}
           </span>
@@ -161,7 +185,7 @@ function renderPosts() {
           <span class="text-slate-600 dark:text-slate-300 font-medium">${post.category}</span>
         </div>
 
-        <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white leading-snug hover:text-brand-blue transition-colors">
+        <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white leading-snug hover:text-brand-blue transition-colors break-words">
           <a href="post.html?id=${post.id}">
             ${post.title}
           </a>
@@ -180,7 +204,7 @@ function renderPosts() {
         </div>
       </div>
 
-      <a href="post.html?id=${post.id}" class="self-end sm:self-center px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-brand-blue hover:text-white dark:hover:bg-brand-blue text-slate-700 dark:text-slate-200 text-xs font-semibold transition-colors flex items-center gap-1 flex-shrink-0">
+      <a href="post.html?id=${post.id}" class="w-full sm:w-auto justify-center sm:justify-start px-3.5 py-2 sm:py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-brand-blue hover:text-white dark:hover:bg-brand-blue text-slate-700 dark:text-slate-200 text-xs font-semibold transition-colors flex items-center gap-1 flex-shrink-0">
         <span>Baca Detail</span>
         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
       </a>
@@ -189,7 +213,7 @@ function renderPosts() {
 }
 
 /* ========================================================
-   4. Gallery & Modal
+   5. Gallery & Lightbox Modal
    ======================================================== */
 function renderGallery() {
   const container = document.getElementById('gallery-container');
@@ -198,7 +222,7 @@ function renderGallery() {
   container.innerHTML = BLOG_DATA.gallery.map((item, idx) => `
     <div 
       onclick="openPhotoModal(${idx})" 
-      class="cursor-pointer p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all flex flex-col justify-between space-y-2 group">
+      class="cursor-pointer p-3.5 sm:p-4 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all flex flex-col justify-between space-y-2 group">
       
       <div>
         <div class="flex items-center justify-between text-[11px] mb-1">
@@ -206,7 +230,7 @@ function renderGallery() {
           <span class="text-slate-400 font-mono text-[10px]">${item.date}</span>
         </div>
 
-        <h4 class="font-bold text-xs text-slate-900 dark:text-white group-hover:text-brand-blue transition-colors">
+        <h4 class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-brand-blue transition-colors leading-snug">
           ${item.title}
         </h4>
 
@@ -287,7 +311,7 @@ function initKeyboardNav() {
 }
 
 /* ========================================================
-   5. Copy URL
+   6. Copy URL Feedback Toast
    ======================================================== */
 function copyUrl() {
   navigator.clipboard.writeText(window.location.href).then(() => {
