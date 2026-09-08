@@ -1,25 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
-  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   --primary: #0d6efd;
   --primary-hover: #0b5ed7;
-  --jumbotron: #eaf2ff;
 }
 
 body {
   font-family: var(--font-main);
   -webkit-font-smoothing: antialiased;
-}
-
-/* Jumbotron */
-.jumbotron-bg {
-  background-color: var(--jumbotron);
-}
-
-.dark .jumbotron-bg {
-  background-color: #1e293b;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Scroll Progress Bar */
@@ -28,41 +19,33 @@ body {
   top: 0;
   left: 0;
   height: 3px;
-  background: linear-gradient(90deg, #0d6efd, #38bdf8);
+  background-color: var(--primary);
   width: 0%;
   z-index: 9999;
   transition: width 0.1s ease-out;
 }
 
-/* Clean Card Hover */
+/* Clean Understated Card Hover */
 .clean-card {
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .clean-card:hover {
-  transform: translateY(-4px);
-  border-color: #0d6efd;
-  box-shadow: 0 16px 32px -12px rgba(13, 110, 253, 0.15);
+  transform: translateY(-2px);
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .dark .clean-card:hover {
-  border-color: #3b82f6;
-  box-shadow: 0 16px 32px -12px rgba(0, 0, 0, 0.6);
-}
-
-/* Interactive Timeline Node */
-.timeline-node {
-  transition: all 0.2s ease;
-}
-.timeline-node:hover {
-  transform: translateY(-2px);
+  border-color: #475569;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 /* Smooth Fade In Animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -71,164 +54,17 @@ body {
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: fadeInUp 0.25s ease-out forwards;
 }
 
-/* Post Reading Typography */
-.post-body {
-  font-size: 1.05rem;
-  line-height: 1.85;
-  color: #334155;
-}
-
-.dark .post-body {
-  color: #cbd5e1;
-}
-
-.post-body h2 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #0f172a;
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
-}
-
-.dark .post-body h2 {
-  color: #f8fafc;
-}
-
-.post-body h3 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #0f172a;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.dark .post-body h3 {
-  color: #f8fafc;
-}
-
-.post-body p {
-  margin-bottom: 1.25rem;
-}
-
-.post-body ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-  margin-bottom: 1.25rem;
-}
-
-.post-body li {
-  margin-bottom: 0.4rem;
-}
-
-.post-body pre {
-  background-color: #0f172a;
-  color: #f8fafc;
-  padding: 1.125rem 1.25rem;
-  border-radius: 0.75rem;
-  overflow-x: auto;
-  font-family: var(--font-mono);
-  font-size: 0.875rem;
-  margin: 1.5rem 0;
-  border: 1px solid #334155;
-}
-
-.post-body code:not(pre code) {
-  background-color: #eff6ff;
-  color: #0d6efd;
-  padding: 0.15rem 0.4rem;
-  border-radius: 0.375rem;
-  font-family: var(--font-mono);
-  font-size: 0.875em;
-  font-weight: 600;
-}
-
-.dark .post-body code:not(pre code) {
-  background-color: #1e293b;
-  color: #93c5fd;
-}
-
-.clean-callout {
-  background-color: #eff6ff;
-  border-left: 4px solid #0d6efd;
-  padding: 1rem 1.25rem;
-  margin: 1.5rem 0;
-  border-radius: 0 0.75rem 0.75rem 0;
-  color: #1e40af;
-}
-
-.dark .clean-callout {
-  background-color: rgba(30, 58, 138, 0.25);
-  border-left-color: #60a5fa;
-  color: #bfdbfe;
-}
-
-/* Back to Top Progress Ring Button */
-/* Typing Cursor Animation */
-.typing-cursor {
-  display: inline-block;
-  width: 2px;
-  height: 1.1em;
-  background-color: currentColor;
-  margin-left: 2px;
-  vertical-align: middle;
-  animation: blink 0.9s infinite;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-/* 3D Tilt Card Perspective */
-.tilt-card {
-  transform-style: preserve-3d;
-  will-change: transform;
-  transition: transform 0.15s ease-out, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-
-/* Interactive Badge Pulse */
-@keyframes softPulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.04); opacity: 0.9; }
-}
-
-.animate-soft-pulse {
-  animation: softPulse 2.5s infinite ease-in-out;
-}
-
-/* Interactive Accordion Item */
-.accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s cubic-bezier(0, 1, 0, 1), opacity 0.25s ease;
-  opacity: 0;
-}
-
-.accordion-item.active .accordion-content {
-  max-height: 500px;
-  opacity: 1;
-  transition: max-height 0.35s ease-in-out, opacity 0.3s ease;
-}
-
-.accordion-item.active .accordion-chevron {
-  transform: rotate(180deg);
-}
-
-.accordion-chevron {
-  transition: transform 0.25s ease;
-}
-
-/* Back to Top Progress Ring Button */
+/* Floating Back-to-Top */
 #back-to-top {
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 #back-to-top.hidden-btn {
   opacity: 0;
-  transform: translateY(16px);
+  transform: translateY(12px);
   pointer-events: none;
 }
 
@@ -236,4 +72,41 @@ body {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
+}
+
+/* Custom Clean Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Accessibility Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

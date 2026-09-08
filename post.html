@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detail Logbook Magang</title>
+  <title>Detail Logbook Magang — I Komang Sunarka</title>
   
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d6efd'/><path d='M9 13.5L16 9l7 4.5-7 4.5-7-4.5z M10 16.5v3.5c0 1.5 2.7 3 6 3s6-1.5 6-3v-3.5l-6 3.5-6-3.5z' fill='white'/></svg>">
@@ -28,37 +28,39 @@
   </script>
 
   <!-- Google Fonts & Custom CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=5">
 </head>
-<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col selection:bg-brand-blue selection:text-white relative">
+<body class="bg-slate-50/60 dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col selection:bg-brand-blue selection:text-white relative">
 
   <!-- TOP SCROLL PROGRESS BAR -->
   <div id="scroll-progress"></div>
 
   <!-- TOP NAVBAR -->
-  <nav class="bg-brand-blue text-white sticky top-0 z-40 shadow-md">
+  <nav class="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800 sticky top-0 z-40">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       
-      <a href="index.html" class="flex items-center gap-2 text-xs sm:text-sm font-bold text-white hover:text-blue-100 transition-colors">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-        <span>Kembali ke Beranda</span>
+      <!-- Back to Home Link -->
+      <a href="index.html#logbook" class="flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-brand-blue transition-colors">
+        <svg class="w-4 h-4 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+        <span>Kembali ke Logbook</span>
       </a>
 
+      <!-- Action Buttons -->
       <div class="flex items-center gap-2">
         <button 
           onclick="copyUrl()" 
           title="Salin Link Artikel"
-          class="px-3 py-1.5 rounded-lg bg-white/15 hover:bg-white/25 border border-white/25 text-xs font-semibold flex items-center gap-1.5 transition-all">
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
-          <span>Salin Link</span>
+          class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold flex items-center gap-1.5 transition-all border border-slate-200/80 dark:border-slate-700">
+          <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+          <span class="hidden sm:inline">Salin Link</span>
         </button>
 
         <button 
           id="theme-btn" 
           aria-label="Ganti Tema"
-          class="p-2 rounded-lg bg-white/15 hover:bg-white/25 border border-white/25 text-xs transition-all flex items-center justify-center">
-          <svg class="w-3.5 h-3.5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
-          <svg class="w-3.5 h-3.5 hidden dark:block text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+          class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs transition-all flex items-center justify-center border border-slate-200/80 dark:border-slate-700">
+          <svg class="w-4 h-4 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+          <svg class="w-4 h-4 hidden dark:block text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
         </button>
       </div>
 
@@ -68,11 +70,11 @@
   <!-- MAIN ARTICLE CONTAINER -->
   <main class="flex-1 max-w-4xl w-full mx-auto px-4 sm:px-6 py-8 sm:py-12">
     
-    <article class="bg-white dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700 rounded-3xl p-6 sm:p-10 shadow-md">
+    <article class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-6 sm:p-10 shadow-sm">
       <div id="article-content">
         <!-- Injected via JavaScript -->
         <div class="py-12 text-center text-slate-400 font-mono text-xs">
-          Memuat artikel...
+          Memuat catatan logbook...
         </div>
       </div>
     </article>
@@ -85,15 +87,20 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-brand-blue text-white py-6 text-center text-xs mt-12 shadow-inner">
-    <div class="max-w-4xl mx-auto px-4">
-      <p>© 2026 I Komang Sunarka • S1 Ilmu Komputer Undiksha</p>
+  <footer class="bg-white dark:bg-slate-950 border-t border-slate-200/80 dark:border-slate-800 py-6 text-center text-xs text-slate-500 dark:text-slate-400 mt-12">
+    <div class="max-w-4xl mx-auto px-4 space-y-1">
+      <p class="font-semibold text-slate-800 dark:text-slate-200">
+        © 2026 I Komang Sunarka • NIM: 2315101063
+      </p>
+      <p class="text-[11px]">
+        S1 Ilmu Komputer, Universitas Pendidikan Ganesha • Magang di PT Laksita Emi Saguna (Denpasar, Bali)
+      </p>
     </div>
   </footer>
 
   <!-- Scripts with cache buster -->
-  <script src="assets/js/posts-data.js?v=4"></script>
-  <script src="assets/js/app.js?v=4"></script>
+  <script src="assets/js/posts-data.js?v=5"></script>
+  <script src="assets/js/app.js?v=5"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const params = new URLSearchParams(window.location.search);
@@ -105,67 +112,180 @@
       if (!post) {
         document.getElementById('article-content').innerHTML = `
           <div class="text-center py-12">
-            <h2 class="text-lg font-bold text-slate-900 dark:text-white">Artikel tidak ditemukan</h2>
+            <h2 class="text-lg font-bold text-slate-900 dark:text-white">Catatan tidak ditemukan</h2>
             <a href="index.html" class="mt-3 inline-block text-xs font-bold text-brand-blue hover:underline">← Kembali ke Beranda</a>
           </div>
         `;
         return;
       }
 
-      document.title = `${post.title} — Logbook Magang`;
+      document.title = `${post.title} — Logbook Magang I Komang Sunarka`;
+
+      // Build Testing Table HTML if available
+      let testingTableHtml = '';
+      if (post.testing && post.testing.length > 0) {
+        testingTableHtml = `
+          <div class="my-6">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-bold text-sm text-slate-900 dark:text-white">Tabel Matriks Skenario Pengujian (${post.testing.length} Skenario)</h3>
+              <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 font-mono">100% Passed</span>
+            </div>
+            <div class="bg-slate-50 dark:bg-slate-950 rounded-2xl border border-slate-200/80 dark:border-slate-800 overflow-hidden">
+              <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs border-collapse">
+                  <thead>
+                    <tr class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-bold border-b border-slate-200/80 dark:border-slate-700">
+                      <th class="p-3 pl-4">Kode</th>
+                      <th class="p-3">Role</th>
+                      <th class="p-3">Aksi / Skenario</th>
+                      <th class="p-3">Hasil yang Diharapkan</th>
+                      <th class="p-3 pr-4 text-right">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-200/60 dark:divide-slate-800 text-slate-700 dark:text-slate-300">
+                    ${post.testing.map(t => `
+                      <tr class="hover:bg-white dark:hover:bg-slate-900/60 transition-colors">
+                        <td class="p-3 pl-4 font-mono font-bold text-brand-blue">${t.code}</td>
+                        <td class="p-3 font-semibold text-slate-900 dark:text-white">${t.role}</td>
+                        <td class="p-3">${t.action}</td>
+                        <td class="p-3 text-slate-600 dark:text-slate-400">${t.expected}</td>
+                        <td class="p-3 pr-4 text-right"><span class="px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold text-[11px]">${t.status}</span></td>
+                      </tr>
+                    `).join('')}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        `;
+      }
 
       document.getElementById('article-content').innerHTML = `
         <!-- Meta Tags & Category Header -->
         <div class="flex flex-wrap items-center gap-2 mb-4">
-          <span class="px-3 py-1 rounded-full bg-brand-blue text-white text-xs font-bold shadow-sm">
+          <span class="px-3 py-1 rounded-md bg-brand-blue text-white text-xs font-bold shadow-sm">
             Minggu ${post.week}
           </span>
-          <span class="px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950 text-brand-blue dark:text-blue-300 text-xs font-semibold border border-blue-200 dark:border-blue-800">
+          <span class="px-3 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold border border-slate-200/80 dark:border-slate-700">
             ${post.category}
           </span>
-          <span class="text-xs text-slate-400">•</span>
-          <span class="text-xs text-slate-500 dark:text-slate-400 font-medium">
+          <span class="px-3 py-1 rounded-md bg-emerald-50 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 text-xs font-semibold border border-emerald-200/80 dark:border-emerald-800">
+            Status: ${post.status || 'Selesai'}
+          </span>
+          <span class="text-xs text-slate-400 font-mono ml-auto">
             ${post.date}
           </span>
         </div>
 
         <!-- Title -->
-        <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight mb-4">
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-snug mb-4">
           ${post.title}
         </h1>
 
         <!-- Author Banner Row -->
-        <div class="flex items-center gap-3.5 pb-6 mb-6 border-b border-slate-100 dark:border-slate-700">
-          <img src="${BLOG_DATA.author.avatar}" alt="${BLOG_DATA.author.name}" class="w-11 h-11 rounded-full object-cover object-top ring-2 ring-blue-500/20">
+        <div class="flex items-center gap-3.5 pb-6 mb-6 border-b border-slate-100 dark:border-slate-800">
+          <img src="${BLOG_DATA.author.avatar}" alt="${BLOG_DATA.author.name}" class="w-11 h-11 rounded-full object-cover object-top ring-2 ring-slate-200 dark:ring-slate-700">
           <div>
             <div class="font-bold text-sm text-slate-900 dark:text-white">${BLOG_DATA.author.name}</div>
             <div class="text-xs text-slate-500 dark:text-slate-400">NIM: ${BLOG_DATA.author.nim} • S1 Ilmu Komputer Undiksha • Magang di ${BLOG_DATA.author.company}</div>
           </div>
         </div>
 
-        <!-- Clean Visual Header (No Dummy Photo) -->
-        <div class="rounded-2xl p-6 sm:p-8 bg-gradient-to-br ${getIconBgClass(post.iconType || 'testing')} text-white flex items-center justify-center mb-8 shadow-sm">
-          <div class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur border border-white/30 flex items-center justify-center shadow-lg">
-            ${getActivityIconSvg(post.iconType || 'testing', 'w-10 h-10')}
-          </div>
-        </div>
-
-        <!-- Summary Highlight -->
-        <div class="p-4 sm:p-5 rounded-2xl bg-blue-50 dark:bg-blue-950/40 border-l-4 border-brand-blue mb-8">
-          <p class="text-sm sm:text-base font-medium text-slate-700 dark:text-slate-200 leading-relaxed italic">
+        <!-- Summary Highlight Box -->
+        <div class="p-5 rounded-2xl bg-blue-50/60 dark:bg-blue-950/40 border border-blue-200/80 dark:border-blue-900/40 mb-8">
+          <span class="text-xs font-bold text-brand-blue dark:text-blue-300 uppercase tracking-wider block mb-1">Ringkasan Kegiatan</span>
+          <p class="text-sm font-medium text-slate-700 dark:text-slate-200 leading-relaxed italic">
             "${post.summary}"
           </p>
         </div>
 
-        <!-- Body Content -->
-        <div class="post-body">
-          ${post.content}
+        <!-- Structured Logbook Sections -->
+        <div class="space-y-8 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+          
+          <!-- 1. Tujuan Kegiatan -->
+          <div class="space-y-2">
+            <h2 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+              <span>1. Tujuan Kegiatan</span>
+            </h2>
+            <p class="text-slate-600 dark:text-slate-300 bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200/60 dark:border-slate-700/60">
+              ${post.objective || 'Melakukan pengujian dan dokumentasi teknis sistem informasi perguruan tinggi.'}
+            </p>
+          </div>
+
+          <!-- 2. Pekerjaan yang Dilakukan -->
+          <div class="space-y-2">
+            <h2 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+              <span>2. Pekerjaan & Aktivitas yang Dilakukan</span>
+            </h2>
+            ${post.tasks && post.tasks.length > 0 ? `
+              <ul class="space-y-2 bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200/60 dark:border-slate-700/60">
+                ${post.tasks.map(task => `
+                  <li class="flex items-start gap-2.5">
+                    <svg class="w-4 h-4 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <span>${task}</span>
+                  </li>
+                `).join('')}
+              </ul>
+            ` : ''}
+          </div>
+
+          <!-- 3. Rincian Pengujian / Hasil Teknis -->
+          <div class="space-y-2">
+            <h2 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+              <span>3. Rincian Pengujian & Validasi Sistem</span>
+            </h2>
+            ${testingTableHtml}
+          </div>
+
+          <!-- 4. Hasil & Dampak Pekerjaan -->
+          <div class="space-y-2">
+            <h2 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+              <span>4. Hasil & Dampak Pekerjaan</span>
+            </h2>
+            <div class="bg-emerald-50/60 dark:bg-emerald-950/40 p-4 rounded-xl border border-emerald-200/80 dark:border-emerald-900/40 text-slate-700 dark:text-slate-200">
+              ${post.results || 'Pekerjaan selesai dilaksanakan sesuai target.'}
+            </div>
+          </div>
+
+          <!-- 5. Kendala & Solusi -->
+          <div class="space-y-3">
+            <h2 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+              <span>5. Kendala & Solusi yang Diterapkan</span>
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700">
+                <span class="text-slate-400 font-bold block text-[11px] uppercase tracking-wider mb-1">Kendala Dihadapi:</span>
+                <p class="text-slate-700 dark:text-slate-300">${post.challenges || 'Tidak ditemukan kendala mayor.'}</p>
+              </div>
+              <div class="p-4 rounded-xl bg-blue-50/60 dark:bg-blue-950/40 border border-blue-200/80 dark:border-blue-900/40">
+                <span class="text-brand-blue dark:text-blue-300 font-bold block text-[11px] uppercase tracking-wider mb-1">Tindakan / Solusi:</span>
+                <p class="text-slate-700 dark:text-slate-300">${post.solutions || 'Koordinasi berkala bersama mentor.'}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6. Pembelajaran yang Diperoleh -->
+          <div class="space-y-2">
+            <h2 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+              <span>6. Pembelajaran & Wawasan Baru</span>
+            </h2>
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 text-slate-700 dark:text-slate-300">
+              ${post.learnings || 'Mendapatkan wawasan mengenai standar kualitas pengujian industri.'}
+            </div>
+          </div>
+
         </div>
 
         <!-- Tags Row -->
-        <div class="mt-10 pt-6 border-t border-slate-100 dark:border-slate-700 flex flex-wrap items-center justify-between gap-3">
+        <div class="mt-10 pt-6 border-t border-slate-100 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
           <div class="flex flex-wrap gap-1.5">
-            ${post.tags.map(t => `<a href="index.html#logbook" class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-brand-blue hover:text-white transition-colors">#${t}</a>`).join('')}
+            ${post.tags.map(t => `<a href="index.html#logbook" class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-brand-blue hover:text-white transition-colors">#${t}</a>`).join('')}
           </div>
           <button onclick="copyUrl()" class="text-xs font-bold text-brand-blue dark:text-blue-400 hover:underline flex items-center gap-1">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
@@ -180,14 +300,14 @@
 
       document.getElementById('post-nav').innerHTML = `
         ${prev ? `
-          <a href="post.html?id=${prev.id}" class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-4 rounded-2xl hover:border-brand-blue transition-colors shadow-sm group">
+          <a href="post.html?id=${prev.id}" class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-4 rounded-2xl hover:border-brand-blue transition-colors shadow-sm group">
             <span class="text-[11px] font-bold text-slate-400 block mb-0.5">← Catatan Sebelumnya</span>
             <span class="text-xs font-bold text-slate-800 dark:text-white group-hover:text-brand-blue line-clamp-1">${prev.title}</span>
           </a>
         ` : '<div></div>'}
 
         ${next ? `
-          <a href="post.html?id=${next.id}" class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-4 rounded-2xl hover:border-brand-blue transition-colors shadow-sm group text-right">
+          <a href="post.html?id=${next.id}" class="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-4 rounded-2xl hover:border-brand-blue transition-colors shadow-sm group text-right">
             <span class="text-[11px] font-bold text-slate-400 block mb-0.5">Catatan Selanjutnya →</span>
             <span class="text-xs font-bold text-slate-800 dark:text-white group-hover:text-brand-blue line-clamp-1">${next.title}</span>
           </a>
@@ -196,16 +316,12 @@
     });
   </script>
 
-  <!-- FLOATING BACK-TO-TOP BUTTON WITH CIRCULAR PROGRESS RING -->
+  <!-- FLOATING BACK-TO-TOP BUTTON -->
   <button 
     id="back-to-top" 
     aria-label="Kembali ke Atas"
     class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-white dark:bg-slate-800 text-brand-blue dark:text-blue-400 shadow-lg border border-slate-200 dark:border-slate-700 flex items-center justify-center hidden-btn hover:scale-110 active:scale-95 transition-all">
-    <svg class="w-10 h-10 -rotate-90 pointer-events-none" viewBox="0 0 40 40">
-      <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2.5" class="text-slate-200 dark:text-slate-700" opacity="0.4"></circle>
-      <circle id="back-to-top-ring" cx="20" cy="20" r="18" fill="none" stroke="#0d6efd" stroke-width="2.5" stroke-dasharray="113.1" stroke-dashoffset="113.1" stroke-linecap="round" class="transition-all duration-75"></circle>
-    </svg>
-    <svg class="w-4 h-4 absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path></svg>
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path></svg>
   </button>
 </body>
 </html>
