@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
   --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -22,20 +22,56 @@ body {
   background-color: #1e293b;
 }
 
+/* Scroll Progress Bar */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0d6efd, #38bdf8);
+  width: 0%;
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+}
+
 /* Clean Card Hover */
 .clean-card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
 }
 
 .clean-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   border-color: #0d6efd;
-  box-shadow: 0 12px 30px -10px rgba(13, 110, 253, 0.12);
+  box-shadow: 0 16px 32px -12px rgba(13, 110, 253, 0.15);
 }
 
 .dark .clean-card:hover {
   border-color: #3b82f6;
-  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 16px 32px -12px rgba(0, 0, 0, 0.6);
+}
+
+/* Interactive Timeline Node */
+.timeline-node {
+  transition: all 0.2s ease;
+}
+.timeline-node:hover {
+  transform: translateY(-2px);
+}
+
+/* Smooth Fade In Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Post Reading Typography */
@@ -96,6 +132,7 @@ body {
   font-family: var(--font-mono);
   font-size: 0.875rem;
   margin: 1.5rem 0;
+  border: 1px solid #334155;
 }
 
 .post-body code:not(pre code) {
@@ -118,7 +155,7 @@ body {
   border-left: 4px solid #0d6efd;
   padding: 1rem 1.25rem;
   margin: 1.5rem 0;
-  border-radius: 0 0.5rem 0.5rem 0;
+  border-radius: 0 0.75rem 0.75rem 0;
   color: #1e40af;
 }
 
@@ -126,4 +163,21 @@ body {
   background-color: rgba(30, 58, 138, 0.25);
   border-left-color: #60a5fa;
   color: #bfdbfe;
+}
+
+/* Back to Top Progress Ring Button */
+#back-to-top {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#back-to-top.hidden-btn {
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+}
+
+#back-to-top.visible-btn {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }

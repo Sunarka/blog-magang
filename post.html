@@ -30,7 +30,10 @@
   <!-- Google Fonts & Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col selection:bg-brand-blue selection:text-white">
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col selection:bg-brand-blue selection:text-white relative">
+
+  <!-- TOP SCROLL PROGRESS BAR -->
+  <div id="scroll-progress"></div>
 
   <!-- TOP NAVBAR -->
   <nav class="bg-brand-blue text-white sticky top-0 z-40 shadow-md">
@@ -160,10 +163,11 @@
         <!-- Tags Row -->
         <div class="mt-10 pt-6 border-t border-slate-100 dark:border-slate-700 flex flex-wrap items-center justify-between gap-3">
           <div class="flex flex-wrap gap-1.5">
-            ${post.tags.map(t => `<span class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300">#${t}</span>`).join('')}
+            ${post.tags.map(t => `<a href="index.html#logbook" class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 hover:bg-brand-blue hover:text-white transition-colors">#${t}</a>`).join('')}
           </div>
-          <button onclick="copyUrl()" class="text-xs font-bold text-brand-blue dark:text-blue-400 hover:underline">
-            Salin Link Artikel Ini
+          <button onclick="copyUrl()" class="text-xs font-bold text-brand-blue dark:text-blue-400 hover:underline flex items-center gap-1">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+            <span>Salin Link Artikel</span>
           </button>
         </div>
       `;
@@ -189,5 +193,17 @@
       `;
     });
   </script>
+
+  <!-- FLOATING BACK-TO-TOP BUTTON WITH CIRCULAR PROGRESS RING -->
+  <button 
+    id="back-to-top" 
+    aria-label="Kembali ke Atas"
+    class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-white dark:bg-slate-800 text-brand-blue dark:text-blue-400 shadow-lg border border-slate-200 dark:border-slate-700 flex items-center justify-center hidden-btn hover:scale-110 active:scale-95 transition-all">
+    <svg class="w-10 h-10 -rotate-90 pointer-events-none" viewBox="0 0 40 40">
+      <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2.5" class="text-slate-200 dark:text-slate-700" opacity="0.4"></circle>
+      <circle id="back-to-top-ring" cx="20" cy="20" r="18" fill="none" stroke="#0d6efd" stroke-width="2.5" stroke-dasharray="113.1" stroke-dashoffset="113.1" stroke-linecap="round" class="transition-all duration-75"></circle>
+    </svg>
+    <svg class="w-4 h-4 absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path></svg>
+  </button>
 </body>
 </html>

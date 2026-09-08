@@ -30,7 +30,10 @@
   <!-- Google Fonts & Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col selection:bg-brand-blue selection:text-white">
+<body class="bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col selection:bg-brand-blue selection:text-white relative">
+
+  <!-- TOP SCROLL PROGRESS BAR -->
+  <div id="scroll-progress"></div>
 
   <!-- TOP NAVBAR -->
   <nav class="bg-brand-blue text-white sticky top-0 z-40 shadow-sm">
@@ -38,14 +41,14 @@
       
       <!-- Brand -->
       <a href="#home" class="font-bold text-base sm:text-lg tracking-tight hover:opacity-90 transition-opacity flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-white"></span>
+        <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
         <span>I Komang Sunarka</span>
       </a>
 
       <!-- Nav Links -->
       <div class="flex items-center gap-3 sm:gap-6 text-xs sm:text-sm font-medium">
         <a href="#home" class="hover:text-blue-200 transition-colors hidden sm:inline">Home</a>
-        <a href="#info" class="hover:text-blue-200 transition-colors hidden sm:inline">Info Magang</a>
+        <a href="#info" class="hover:text-blue-200 transition-colors hidden sm:inline">Info</a>
         <a href="#logbook" class="hover:text-blue-200 transition-colors">Logbook</a>
         <a href="#gallery" class="hover:text-blue-200 transition-colors">Dokumentasi</a>
         
@@ -53,7 +56,7 @@
         <button 
           onclick="copyUrl()" 
           title="Salin Link Blog untuk Portal"
-          class="px-3 py-1.5 rounded-lg bg-white/15 hover:bg-white/25 border border-white/25 text-xs font-semibold flex items-center gap-1.5 transition-all">
+          class="px-3 py-1.5 rounded-lg bg-white/15 hover:bg-white/25 border border-white/25 text-xs font-semibold flex items-center gap-1.5 transition-all active:scale-95">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
           <span class="hidden sm:inline">Salin Link</span>
         </button>
@@ -62,7 +65,7 @@
         <button 
           id="theme-btn" 
           aria-label="Ganti Tema"
-          class="p-2 rounded-lg bg-white/15 hover:bg-white/25 border border-white/25 text-xs transition-all flex items-center justify-center">
+          class="p-2 rounded-lg bg-white/15 hover:bg-white/25 border border-white/25 text-xs transition-all flex items-center justify-center active:scale-95">
           <svg class="w-3.5 h-3.5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
           <svg class="w-3.5 h-3.5 hidden dark:block text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
         </button>
@@ -75,11 +78,14 @@
   <section id="home" class="jumbotron-bg text-center relative pt-12 sm:pt-16">
     <div class="max-w-3xl mx-auto px-4 relative z-10">
       
-      <!-- Circular Avatar -->
-      <img 
-        src="assets/images/profile.png" 
-        alt="I Komang Sunarka" 
-        class="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover object-top border-4 border-white shadow-lg mx-auto ring-4 ring-blue-500/15">
+      <!-- Circular Avatar with Hover Glow -->
+      <div class="inline-block relative group">
+        <img 
+          src="assets/images/profile.png" 
+          alt="I Komang Sunarka" 
+          class="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover object-top border-4 border-white shadow-lg mx-auto ring-4 ring-blue-500/20 group-hover:scale-105 transition-transform duration-300">
+        <span class="absolute bottom-1 right-3 w-5 h-5 bg-emerald-500 border-2 border-white rounded-full" title="Status Aktif Magang"></span>
+      </div>
 
       <!-- Big Title -->
       <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-5 tracking-tight">
@@ -91,9 +97,16 @@
         Mahasiswa S1 Ilmu Komputer Undiksha • Magang di PT Laksita Emi Saguna
       </p>
 
-      <div class="inline-flex items-center gap-2 mt-3.5 px-3.5 py-1 rounded-full bg-white/80 dark:bg-slate-900/80 border border-blue-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold shadow-sm">
-        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-        <span>Magang Reguler Ganjil 2026/2027</span>
+      <!-- Badge Row -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mt-3.5">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/90 dark:bg-slate-900/90 border border-blue-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-xs font-semibold shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span>Magang Reguler Ganjil 2026/2027</span>
+        </div>
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 dark:bg-blue-400/10 border border-brand-blue/30 text-brand-blue dark:text-blue-300 text-xs font-semibold">
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span>14 Skenario Pengujian</span>
+        </div>
       </div>
 
     </div>
@@ -108,14 +121,15 @@
     </svg>
   </section>
 
-  <!-- SECTION: INFO RINGKAS MAGANG -->
+  <!-- SECTION: INFO RINGKAS MAGANG & TIMELINE -->
   <section id="info" class="py-10 sm:py-12 bg-white dark:bg-slate-950">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <!-- 3-Box Summary Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10">
         
         <!-- Box 1: Mahasiswa -->
-        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
+        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 clean-card">
           <div class="w-9 h-9 rounded-xl bg-blue-100 dark:bg-blue-950 text-brand-blue flex items-center justify-center mb-3">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
           </div>
@@ -128,7 +142,7 @@
         </div>
 
         <!-- Box 2: Tempat Magang -->
-        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
+        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 clean-card">
           <div class="w-9 h-9 rounded-xl bg-blue-100 dark:bg-blue-950 text-brand-blue flex items-center justify-center mb-3">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
           </div>
@@ -140,7 +154,7 @@
         </div>
 
         <!-- Box 3: Jobdesk & Periode -->
-        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
+        <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 clean-card">
           <div class="w-9 h-9 rounded-xl bg-blue-100 dark:bg-blue-950 text-brand-blue flex items-center justify-center mb-3">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
           </div>
@@ -151,6 +165,49 @@
           </p>
         </div>
 
+      </div>
+
+      <!-- Interactive Weekly Roadmap / Stepper -->
+      <div class="p-5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800">
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-brand-blue"></span>
+            <h3 class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">Alur Progres Mingguan (Klik untuk Filter)</h3>
+          </div>
+          <span class="text-[11px] text-slate-400 font-mono">Minggu 1 - 3 Aktif</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <!-- Week 1 Node -->
+          <div data-week="1" class="timeline-node cursor-pointer p-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-brand-blue hover:shadow-sm">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-xs font-bold text-brand-blue">Minggu 1</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500" title="Selesai"></span>
+            </div>
+            <div class="text-xs font-semibold text-slate-800 dark:text-slate-100 truncate">Testing SIM Keuangan</div>
+            <div class="text-[10px] text-slate-400 mt-0.5">14 Skenario Black Box</div>
+          </div>
+
+          <!-- Week 2 Node -->
+          <div data-week="2" class="timeline-node cursor-pointer p-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-brand-blue hover:shadow-sm">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-xs font-bold text-brand-blue">Minggu 2</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500" title="Selesai"></span>
+            </div>
+            <div class="text-xs font-semibold text-slate-800 dark:text-slate-100 truncate">User Guide PDDIKTI & SIM</div>
+            <div class="text-[10px] text-slate-400 mt-0.5">Penyusunan Modul Manual</div>
+          </div>
+
+          <!-- Week 3 Node -->
+          <div data-week="3" class="timeline-node cursor-pointer p-3 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-brand-blue hover:shadow-sm">
+            <div class="flex items-center justify-between mb-1">
+              <span class="text-xs font-bold text-brand-blue">Minggu 3</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500" title="Selesai"></span>
+            </div>
+            <div class="text-xs font-semibold text-slate-800 dark:text-slate-100 truncate">Penyempurnaan Konseling</div>
+            <div class="text-[10px] text-slate-400 mt-0.5">Finalisasi User Guide</div>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -170,13 +227,40 @@
         </p>
       </div>
 
-      <!-- Clean Filter Tabs -->
-      <div class="flex justify-center mb-8">
+      <!-- Interactive Search & Filter Toolbar -->
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
+        
+        <!-- Category Filter Tabs -->
         <div class="inline-flex bg-white dark:bg-slate-900 p-1 rounded-xl border border-slate-200 dark:border-slate-800 text-xs font-semibold gap-1 shadow-sm" id="filter-tabs">
-          <button data-filter="all" class="tab-btn px-4 py-1.5 rounded-lg bg-brand-blue text-white shadow-sm transition-all">Semua Catatan</button>
-          <button data-filter="Testing Web" class="tab-btn px-4 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-brand-blue transition-all">Testing Web</button>
-          <button data-filter="User Guide" class="tab-btn px-4 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-brand-blue transition-all">User Guide</button>
+          <button data-filter="all" class="tab-btn px-4 py-1.5 rounded-lg bg-brand-blue text-white shadow-sm transition-all font-semibold">Semua (3)</button>
+          <button data-filter="Testing Web" class="tab-btn px-4 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-brand-blue transition-all font-medium">Testing Web</button>
+          <button data-filter="User Guide" class="tab-btn px-4 py-1.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-brand-blue transition-all font-medium">User Guide</button>
         </div>
+
+        <!-- Live Search Box -->
+        <div class="relative w-full sm:w-72">
+          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-slate-400">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </div>
+          <input 
+            type="text" 
+            id="search-input" 
+            placeholder="Cari skenario, modul, tag..." 
+            class="w-full pl-9 pr-8 py-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl text-xs text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-blue shadow-sm">
+          <button 
+            id="search-clear-btn" 
+            class="hidden absolute inset-y-0 right-0 pr-2.5 flex items-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xs">
+            ✕
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Live Count Indicator -->
+      <div class="flex items-center justify-between mb-4 px-1">
+        <span id="posts-count-badge" class="text-xs font-medium text-slate-500 dark:text-slate-400">
+          Menampilkan 3 dari 3 catatan
+        </span>
       </div>
 
       <!-- Clean Cards Grid -->
@@ -209,15 +293,54 @@
     </div>
   </section>
 
-  <!-- LIGHTBOX MODAL FOR PHOTOS -->
+  <!-- QUICK POST PREVIEW MODAL -->
+  <div id="preview-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="relative max-w-2xl w-full max-h-[85vh] bg-white dark:bg-slate-900 text-slate-900 dark:text-white rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col animate-fade-in-up">
+      <div class="flex items-center justify-between p-4 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/50">
+        <span class="text-xs font-bold text-slate-500 dark:text-slate-400">Pratinjau Cepat Logbook</span>
+        <button onclick="closePostPreview()" class="w-7 h-7 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-700 flex items-center justify-center text-slate-500 text-sm font-bold transition-colors">
+          ✕
+        </button>
+      </div>
+      <div id="preview-modal-body" class="p-6 overflow-y-auto flex-1">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX MODAL FOR PHOTOS (WITH PREV/NEXT ARROWS) -->
   <div id="photo-modal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
-    <div class="relative max-w-2xl w-full bg-slate-900 text-white rounded-2xl overflow-hidden shadow-2xl border border-slate-800">
-      <button 
-        onclick="closePhotoModal()" 
-        class="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-black/60 text-white hover:bg-black flex items-center justify-center text-xs font-bold transition-colors">
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-      </button>
-      <img id="modal-img" src="" alt="Dokumentasi Foto" class="w-full max-h-[70vh] object-contain bg-black">
+    <div class="relative max-w-2xl w-full bg-slate-900 text-white rounded-2xl overflow-hidden shadow-2xl border border-slate-800 animate-fade-in-up">
+      
+      <!-- Top Bar: Counter & Close -->
+      <div class="flex items-center justify-between p-3.5 bg-slate-950/80 border-b border-slate-800">
+        <span id="modal-counter" class="text-xs font-mono text-slate-400"></span>
+        <button 
+          onclick="closePhotoModal()" 
+          class="w-7 h-7 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white text-xs font-bold transition-colors">
+          ✕
+        </button>
+      </div>
+
+      <!-- Main Image Container with Navigation Arrows -->
+      <div class="relative group">
+        <img id="modal-img" src="" alt="Dokumentasi Foto" class="w-full max-h-[65vh] object-contain bg-black">
+        
+        <!-- Prev Button -->
+        <button 
+          onclick="prevPhoto()" 
+          class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/60 text-white hover:bg-brand-blue flex items-center justify-center transition-colors shadow">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+
+        <!-- Next Button -->
+        <button 
+          onclick="nextPhoto()" 
+          class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/60 text-white hover:bg-brand-blue flex items-center justify-center transition-colors shadow">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+      </div>
+
       <div class="p-4 bg-slate-900">
         <h3 id="modal-title" class="font-bold text-sm sm:text-base text-blue-400"></h3>
         <p id="modal-caption" class="text-xs text-slate-300 mt-1 leading-relaxed"></p>
@@ -225,6 +348,18 @@
       </div>
     </div>
   </div>
+
+  <!-- FLOATING BACK-TO-TOP BUTTON WITH CIRCULAR PROGRESS RING -->
+  <button 
+    id="back-to-top" 
+    aria-label="Kembali ke Atas"
+    class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-white dark:bg-slate-800 text-brand-blue dark:text-blue-400 shadow-lg border border-slate-200 dark:border-slate-700 flex items-center justify-center hidden-btn hover:scale-110 active:scale-95 transition-all">
+    <svg class="w-10 h-10 -rotate-90 pointer-events-none" viewBox="0 0 40 40">
+      <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2.5" class="text-slate-200 dark:text-slate-700" opacity="0.4"></circle>
+      <circle id="back-to-top-ring" cx="20" cy="20" r="18" fill="none" stroke="#0d6efd" stroke-width="2.5" stroke-dasharray="113.1" stroke-dashoffset="113.1" stroke-linecap="round" class="transition-all duration-75"></circle>
+    </svg>
+    <svg class="w-4 h-4 absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 15l7-7 7 7"></path></svg>
+  </button>
 
   <!-- FOOTER -->
   <footer class="bg-brand-blue text-white py-6 text-center text-xs mt-auto">
