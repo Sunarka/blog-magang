@@ -193,6 +193,43 @@ function initTimeline() {
 }
 
 /* ========================================================
+   Helper: Activity Icons (Zero Dummy Photos)
+   ======================================================== */
+function getActivityIconSvg(type, size = "w-6 h-6") {
+  switch (type) {
+    case 'testing':
+      return `<svg class="${size}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>`;
+    case 'doc':
+      return `<svg class="${size}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>`;
+    case 'review':
+      return `<svg class="${size}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>`;
+    case 'office':
+      return `<svg class="${size}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>`;
+    case 'mentoring':
+      return `<svg class="${size}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>`;
+    default:
+      return `<svg class="${size}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>`;
+  }
+}
+
+function getIconBgClass(type) {
+  switch (type) {
+    case 'testing':
+      return 'from-blue-600 to-indigo-700 text-white';
+    case 'doc':
+      return 'from-sky-500 to-blue-600 text-white';
+    case 'review':
+      return 'from-emerald-500 to-teal-700 text-white';
+    case 'office':
+      return 'from-indigo-600 to-slate-800 text-white';
+    case 'mentoring':
+      return 'from-violet-600 to-purple-800 text-white';
+    default:
+      return 'from-brand-blue to-blue-800 text-white';
+  }
+}
+
+/* ========================================================
    6. Render Logbook Posts Grid
    ======================================================== */
 function renderPosts() {
@@ -240,22 +277,29 @@ function renderPosts() {
     return;
   }
 
-  container.innerHTML = filtered.map(post => `
+  container.innerHTML = filtered.map(post => {
+    const iconHtml = getActivityIconSvg(post.iconType || 'testing', 'w-10 h-10');
+    const bgGradient = getIconBgClass(post.iconType || 'testing');
+
+    return `
     <article class="bg-white dark:bg-slate-900 rounded-2xl overflow-hidden border border-slate-200/80 dark:border-slate-800 shadow-sm clean-card flex flex-col justify-between animate-fade-in-up">
       
       <div>
-        <!-- Cover Thumbnail -->
-        <a href="post.html?id=${post.id}" class="block relative aspect-video bg-slate-100 dark:bg-slate-800 overflow-hidden group">
-          <img 
-            src="${post.cover}" 
-            alt="${post.title}" 
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-          <span class="absolute top-2.5 left-2.5 bg-brand-blue text-white text-[11px] font-bold px-2.5 py-0.5 rounded-md shadow-sm">
+        <!-- Clean Visual Header (No Dummy Photos) -->
+        <a href="post.html?id=${post.id}" class="block relative aspect-[16/8] bg-gradient-to-br ${bgGradient} overflow-hidden group flex items-center justify-center p-6">
+          <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors"></div>
+          
+          <span class="absolute top-2.5 left-2.5 bg-white/20 backdrop-blur text-white text-[11px] font-bold px-2.5 py-0.5 rounded-md shadow-sm border border-white/20">
             Minggu ${post.week}
           </span>
-          <span class="absolute bottom-2.5 right-2.5 bg-black/60 backdrop-blur text-white text-[10px] px-2 py-0.5 rounded">
+          <span class="absolute bottom-2.5 right-2.5 bg-black/40 backdrop-blur text-white text-[10px] px-2 py-0.5 rounded">
             ${post.category}
           </span>
+
+          <!-- Centered Clean SVG Icon -->
+          <div class="w-14 h-14 rounded-2xl bg-white/15 backdrop-blur border border-white/25 flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
+            ${iconHtml}
+          </div>
         </a>
 
         <!-- Content -->
@@ -309,7 +353,8 @@ function renderPosts() {
       </div>
 
     </article>
-  `).join('');
+    `;
+  }).join('');
 }
 
 function resetFilters() {
@@ -335,6 +380,9 @@ function openPostPreview(postId) {
   const body = document.getElementById('preview-modal-body');
   if (!modal || !body) return;
 
+  const iconHtml = getActivityIconSvg(post.iconType || 'testing', 'w-10 h-10');
+  const bgGradient = getIconBgClass(post.iconType || 'testing');
+
   body.innerHTML = `
     <div class="flex items-center gap-2 mb-3">
       <span class="px-2.5 py-0.5 rounded-md bg-brand-blue text-white text-[11px] font-bold">Minggu ${post.week}</span>
@@ -347,8 +395,10 @@ function openPostPreview(postId) {
       ${post.title}
     </h2>
 
-    <div class="rounded-xl overflow-hidden mb-5 aspect-video bg-slate-100 dark:bg-slate-800">
-      <img src="${post.cover}" alt="${post.title}" class="w-full h-full object-cover">
+    <div class="rounded-2xl p-6 bg-gradient-to-br ${bgGradient} text-white flex items-center justify-center mb-5 shadow-sm">
+      <div class="w-14 h-14 rounded-2xl bg-white/20 backdrop-blur border border-white/30 flex items-center justify-center">
+        ${iconHtml}
+      </div>
     </div>
 
     <div class="p-3.5 rounded-xl bg-blue-50 dark:bg-blue-950/40 border-l-4 border-brand-blue mb-5 text-xs sm:text-sm text-slate-700 dark:text-slate-200">
@@ -383,44 +433,51 @@ function closePostPreview() {
 }
 
 /* ========================================================
-   8. Render Photo Gallery Grid
+   8. Render Photo / Activity Documentation Grid
    ======================================================== */
 function renderGallery() {
   const container = document.getElementById('gallery-container');
   if (!container || typeof BLOG_DATA === 'undefined' || !BLOG_DATA.gallery) return;
 
-  container.innerHTML = BLOG_DATA.gallery.map((item, idx) => `
+  container.innerHTML = BLOG_DATA.gallery.map((item, idx) => {
+    const iconHtml = getActivityIconSvg(item.iconType || 'testing', 'w-8 h-8');
+    const bgGradient = getIconBgClass(item.iconType || 'testing');
+
+    return `
     <div 
       onclick="openPhotoModal(${idx})" 
-      class="group cursor-pointer bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200/80 dark:border-slate-800 clean-card shadow-sm">
-      <div class="relative aspect-[4/3] bg-slate-100 dark:bg-slate-800 overflow-hidden">
-        <img 
-          src="${item.image}" 
-          alt="${item.title}" 
-          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-        <span class="absolute top-2 left-2 bg-brand-blue text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">
+      class="group cursor-pointer bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200/80 dark:border-slate-800 clean-card shadow-sm flex flex-col justify-between">
+      
+      <!-- Icon Graphic Card Header (No Dummy Photos) -->
+      <div class="relative aspect-[4/3] bg-gradient-to-br ${bgGradient} flex items-center justify-center p-4">
+        <span class="absolute top-2 left-2 bg-white/20 backdrop-blur text-white text-[10px] font-bold px-2 py-0.5 rounded shadow-sm border border-white/20">
           ${item.category}
         </span>
-        <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-          <span class="p-2 rounded-full bg-white/90 text-slate-900 shadow">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"></path></svg>
-          </span>
+        
+        <div class="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur border border-white/30 flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300 shadow">
+          ${iconHtml}
+        </div>
+
+        <div class="absolute bottom-2 right-2 text-[10px] font-semibold text-white/80 bg-black/30 px-2 py-0.5 rounded backdrop-blur">
+          Lihat Info
         </div>
       </div>
-      <div class="p-3">
+
+      <div class="p-3.5">
         <h4 class="font-bold text-xs text-slate-800 dark:text-slate-100 line-clamp-1 group-hover:text-brand-blue transition-colors">
           ${item.title}
         </h4>
-        <p class="text-[11px] text-slate-400 mt-0.5 line-clamp-1">
+        <p class="text-[11px] text-slate-400 mt-1 line-clamp-2 leading-relaxed">
           ${item.caption}
         </p>
       </div>
     </div>
-  `).join('');
+    `;
+  }).join('');
 }
 
 /* ========================================================
-   9. Photo Modal & Carousel Navigation
+   9. Activity Modal & Navigation
    ======================================================== */
 function openPhotoModal(idx) {
   if (typeof BLOG_DATA === 'undefined' || !BLOG_DATA.gallery) return;
@@ -438,17 +495,27 @@ function updatePhotoModal() {
   const item = BLOG_DATA.gallery[currentPhotoIdx];
   if (!item) return;
 
-  const img = document.getElementById('modal-img');
+  const iconContainer = document.getElementById('modal-icon-container');
   const title = document.getElementById('modal-title');
   const caption = document.getElementById('modal-caption');
   const date = document.getElementById('modal-date');
   const counter = document.getElementById('modal-counter');
 
-  if (img) img.src = item.image;
+  const iconHtml = getActivityIconSvg(item.iconType || 'testing', 'w-16 h-16');
+  const bgGradient = getIconBgClass(item.iconType || 'testing');
+
+  if (iconContainer) {
+    iconContainer.className = `w-full py-12 bg-gradient-to-br ${bgGradient} flex items-center justify-center text-white relative`;
+    iconContainer.innerHTML = `
+      <div class="w-24 h-24 rounded-3xl bg-white/20 backdrop-blur border border-white/30 flex items-center justify-center shadow-xl">
+        ${iconHtml}
+      </div>
+    `;
+  }
   if (title) title.textContent = item.title;
   if (caption) caption.textContent = item.caption;
   if (date) date.textContent = `Tanggal: ${item.date} • Kategori: ${item.category}`;
-  if (counter) counter.textContent = `Foto ${currentPhotoIdx + 1} dari ${BLOG_DATA.gallery.length}`;
+  if (counter) counter.textContent = `Dokumentasi ${currentPhotoIdx + 1} dari ${BLOG_DATA.gallery.length}`;
 }
 
 function nextPhoto() {

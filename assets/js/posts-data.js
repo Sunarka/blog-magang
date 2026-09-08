@@ -29,8 +29,7 @@ const BLOG_DATA = {
       category: "Testing Web",
       title: "Minggu 1: Software QA Testing SIM Keuangan Universitas Mahasaraswati (14 Skenario Pengujian)",
       date: "24 – 28 Agustus 2026",
-      readTime: "5 menit baca",
-      cover: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+      iconType: "testing",
       summary: "Pelaksanaan pengujian fungsional modul Perencanaan Program & Pengajuan dari 8 role pengguna, penguncian hak akses tingkat/fakultas/prodi, keamanan URL (HTTP 403), dan validasi submit pengajuan pada SIM Keuangan Universitas Mahasaraswati Denpasar.",
       tags: ["SIM Keuangan", "QA Testing", "Role Access", "Security URL"],
       content: `
@@ -75,8 +74,7 @@ const BLOG_DATA = {
       category: "User Guide",
       title: "Minggu 2: Pembuatan User Guide Sistem Feeder PDDIKTI, SIM Prestasi & Konseling",
       date: "31 Agustus – 4 September 2026",
-      readTime: "4 menit baca",
-      cover: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=800",
+      iconType: "doc",
       summary: "Menyusun dokumentasi teknis panduan penggunaan (User Guide) lengkap dengan tangkapan layar panduan langkah demi langkah untuk Sistem Feeder PDDIKTI, SIM Prestasi, dan Sistem Konseling.",
       tags: ["User Guide", "Technical Writing", "Feeder PDDIKTI"],
       content: `
@@ -104,8 +102,7 @@ const BLOG_DATA = {
       category: "User Guide",
       title: "Minggu 3: Review dan Penyempurnaan Panduan SIM Prestasi & Sistem Konseling",
       date: "7 – 11 September 2026",
-      readTime: "3 menit baca",
-      cover: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800",
+      iconType: "review",
       summary: "Melakukan penyesuaian isi User Guide berdasarkan evaluasi alur pengguna sistem konseling dan penyiapan berkas pelaporan.",
       tags: ["User Guide", "Review", "Sistem Konseling"],
       content: `
@@ -127,39 +124,39 @@ const BLOG_DATA = {
     }
   ],
 
-  // DOKUMENTASI FOTO DI TEMPAT MAGANG (PT LAKSITA EMI SAGUNA)
+  // DOKUMENTASI KEGIATAN DI TEMPAT MAGANG (PT LAKSITA EMI SAGUNA)
   gallery: [
     {
       id: 1,
       title: "Testing Web SIM Keuangan Unmas (14 Skenario)",
       category: "QA Testing",
       date: "26 Agustus 2026",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
-      caption: "Pelaksanaan pengujian 14 skenario hak akses role dan keamanan URL pada SIM Keuangan Universitas Mahasaraswati."
+      iconType: "testing",
+      caption: "Pelaksanaan pengujian 14 skenario hak akses role dan keamanan URL pada SIM Keuangan Universitas Mahasaraswati Denpasar."
     },
     {
       id: 2,
       title: "Penyusunan Dokumen User Guide Sistem",
       category: "Dokumentasi",
       date: "31 Agustus 2026",
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800",
-      caption: "Menyusun draf panduan penggunaan modul SIM Prestasi dan Sistem Feeder PDDIKTI."
+      iconType: "doc",
+      caption: "Menyusun draf panduan teknis operasional modul SIM Prestasi dan Sistem Feeder PDDIKTI kampus."
     },
     {
       id: 3,
-      title: "Kantor & Meja Kerja PT Laksita Emi Saguna",
-      category: "Lingkungan Kantor",
+      title: "Aktivitas Teknis PT Laksita Emi Saguna",
+      category: "Lingkungan Magang",
       date: "3 September 2026",
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800",
-      caption: "Suasana kantor PT Laksita Emi Saguna di Jalan Himalaya Raya No 8a, Pemecutan Kaja, Denpasar."
+      iconType: "office",
+      caption: "Pelaksanaan aktivitas magang di kantor PT Laksita Emi Saguna, Jalan Himalaya Raya No 8a, Pemecutan Kaja, Denpasar."
     },
     {
       id: 4,
       title: "Sesi Koordinasi & Review Hasil Pengujian",
       category: "Mentoring",
       date: "8 September 2026",
-      image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800",
-      caption: "Sesi evaluasi hasil testing SIM Keuangan dan draf User Guide bersama mentor pembimbing lapangan."
+      iconType: "mentoring",
+      caption: "Sesi konsultasi evaluasi hasil testing SIM Keuangan dan revisi User Guide bersama pembimbing lapangan."
     }
   ]
 };

@@ -143,9 +143,11 @@
           </div>
         </div>
 
-        <!-- Cover Image -->
-        <div class="rounded-2xl overflow-hidden mb-8 aspect-video bg-slate-100 dark:bg-slate-700 shadow-md">
-          <img src="${post.cover}" alt="${post.title}" class="w-full h-full object-cover">
+        <!-- Clean Visual Header (No Dummy Photo) -->
+        <div class="rounded-2xl p-6 sm:p-8 bg-gradient-to-br ${getIconBgClass(post.iconType || 'testing')} text-white flex items-center justify-center mb-8 shadow-sm">
+          <div class="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur border border-white/30 flex items-center justify-center shadow-lg">
+            ${getActivityIconSvg(post.iconType || 'testing', 'w-10 h-10')}
+          </div>
         </div>
 
         <!-- Summary Highlight -->
