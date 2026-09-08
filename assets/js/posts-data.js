@@ -158,5 +158,23 @@ const BLOG_DATA = {
       iconType: "mentoring",
       caption: "Sesi konsultasi evaluasi hasil testing SIM Keuangan dan revisi User Guide bersama pembimbing lapangan."
     }
+  ],
+
+  // 14 SKENARIO PENGUJIAN BLACK BOX QA (INTERACTIVE MATRIX)
+  scenarios: [
+    { code: "SN-01", role: "Rektor / WR", type: "Role Access", action: "Buka dropdown Tingkatan dengan akun Rektor/WR", result: "3 opsi tersedia: Universitas, Fakultas, & Prodi", status: "PASSED" },
+    { code: "SN-02", role: "Staff Universitas", type: "Role Access", action: "Buka dropdown Tingkatan via URL dengan role Staf Univ", result: "Hanya opsi Universitas yang ditampilkan", status: "PASSED" },
+    { code: "SN-03", role: "Dekan / WD", type: "Role Access", action: "Buka dropdown Tingkatan & Fakultas dengan role Dekan/WD", result: "Tingkatan berisi Fakultas & Prodi; Fakultas terkunci ke fakultas sendiri", status: "PASSED" },
+    { code: "SN-04", role: "Staff Fakultas", type: "Role Access", action: "Buka dropdown Tingkatan dengan role Staf Fakultas", result: "Hanya opsi Fakultas (TIDAK ada Prodi); terkunci ke fakultas sendiri", status: "PASSED" },
+    { code: "SN-05", role: "Koorprodi / Staf", type: "Role Access", action: "Buka dropdown Tingkatan, Fakultas, Prodi dengan role Prodi", result: "Hanya opsi Prodi; Fakultas & Prodi terkunci ke milik sendiri", status: "PASSED" },
+    { code: "SN-06", role: "Pengusul Anggaran", type: "Functional", action: "Buka detail pos pagu & tambah Program baru", result: "Program baru berhasil masuk ke RENSTRA UNMAS 2022–2026", status: "PASSED" },
+    { code: "SN-07", role: "Pengusul Anggaran", type: "Functional", action: "Tambah Kegiatan & Rincian Belanja", result: "Item belanja berhasil disimpan dan nominal akumulasi sesuai", status: "PASSED" },
+    { code: "SN-08", role: "Pengusul Anggaran", type: "Functional", action: "Edit dan hapus salah satu kegiatan/belanja", result: "Data diperbarui dan total kalkulasi pos anggaran langsung terupdate", status: "PASSED" },
+    { code: "SN-09", role: "Security / URL", type: "Security", action: "Manipulasi ganti ID pos di URL ke Prodi lain", result: "Ditolak HTTP 403 (Hanya bisa akses pos prodi sendiri)", status: "PASSED" },
+    { code: "SN-10", role: "Security / URL", type: "Security", action: "Manipulasi ganti ID pos di URL ke Fakultas lain", result: "Ditolak HTTP 403 (Hanya bisa akses pos fakultas sendiri)", status: "PASSED" },
+    { code: "SN-11", role: "Reviewer Flow", type: "Workflow", action: "Validasi daftar penerima review untuk pengajuan prodi", result: "Hanya menampilkan Koorprodi aktif + Dekan/WD fakultasnya", status: "PASSED" },
+    { code: "SN-12", role: "Reviewer Flow", type: "Workflow", action: "Opsi naik tingkat pengajuan universitas", result: "Daftar penerima review otomatis memuat pejabat tingkat universitas", status: "PASSED" },
+    { code: "SN-13", role: "Reviewer Flow", type: "Workflow", action: "Tampilan daftar pejabat universitas (LPPM/LPMI)", result: "Format Nama + Jabatan + Unit tertampil lengkap dan akurat", status: "PASSED" },
+    { code: "SN-14", role: "Submission", type: "Workflow", action: "Submit final pengajuan pos pagu anggaran", result: "Status berubah 'Menunggu' & terkunci dari modifikasi sepihak", status: "PASSED" }
   ]
 };

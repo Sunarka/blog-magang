@@ -7,21 +7,131 @@
 let activeCategory = 'all';
 let searchQuery = '';
 let currentPhotoIdx = 0;
+let scenarioFilter = 'all';
 
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initBanner();
+  initTypingEffect();
+  initCounterAnimation();
+  init3DTilt();
   initScrollProgress();
   initBackToTop();
   initSearchAndFilter();
   initTimeline();
+  initScenarioExplorer();
   initKeyboardNav();
   renderPosts();
   renderGallery();
 });
 
 /* ========================================================
-   1. Dark / Light Theme Toggle
+   1. Dynamic Typing Effect (Hero Subtitle)
+   ======================================================== */
+function initTypingEffect() {
+  const el = document.getElementById('typing-text');
+  if (!el) return;
+
+  const phrases = [
+    "Mahasiswa S1 Ilmu Komputer Undiksha",
+    "Software QA Tester @ PT Laksita Emi Saguna",
+    "Technical Documentation Specialist",
+    "Pengujian SIM Keuangan & User Guide"
+  ];
+
+  let phraseIdx = 0;
+  let charIdx = 0;
+  let isDeleting = false;
+  let typingSpeed = 70;
+
+  function type() {
+    const currentPhrase = phrases[phraseIdx];
+
+    if (isDeleting) {
+      el.textContent = currentPhrase.substring(0, charIdx - 1);
+      charIdx--;
+      typingSpeed = 35;
+    } else {
+      el.textContent = currentPhrase.substring(0, charIdx + 1);
+      charIdx++;
+      typingSpeed = 70;
+    }
+
+    if (!isDeleting && charIdx === currentPhrase.length) {
+      typingSpeed = 2000; // Pause at end
+      isDeleting = true;
+    } else if (isDeleting && charIdx === 0) {
+      isDeleting = false;
+      phraseIdx = (phraseIdx + 1) % phrases.length;
+      typingSpeed = 400; // Pause before new phrase
+    }
+
+    setTimeout(type, typingSpeed);
+  }
+
+  type();
+}
+
+/* ========================================================
+   2. Animated Number Counters
+   ======================================================== */
+function initCounterAnimation() {
+  const counters = document.querySelectorAll('.stat-counter');
+  if (!counters.length) return;
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.getAttribute('data-target'), 10) || 0;
+        const suffix = el.getAttribute('data-suffix') || '';
+        let count = 0;
+        const duration = 1200;
+        const stepTime = Math.abs(Math.floor(duration / Math.max(target, 1)));
+
+        const timer = setInterval(() => {
+          count += 1;
+          el.textContent = `${count}${suffix}`;
+          if (count >= target) {
+            el.textContent = `${target}${suffix}`;
+            clearInterval(timer);
+          }
+        }, stepTime);
+
+        obs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  counters.forEach(c => observer.observe(c));
+}
+
+/* ========================================================
+   3. Subtle 3D Card Tilt Micro-motion
+   ======================================================== */
+function init3DTilt() {
+  const cards = document.querySelectorAll('.tilt-card');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -5;
+      const rotateY = ((x - centerX) / centerX) * 5;
+
+      card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0)';
+    });
+  });
+}
+
+/* ========================================================
+   4. Dark / Light Theme Toggle
    ======================================================== */
 function initTheme() {
   const btn = document.getElementById('theme-btn');
@@ -190,6 +300,96 @@ function initTimeline() {
       }
     });
   });
+}
+
+/* ========================================================
+   5.1 Interactive Scenario Matrix Explorer
+   ======================================================== */
+function initScenarioExplorer() {
+  const container = document.getElementById('scenarios-container');
+  if (!container || typeof BLOG_DATA === 'undefined' || !BLOG_DATA.scenarios) return;
+
+  const filterBtns = document.querySelectorAll('#scenario-filters button');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      scenarioFilter = btn.dataset.filter;
+      filterBtns.forEach(b => {
+        if (b.dataset.filter === scenarioFilter) {
+          b.className = 'px-3 py-1 rounded-lg bg-brand-blue text-white font-semibold text-xs shadow-sm transition-all';
+        } else {
+          b.className = 'px-3 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-brand-blue font-medium text-xs transition-all';
+        }
+      });
+      renderScenarios();
+    });
+  });
+
+  renderScenarios();
+}
+
+function renderScenarios() {
+  const container = document.getElementById('scenarios-container');
+  const countEl = document.getElementById('scenario-count-text');
+  if (!container || typeof BLOG_DATA === 'undefined' || !BLOG_DATA.scenarios) return;
+
+  const filtered = BLOG_DATA.scenarios.filter(s => {
+    if (scenarioFilter === 'all') return true;
+    return s.type.toLowerCase() === scenarioFilter.toLowerCase();
+  });
+
+  if (countEl) {
+    countEl.textContent = `${filtered.length} skenario aktif • 100% Passed`;
+  }
+
+  container.innerHTML = filtered.map((s, idx) => `
+    <div class="accordion-item border border-slate-200 dark:border-slate-800 rounded-xl bg-white dark:bg-slate-900 overflow-hidden shadow-sm transition-all hover:border-blue-400">
+      <button 
+        onclick="toggleScenario('sc-${s.code}')" 
+        class="w-full text-left p-3.5 sm:p-4 flex items-center justify-between gap-3 focus:outline-none">
+        <div class="flex items-center gap-2.5 flex-1 min-w-0">
+          <span class="px-2 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/80 text-brand-blue dark:text-blue-300 text-[11px] font-mono font-bold border border-blue-200 dark:border-blue-800 flex-shrink-0">
+            ${s.code}
+          </span>
+          <span class="text-xs font-bold text-slate-900 dark:text-white truncate">
+            ${s.action}
+          </span>
+        </div>
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <span class="hidden sm:inline-block px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold border border-emerald-200 dark:border-emerald-800">
+            ${s.status}
+          </span>
+          <svg class="accordion-chevron w-4 h-4 text-slate-400 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+      </button>
+      <div id="sc-${s.code}" class="accordion-content border-t border-slate-100 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/50 p-4 text-xs space-y-2">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          <div>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Role Penguji:</span>
+            <span class="font-semibold text-slate-800 dark:text-slate-200">${s.role}</span>
+          </div>
+          <div>
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Kategori Uji:</span>
+            <span class="font-semibold text-brand-blue dark:text-blue-300">${s.type}</span>
+          </div>
+        </div>
+        <div>
+          <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Hasil Pengujian Sistem:</span>
+          <p class="text-slate-700 dark:text-slate-300 leading-relaxed font-mono text-[11px] bg-white dark:bg-slate-900 p-2.5 rounded-lg border border-slate-200 dark:border-slate-800 mt-1">
+            ${s.result}
+          </p>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function toggleScenario(id) {
+  const content = document.getElementById(id);
+  if (!content) return;
+  const parent = content.closest('.accordion-item');
+  if (parent) {
+    parent.classList.toggle('active');
+  }
 }
 
 /* ========================================================

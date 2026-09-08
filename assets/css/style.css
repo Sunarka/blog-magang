@@ -166,6 +166,62 @@ body {
 }
 
 /* Back to Top Progress Ring Button */
+/* Typing Cursor Animation */
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background-color: currentColor;
+  margin-left: 2px;
+  vertical-align: middle;
+  animation: blink 0.9s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* 3D Tilt Card Perspective */
+.tilt-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.15s ease-out, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* Interactive Badge Pulse */
+@keyframes softPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.04); opacity: 0.9; }
+}
+
+.animate-soft-pulse {
+  animation: softPulse 2.5s infinite ease-in-out;
+}
+
+/* Interactive Accordion Item */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0, 1, 0, 1), opacity 0.25s ease;
+  opacity: 0;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 500px;
+  opacity: 1;
+  transition: max-height 0.35s ease-in-out, opacity 0.3s ease;
+}
+
+.accordion-item.active .accordion-chevron {
+  transform: rotate(180deg);
+}
+
+.accordion-chevron {
+  transition: transform 0.25s ease;
+}
+
+/* Back to Top Progress Ring Button */
 #back-to-top {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
