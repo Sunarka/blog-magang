@@ -143,8 +143,8 @@ function renderPosts() {
 
   const filtered = BLOG_DATA.posts.filter(post => {
     const matchesCategory = (activeCategory === 'all') ||
-      (post.category.toLowerCase() === activeCategory.toLowerCase()) ||
-      (post.tags.some(t => t.toLowerCase().includes(activeCategory.toLowerCase())));
+      (post.category.toLowerCase().includes(activeCategory.toLowerCase())) ||
+      (post.tags && post.tags.some(t => t.toLowerCase().includes(activeCategory.toLowerCase())));
 
     if (!matchesCategory) return false;
 
@@ -154,7 +154,7 @@ function renderPosts() {
       ${post.summary} 
       ${post.category} 
       minggu ${post.week} 
-      ${post.tags.join(' ')} 
+      ${post.tags ? post.tags.join(' ') : ''} 
     `.toLowerCase();
 
     return combinedText.includes(searchQuery);
@@ -173,41 +173,54 @@ function renderPosts() {
   }
 
   container.innerHTML = filtered.map(post => `
-    <article class="p-4 sm:p-5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3.5 sm:gap-4">
-      <div class="space-y-1.5 flex-1 min-w-0">
-        <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 text-[11px]">
-          <span class="px-2 py-0.5 rounded bg-blue-50 dark:bg-blue-950/80 text-brand-blue dark:text-blue-300 font-bold font-mono">
+    <article class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all flex flex-col sm:flex-row items-stretch sm:items-center gap-4 group">
+      ${post.image ? `
+        <a href="post.html?id=${post.id}" class="block w-full sm:w-44 sm:h-32 h-44 flex-shrink-0 overflow-hidden rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700/60 relative">
+          <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          <span class="sm:hidden absolute top-2 left-2 px-2 py-0.5 rounded-md bg-brand-blue/90 backdrop-blur-sm text-white text-[10px] font-bold font-mono">
             Minggu ${post.week}
           </span>
-          <span class="text-slate-400">•</span>
-          <span class="text-slate-500 dark:text-slate-400 font-mono">${post.date}</span>
-          <span class="text-slate-400">•</span>
-          <span class="text-slate-600 dark:text-slate-300 font-medium">${post.category}</span>
+        </a>
+      ` : ''}
+
+      <div class="space-y-2 flex-1 min-w-0 flex flex-col justify-between">
+        <div>
+          <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 text-[11px] mb-1">
+            <span class="hidden sm:inline-block px-2 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/80 text-brand-blue dark:text-blue-300 font-bold font-mono">
+              Minggu ${post.week}
+            </span>
+            <span class="hidden sm:inline-block text-slate-400">•</span>
+            <span class="text-slate-500 dark:text-slate-400 font-mono">${post.date}</span>
+            <span class="text-slate-400">•</span>
+            <span class="text-slate-600 dark:text-slate-300 font-medium">${post.category}</span>
+          </div>
+
+          <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white leading-snug hover:text-brand-blue transition-colors break-words">
+            <a href="post.html?id=${post.id}">
+              ${post.title}
+            </a>
+          </h3>
+
+          <p class="text-xs text-slate-600 dark:text-slate-300 line-clamp-2 leading-relaxed mt-1">
+            ${post.summary}
+          </p>
         </div>
 
-        <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white leading-snug hover:text-brand-blue transition-colors break-words">
-          <a href="post.html?id=${post.id}">
-            ${post.title}
+        <div class="pt-2 flex flex-wrap items-center justify-between gap-2 border-t border-slate-100 dark:border-slate-800/80">
+          <div class="flex flex-wrap gap-1">
+            ${post.tags ? post.tags.slice(0, 3).map(t => `
+              <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+                #${t}
+              </span>
+            `).join('') : ''}
+          </div>
+
+          <a href="post.html?id=${post.id}" class="w-full sm:w-auto justify-center sm:justify-start px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-brand-blue hover:text-white dark:hover:bg-brand-blue text-slate-700 dark:text-slate-200 text-xs font-semibold transition-colors flex items-center gap-1.5 flex-shrink-0">
+            <span>Baca Selengkapnya</span>
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
           </a>
-        </h3>
-
-        <p class="text-xs text-slate-600 dark:text-slate-300 line-clamp-2 leading-relaxed">
-          ${post.summary}
-        </p>
-
-        <div class="flex flex-wrap gap-1 pt-1">
-          ${post.tags.map(t => `
-            <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
-              #${t}
-            </span>
-          `).join('')}
         </div>
       </div>
-
-      <a href="post.html?id=${post.id}" class="w-full sm:w-auto justify-center sm:justify-start px-3.5 py-2 sm:py-1.5 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-brand-blue hover:text-white dark:hover:bg-brand-blue text-slate-700 dark:text-slate-200 text-xs font-semibold transition-colors flex items-center gap-1 flex-shrink-0">
-        <span>Baca Detail</span>
-        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-      </a>
     </article>
   `).join('');
 }
@@ -222,9 +235,15 @@ function renderGallery() {
   container.innerHTML = BLOG_DATA.gallery.map((item, idx) => `
     <div 
       onclick="openPhotoModal(${idx})" 
-      class="cursor-pointer p-3.5 sm:p-4 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all flex flex-col justify-between space-y-2 group">
+      class="cursor-pointer p-3.5 sm:p-4 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 transition-all flex flex-col justify-between space-y-3 group">
       
       <div>
+        ${item.image ? `
+          <div class="overflow-hidden rounded-xl mb-2.5 max-h-36 bg-slate-200 dark:bg-slate-800 border border-slate-200/60 dark:border-slate-700/60">
+            <img src="${item.image}" alt="${item.title}" class="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300">
+          </div>
+        ` : ''}
+
         <div class="flex items-center justify-between text-[11px] mb-1">
           <span class="font-bold text-brand-blue dark:text-blue-400">${item.category}</span>
           <span class="text-slate-400 font-mono text-[10px]">${item.date}</span>
@@ -239,8 +258,8 @@ function renderGallery() {
         </p>
       </div>
 
-      <div class="text-[11px] font-semibold text-slate-500 group-hover:text-brand-blue transition-colors flex items-center gap-1 pt-1">
-        <span>Buka catatan</span>
+      <div class="text-[11px] font-semibold text-slate-500 group-hover:text-brand-blue transition-colors flex items-center gap-1 pt-2 border-t border-slate-100 dark:border-slate-800">
+        <span>Buka foto & detail</span>
         <span class="group-hover:translate-x-0.5 transition-transform">→</span>
       </div>
     </div>
@@ -267,11 +286,23 @@ function updatePhotoModal() {
   const caption = document.getElementById('modal-caption');
   const date = document.getElementById('modal-date');
   const counter = document.getElementById('modal-counter');
+  const img = document.getElementById('modal-img');
+  const imgContainer = document.getElementById('modal-img-container');
 
   if (title) title.textContent = item.title;
   if (caption) caption.textContent = item.caption;
   if (date) date.textContent = `${item.date} • ${item.category}`;
   if (counter) counter.textContent = `${currentPhotoIdx + 1} / ${BLOG_DATA.gallery.length}`;
+  
+  if (img && imgContainer) {
+    if (item.image) {
+      img.src = item.image;
+      img.alt = item.title;
+      imgContainer.classList.remove('hidden');
+    } else {
+      imgContainer.classList.add('hidden');
+    }
+  }
 }
 
 function nextPhoto() {

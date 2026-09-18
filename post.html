@@ -121,11 +121,11 @@
 
       document.title = `${post.title} — Logbook Magang`;
 
-      // Build Testing Table HTML with horizontal scroll wrapper
+      // Build Testing Table HTML if any
       let testingTableHtml = '';
       if (post.testing && post.testing.length > 0) {
         testingTableHtml = `
-          <div class="my-5 sm:my-6 space-y-2.5">
+          <div class="my-5 space-y-2.5">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
               <h3 class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">Tabel Matriks Skenario Pengujian (${post.testing.length} Skenario)</h3>
               <span class="text-[11px] font-bold text-emerald-600 dark:text-emerald-400 font-mono">100% Passed</span>
@@ -188,7 +188,7 @@
           <img src="${BLOG_DATA.author.avatar}" alt="${BLOG_DATA.author.name}" class="w-10 h-10 rounded-full object-cover object-top ring-2 ring-slate-200 dark:ring-slate-700 flex-shrink-0">
           <div class="min-w-0 flex-1">
             <div class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white truncate">${BLOG_DATA.author.name}</div>
-            <div class="text-[11px] text-slate-500 dark:text-slate-400 truncate">NIM: ${BLOG_DATA.author.nim} • S1 Ilmu Komputer Undiksha</div>
+            <div class="text-[11px] text-slate-500 dark:text-slate-400 truncate">NIM: ${BLOG_DATA.author.nim} • ${BLOG_DATA.author.program} Undiksha</div>
           </div>
         </div>
 
@@ -200,28 +200,37 @@
           </p>
         </div>
 
-        <!-- Structured Logbook Sections -->
-        <div class="space-y-6 sm:space-y-8 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-          
-          <!-- 1. Tujuan Kegiatan -->
-          <div class="space-y-2">
-            <h2 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
-              <span>1. Tujuan Kegiatan</span>
-            </h2>
-            <p class="text-slate-600 dark:text-slate-300 bg-slate-50 dark:bg-slate-800/50 p-3.5 sm:p-4 rounded-xl border border-slate-200/60 dark:border-slate-700/60">
-              ${post.objective || 'Melakukan pengujian dan dokumentasi teknis sistem informasi perguruan tinggi.'}
-            </p>
+        <!-- FULL ARTICLE CONTENT (Rich Text & Images from Senior's Blog) -->
+        <div class="article-body space-y-6 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+          ${post.content || ''}
+        </div>
+
+        <!-- Structured Logbook Breakdown (Cards) -->
+        <div class="mt-8 pt-8 border-t border-slate-100 dark:border-slate-800 space-y-6 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+          <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-brand-blue"></span>
+            <span>Rincian Struktur Aktivitas Magang</span>
+          </h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- 1. Tujuan -->
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/70 dark:border-slate-700/70">
+              <span class="text-[11px] font-bold text-brand-blue dark:text-blue-400 block mb-1 uppercase tracking-wide">1. Tujuan Kegiatan</span>
+              <p class="text-slate-700 dark:text-slate-300">${post.objective || 'Pelaksanaan kegiatan magang sesuai target operasional industri.'}</p>
+            </div>
+
+            <!-- 2. Hasil & Dampak -->
+            <div class="p-4 rounded-xl bg-emerald-50/60 dark:bg-emerald-950/40 border border-emerald-200/80 dark:border-emerald-900/40">
+              <span class="text-[11px] font-bold text-emerald-700 dark:text-emerald-300 block mb-1 uppercase tracking-wide">2. Hasil & Dampak</span>
+              <p class="text-slate-700 dark:text-slate-300">${post.results || 'Target terselesaikan dengan baik sesuai spesifikasi.'}</p>
+            </div>
           </div>
 
-          <!-- 2. Pekerjaan yang Dilakukan -->
-          <div class="space-y-2">
-            <h2 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
-              <span>2. Pekerjaan & Aktivitas yang Dilakukan</span>
-            </h2>
-            ${post.tasks && post.tasks.length > 0 ? `
-              <ul class="space-y-2 bg-slate-50 dark:bg-slate-800/50 p-3.5 sm:p-4 rounded-xl border border-slate-200/60 dark:border-slate-700/60">
+          <!-- Pekerjaan Dilakukan List -->
+          ${post.tasks && post.tasks.length > 0 ? `
+            <div class="p-4 sm:p-5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/70 dark:border-slate-700/70">
+              <span class="text-[11px] font-bold text-brand-blue dark:text-blue-400 block mb-2 uppercase tracking-wide">Aktivitas & Pekerjaan yang Dilakukan:</span>
+              <ul class="space-y-2">
                 ${post.tasks.map(task => `
                   <li class="flex items-start gap-2">
                     <svg class="w-4 h-4 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
@@ -229,58 +238,29 @@
                   </li>
                 `).join('')}
               </ul>
-            ` : ''}
-          </div>
+            </div>
+          ` : ''}
 
-          <!-- 3. Rincian Pengujian / Hasil Teknis -->
-          <div class="space-y-2">
-            <h2 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
-              <span>3. Rincian Pengujian & Validasi Sistem</span>
-            </h2>
-            ${testingTableHtml}
-          </div>
+          <!-- Testing Table if present -->
+          ${testingTableHtml}
 
-          <!-- 4. Hasil & Dampak Pekerjaan -->
-          <div class="space-y-2">
-            <h2 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
-              <span>4. Hasil & Dampak Pekerjaan</span>
-            </h2>
-            <div class="bg-emerald-50/60 dark:bg-emerald-950/40 p-3.5 sm:p-4 rounded-xl border border-emerald-200/80 dark:border-emerald-900/40 text-slate-700 dark:text-slate-200">
-              ${post.results || 'Pekerjaan selesai dilaksanakan sesuai target.'}
+          <!-- Kendala & Solusi -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700">
+              <span class="text-slate-400 font-bold block text-[10px] uppercase tracking-wider mb-1">Kendala Dihadapi:</span>
+              <p class="text-slate-700 dark:text-slate-300">${post.challenges || 'Tidak ditemukan kendala mayor.'}</p>
+            </div>
+            <div class="p-3.5 sm:p-4 rounded-xl bg-blue-50/60 dark:bg-blue-950/40 border border-blue-200/80 dark:border-blue-900/40">
+              <span class="text-brand-blue dark:text-blue-300 font-bold block text-[10px] uppercase tracking-wider mb-1">Tindakan / Solusi:</span>
+              <p class="text-slate-700 dark:text-slate-300">${post.solutions || 'Koordinasi berkala bersama mentor lapangan.'}</p>
             </div>
           </div>
 
-          <!-- 5. Kendala & Solusi -->
-          <div class="space-y-2.5">
-            <h2 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
-              <span>5. Kendala & Solusi yang Diterapkan</span>
-            </h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div class="p-3.5 sm:p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700">
-                <span class="text-slate-400 font-bold block text-[10px] uppercase tracking-wider mb-1">Kendala Dihadapi:</span>
-                <p class="text-slate-700 dark:text-slate-300">${post.challenges || 'Tidak ditemukan kendala mayor.'}</p>
-              </div>
-              <div class="p-3.5 sm:p-4 rounded-xl bg-blue-50/60 dark:bg-blue-950/40 border border-blue-200/80 dark:border-blue-900/40">
-                <span class="text-brand-blue dark:text-blue-300 font-bold block text-[10px] uppercase tracking-wider mb-1">Tindakan / Solusi:</span>
-                <p class="text-slate-700 dark:text-slate-300">${post.solutions || 'Koordinasi berkala bersama mentor.'}</p>
-              </div>
-            </div>
+          <!-- Pembelajaran -->
+          <div class="p-3.5 sm:p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60">
+            <span class="text-brand-blue dark:text-blue-400 font-bold block text-[10px] uppercase tracking-wider mb-1">Pembelajaran & Wawasan Baru:</span>
+            <p class="text-slate-700 dark:text-slate-300">${post.learnings || 'Mendapatkan wawasan mengenai standar kualitas dan dokumentasi sistem skala enterprise.'}</p>
           </div>
-
-          <!-- 6. Pembelajaran yang Diperoleh -->
-          <div class="space-y-2">
-            <h2 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
-              <span>6. Pembelajaran & Wawasan Baru</span>
-            </h2>
-            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60 text-slate-700 dark:text-slate-300">
-              ${post.learnings || 'Mendapatkan wawasan mengenai standar kualitas pengujian industri.'}
-            </div>
-          </div>
-
         </div>
 
         <!-- Tags Row -->
