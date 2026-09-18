@@ -222,97 +222,204 @@
   </section>
 
   <!-- SECTION: FEATURED PROJECTS -->
-  <section id="projects" class="py-10 border-t border-slate-100 dark:border-slate-800/80 bg-slate-50/40 dark:bg-slate-950">
+  <section id="projects" class="py-12 border-t border-slate-100 dark:border-slate-800/80 bg-slate-50/40 dark:bg-slate-950">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-6">
       
-      <div>
-        <h2 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
-          <span class="w-2.5 h-2.5 rounded-full bg-brand-blue"></span>
-          <span>Featured Projects</span>
-        </h2>
-        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
-          Berikut adalah beberapa proyek nyata yang dikerjakan selama masa magang dan studi.
-        </p>
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+        <div>
+          <h2 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white tracking-tight flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-brand-blue"></span>
+            <span>Featured Projects</span>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+            Kumpulan proyek nyata magang industri dan portofolio pengembangan perangkat lunak open-source di GitHub.
+          </p>
+        </div>
+        <a href="https://github.com/Sunarka?tab=repositories" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-brand-blue hover:underline inline-flex items-center gap-1 self-start sm:self-auto">
+          <span>Lihat Semua Repositori GitHub</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+        </a>
       </div>
 
-      <!-- Projects 3-Column Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <!-- Projects Grid (6 Cards) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
         
-        <!-- Project 1: Modul SIMRS -->
+        <!-- Project 1: Flappy Bird Adventure (GitHub) -->
         <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:border-brand-blue dark:hover:border-brand-blue transition-all flex flex-col justify-between space-y-4 shadow-sm group">
           <div class="space-y-3">
-            <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-950/80 text-brand-blue dark:text-blue-300 flex items-center justify-center text-xl">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+            <div class="flex items-center justify-between">
+              <div class="w-11 h-11 rounded-xl bg-amber-50 dark:bg-amber-950/80 text-amber-500 flex items-center justify-center text-lg">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold font-mono bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 border border-amber-200/60 dark:border-amber-800/60">Game Dev</span>
+            </div>
+            <h3 class="font-bold text-base text-slate-900 dark:text-white group-hover:text-brand-blue transition-colors">
+              Flappy Bird Adventure
+            </h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Game arkade petualangan interaktif berbasis HTML5 Canvas & JavaScript murni dengan simulasi rintangan gerak dan sistem skor.
+            </p>
+          </div>
+
+          <div class="space-y-3 pt-3 border-t border-slate-100 dark:border-slate-800">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">JavaScript</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">HTML5 Canvas</span>
+            </div>
+            <div class="flex items-center justify-between text-xs pt-1">
+              <a href="https://github.com/Sunarka/Flappy-Bird-Adventure" target="_blank" rel="noopener noreferrer" class="font-semibold text-slate-700 dark:text-slate-300 hover:text-brand-blue flex items-center gap-1.5">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+                <span>GitHub Repo</span>
+              </a>
+              <a href="https://sunarka.github.io/Flappy-Bird-Adventure/" target="_blank" rel="noopener noreferrer" class="font-bold text-brand-blue hover:underline flex items-center gap-1">
+                <span>Play / Demo</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Sistem Reservasi Hotel (GitHub) -->
+        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:border-brand-blue dark:hover:border-brand-blue transition-all flex flex-col justify-between space-y-4 shadow-sm group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="w-11 h-11 rounded-xl bg-cyan-50 dark:bg-cyan-950/80 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-lg">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+              </div>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold font-mono bg-cyan-50 dark:bg-cyan-950/60 text-cyan-600 dark:text-cyan-400 border border-cyan-200/60 dark:border-cyan-800/60">Python App</span>
+            </div>
+            <h3 class="font-bold text-base text-slate-900 dark:text-white group-hover:text-brand-blue transition-colors">
+              Sistem Reservasi Hotel
+            </h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Aplikasi pemesanan kamar hotel, kalkulasi tarif menginap, manajemen tipe kamar, dan pencatatan transaksi tamu berbasis Python.
+            </p>
+          </div>
+
+          <div class="space-y-3 pt-3 border-t border-slate-100 dark:border-slate-800">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">Python</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">Reservation</span>
+            </div>
+            <a href="https://github.com/Sunarka/Resevation-Hotel" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-brand-blue hover:underline inline-flex items-center gap-1.5 pt-1">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <span>Lihat di GitHub</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3: Inventory & Peminjaman Barang (GitHub) -->
+        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:border-brand-blue dark:hover:border-brand-blue transition-all flex flex-col justify-between space-y-4 shadow-sm group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="w-11 h-11 rounded-xl bg-emerald-50 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-lg">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+              </div>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold font-mono bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 border border-emerald-200/60 dark:border-emerald-800/60">Web System</span>
+            </div>
+            <h3 class="font-bold text-base text-slate-900 dark:text-white group-hover:text-brand-blue transition-colors">
+              Inventory & Peminjaman Barang
+            </h3>
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              Sistem informasi manajemen inventaris aset, pencatatan transaksi peminjaman barang, serta tracking ketersediaan stok secara terstruktur.
+            </p>
+          </div>
+
+          <div class="space-y-3 pt-3 border-t border-slate-100 dark:border-slate-800">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">JavaScript</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">Inventory</span>
+            </div>
+            <a href="https://github.com/Sunarka/sistem-inventory-dan-peminjaman-barang" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-brand-blue hover:underline inline-flex items-center gap-1.5 pt-1">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+              <span>Lihat di GitHub</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4: Modul SIMRS & SSO (Magang) -->
+        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:border-brand-blue dark:hover:border-brand-blue transition-all flex flex-col justify-between space-y-4 shadow-sm group">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="w-11 h-11 rounded-xl bg-blue-50 dark:bg-blue-950/80 text-brand-blue dark:text-blue-300 flex items-center justify-center text-lg">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+              </div>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold font-mono bg-blue-50 dark:bg-blue-950/60 text-brand-blue dark:text-blue-300 border border-blue-200/60 dark:border-blue-800/60">Magang</span>
             </div>
             <h3 class="font-bold text-base text-slate-900 dark:text-white group-hover:text-brand-blue transition-colors">
               Modul SIMRS & Desain UI SSO
             </h3>
             <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-              Pengembangan modul sistem informasi manajemen rumah sakit untuk efisiensi alur administrasi klinis, rekam medis, dan perancangan antarmuka Single Sign-On (SSO).
+              Pengembangan modul deskriptif sistem informasi manajemen rumah sakit dan perancangan antarmuka Single Sign-On (SSO) UNMAS.
             </p>
           </div>
 
-          <div class="space-y-3 pt-2 border-t border-slate-100 dark:border-slate-800">
+          <div class="space-y-3 pt-3 border-t border-slate-100 dark:border-slate-800">
             <div class="flex flex-wrap gap-1.5">
-              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">System Development</span>
-              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">UI/UX Design</span>
-              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">QA Testing</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">System Modul</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">UI/UX SSO</span>
             </div>
-            <a href="post.html?id=blog2-pembuatan-modul-simrs-desain-ui-sso" class="text-xs font-semibold text-brand-blue hover:underline inline-flex items-center gap-1">
+            <a href="post.html?id=blog2-pembuatan-modul-simrs-desain-ui-sso" class="text-xs font-semibold text-brand-blue hover:underline inline-flex items-center gap-1 pt-1">
               <span>Lihat Detail Proyek</span>
               <span>→</span>
             </a>
           </div>
         </div>
 
-        <!-- Project 2: User Guide SIMAK & Pembayaran -->
+        <!-- Project 5: User Guide SIMAK & Pembayaran (Magang) -->
         <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:border-brand-blue dark:hover:border-brand-blue transition-all flex flex-col justify-between space-y-4 shadow-sm group">
           <div class="space-y-3">
-            <div class="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+            <div class="flex items-center justify-between">
+              <div class="w-11 h-11 rounded-xl bg-purple-50 dark:bg-purple-950/80 text-purple-600 dark:text-purple-400 flex items-center justify-center text-lg">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+              </div>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold font-mono bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 border border-purple-200/60 dark:border-purple-800/60">Magang</span>
             </div>
             <h3 class="font-bold text-base text-slate-900 dark:text-white group-hover:text-brand-blue transition-colors">
               User Guide SIMAK & Pembayaran UNMAS
             </h3>
             <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-              Penyusunan panduan pengguna komprehensif untuk 4 role akademik serta sistem integrasi transaksi pembayaran perbankan (Bank BPD & BNI).
+              Penyusunan panduan operasional 4 role akademik SIMAK serta alur rekonsiliasi integrasi mitra perbankan (Bank BPD & BNI).
             </p>
           </div>
 
-          <div class="space-y-3 pt-2 border-t border-slate-100 dark:border-slate-800">
+          <div class="space-y-3 pt-3 border-t border-slate-100 dark:border-slate-800">
             <div class="flex flex-wrap gap-1.5">
-              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">Technical Writing</span>
-              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">UI/UX Analysis</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">Technical Guide</span>
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">Multirole</span>
             </div>
-            <a href="post.html?id=blog3-user-guide-simak-unmas-multirole" class="text-xs font-semibold text-brand-blue hover:underline inline-flex items-center gap-1">
+            <a href="post.html?id=blog3-user-guide-simak-unmas-multirole" class="text-xs font-semibold text-brand-blue hover:underline inline-flex items-center gap-1 pt-1">
               <span>Lihat Detail Proyek</span>
               <span>→</span>
             </a>
           </div>
         </div>
 
-        <!-- Project 3: Katalog Perguruan Tinggi Terintegrasi -->
+        <!-- Project 6: Katalog Aplikasi Perguruan Tinggi (Magang) -->
         <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 hover:border-brand-blue dark:hover:border-brand-blue transition-all flex flex-col justify-between space-y-4 shadow-sm group">
           <div class="space-y-3">
-            <div class="w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-950/80 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+            <div class="flex items-center justify-between">
+              <div class="w-11 h-11 rounded-xl bg-indigo-50 dark:bg-indigo-950/80 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-lg">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+              </div>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold font-mono bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border border-indigo-200/60 dark:border-indigo-800/60">Magang</span>
             </div>
             <h3 class="font-bold text-base text-slate-900 dark:text-white group-hover:text-brand-blue transition-colors">
               Katalog Aplikasi Terintegrasi
             </h3>
             <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-              Arsitektur data dan dokumen resmi pemetaan ekosistem aplikasi perguruan tinggi terpadu guna unifikasi hak akses melalui Single Sign-On (SSO).
+              Arsitektur data dan dokumen resmi pemetaan ekosistem aplikasi perguruan tinggi terpadu guna unifikasi hak akses melalui SSO.
             </p>
           </div>
 
-          <div class="space-y-3 pt-2 border-t border-slate-100 dark:border-slate-800">
+          <div class="space-y-3 pt-3 border-t border-slate-100 dark:border-slate-800">
             <div class="flex flex-wrap gap-1.5">
-              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">Web Portal</span>
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">Architecture</span>
               <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">SSO Platform</span>
             </div>
-            <a href="post.html?id=blog6-katalog-aplikasi-perguruan-tinggi-terintegrasi" class="text-xs font-semibold text-brand-blue hover:underline inline-flex items-center gap-1">
+            <a href="post.html?id=blog6-katalog-aplikasi-perguruan-tinggi-terintegrasi" class="text-xs font-semibold text-brand-blue hover:underline inline-flex items-center gap-1 pt-1">
               <span>Lihat Detail Proyek</span>
               <span>→</span>
             </a>
