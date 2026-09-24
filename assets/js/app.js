@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initSearchAndFilter();
   initKeyboardNav();
+  initBackToTop();
+  initInternshipProgress();
   renderPosts();
   renderGallery();
 });
@@ -342,7 +344,116 @@ function initKeyboardNav() {
 }
 
 /* ========================================================
-   6. Copy URL Feedback Toast
+   6. Internship Dynamic Progress Tracker
+   ======================================================== */
+function initInternshipProgress() {
+  const progressBar = document.getElementById('internship-progress-bar');
+  const percentText = document.getElementById('internship-percent-text');
+  const statDays = document.getElementById('stat-days');
+  const statWeeks = document.getElementById('stat-weeks');
+  const statPosts = document.getElementById('stat-posts');
+  const statRemaining = document.getElementById('stat-remaining');
+  const statusBadge = document.getElementById('internship-status-badge');
+
+  if (!progressBar && !percentText) return;
+
+  const startDate = new Date(2026, 7, 24, 0, 0, 0); // 24 Aug 2026
+  const endDate = new Date(2026, 11, 31, 23, 59, 59); // 31 Dec 2026
+  const now = new Date();
+
+  const totalTime = endDate.getTime() - startDate.getTime();
+  const totalDays = 130;
+  const totalWeeks = 19;
+
+  let elapsedDays = 0;
+  let percent = 0;
+  let currentWeek = 1;
+  let remainingDays = totalDays;
+
+  if (now <= startDate) {
+    percent = 0;
+    elapsedDays = 0;
+    currentWeek = 1;
+    remainingDays = totalDays;
+    if (statusBadge) {
+      statusBadge.textContent = 'Persiapan';
+      statusBadge.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-amber-50 dark:bg-amber-950 text-amber-600 dark:text-amber-400 border border-amber-200/60 dark:border-amber-800/60';
+    }
+  } else if (now >= endDate) {
+    percent = 100;
+    elapsedDays = totalDays;
+    currentWeek = totalWeeks;
+    remainingDays = 0;
+    if (statusBadge) {
+      statusBadge.textContent = 'Selesai';
+      statusBadge.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 border border-emerald-200/60 dark:border-emerald-800/60';
+    }
+  } else {
+    const elapsedMs = now.getTime() - startDate.getTime();
+    elapsedDays = Math.min(totalDays, Math.max(1, Math.floor(elapsedMs / (1000 * 60 * 60 * 24)) + 1));
+    remainingDays = Math.max(0, totalDays - elapsedDays);
+    percent = Math.min(100, Math.max(0, Math.round((elapsedMs / totalTime) * 100)));
+    currentWeek = Math.min(totalWeeks, Math.max(1, Math.ceil(elapsedDays / 7)));
+    if (statusBadge) {
+      statusBadge.textContent = 'On Progress';
+      statusBadge.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-50 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 border border-emerald-200/60 dark:border-emerald-800/60';
+    }
+  }
+
+  if (percentText) percentText.textContent = `${percent}%`;
+  if (statDays) statDays.textContent = `${elapsedDays} / ${totalDays} Hari`;
+  if (statWeeks) statWeeks.textContent = `Minggu ${currentWeek} / ${totalWeeks}`;
+  if (statPosts && typeof BLOG_DATA !== 'undefined' && BLOG_DATA.posts) {
+    statPosts.textContent = `${BLOG_DATA.posts.length} Terverifikasi`;
+  }
+  if (statRemaining) statRemaining.textContent = `${remainingDays} Hari Lagi`;
+
+  // Animate progress bar smoothly
+  if (progressBar) {
+    setTimeout(() => {
+      progressBar.style.width = `${percent}%`;
+    }, 200);
+  }
+}
+
+/* ========================================================
+   7. Floating Back to Top & Scroll Progress
+   ======================================================== */
+function initBackToTop() {
+  const btn = document.getElementById('back-to-top');
+  const scrollBar = document.getElementById('scroll-progress');
+
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    
+    // Top scroll progress bar
+    if (scrollBar && docHeight > 0) {
+      const progress = (scrollY / docHeight) * 100;
+      scrollBar.style.width = `${progress}%`;
+    }
+
+    // Back to top button visibility
+    if (btn) {
+      if (scrollY > 300) {
+        btn.classList.remove('hidden-btn');
+        btn.classList.add('visible-btn');
+      } else {
+        btn.classList.remove('visible-btn');
+        btn.classList.add('hidden-btn');
+      }
+    }
+  }, { passive: true });
+
+  if (btn) {
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+}
+
+/* ========================================================
+   8. Copy URL Feedback Toast
    ======================================================== */
 function copyUrl() {
   navigator.clipboard.writeText(window.location.href).then(() => {
