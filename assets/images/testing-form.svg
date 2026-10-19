@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+    <linearGradient id="cardGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f8fafc" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="450" rx="16" fill="url(#bgGrad5)"/>
+  
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="90" x2="800" y2="90" /><line x1="0" y1="180" x2="800" y2="180" />
+    <line x1="0" y1="270" x2="800" y2="270" /><line x1="0" y1="360" x2="800" y2="360" />
+    <line x1="160" y1="0" x2="160" y2="450" /><line x1="320" y1="0" x2="320" y2="450" />
+    <line x1="480" y1="0" x2="480" y2="450" /><line x1="640" y1="0" x2="640" y2="450" />
+  </g>
+
+  <!-- Card Frame -->
+  <g transform="translate(70, 45)">
+    <rect width="660" height="360" rx="14" fill="url(#cardGrad5)" filter="drop-shadow(0 20px 25px rgba(0,0,0,0.25))" stroke="#e2e8f0" stroke-width="1" />
+    <rect width="660" height="42" rx="14" fill="#f8fafc" />
+    <circle cx="25" cy="21" r="5" fill="#ef4444"/><circle cx="41" cy="21" r="5" fill="#f59e0b"/><circle cx="57" cy="21" r="5" fill="#10b981"/>
+    <text x="330" y="26" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#64748b" text-anchor="middle">Form Input Validation & Error Handling — Minggu 5</text>
+    <line x1="0" y1="42" x2="660" y2="42" stroke="#e2e8f0" stroke-width="1" />
+
+    <!-- Form Mockup -->
+    <g transform="translate(40, 65)">
+      <rect width="360" height="260" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+      <text x="20" y="30" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#0f172a">Pengujian Validasi Form Anggaran</text>
+      
+      <!-- Field 1: Valid -->
+      <text x="20" y="60" font-family="system-ui, sans-serif" font-size="10.5" font-weight="600" fill="#475569">Nominal Belanja (IDR)</text>
+      <rect x="20" y="70" width="320" height="30" rx="6" fill="#f8fafc" stroke="#10b981" stroke-width="1.5" />
+      <text x="30" y="90" font-family="monospace" font-size="11" fill="#0f172a">Rp 15.000.000</text>
+      <text x="320" y="90" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#10b981">✓</text>
+
+      <!-- Field 2: Invalid test -->
+      <text x="20" y="125" font-family="system-ui, sans-serif" font-size="10.5" font-weight="600" fill="#475569">Batas Maksimal Pagu (Negative Test: Melebihi Pagu)</text>
+      <rect x="20" y="135" width="320" height="30" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5" />
+      <text x="30" y="155" font-family="monospace" font-size="11" fill="#dc2626">Rp 999.000.000</text>
+      <text x="320" y="155" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#ef4444">✕</text>
+      <text x="20" y="180" font-family="system-ui, sans-serif" font-size="9.5" font-weight="600" fill="#dc2626">Pesan Error Terdeteksi: Nominal melebihi sisa pagu program!</text>
+
+      <!-- Field 3: File Upload -->
+      <text x="20" y="210" font-family="system-ui, sans-serif" font-size="10.5" font-weight="600" fill="#475569">Upload Bukti PDF (Maks 2MB)</text>
+      <rect x="20" y="220" width="320" height="26" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+      <text x="30" y="237" font-family="system-ui, sans-serif" font-size="10" fill="#64748b">tor_kegiatan_2026.pdf (1.2 MB) — Valid</text>
+    </g>
+
+    <!-- Right Side: QA Summary Card -->
+    <g transform="translate(425, 65)">
+      <rect width="195" height="260" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" />
+      <text x="20" y="30" font-family="system-ui, sans-serif" font-size="11.5" font-weight="700" fill="#0f172a">Hasil Uji Validasi</text>
+      <line x1="20" y1="42" x2="175" y2="42" stroke="#e2e8f0" stroke-width="1" />
+
+      <text x="20" y="65" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#475569">Boundary Test: Passed</text>
+      <text x="20" y="85" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#475569">Negative Input: Handled</text>
+      <text x="20" y="105" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#475569">File MIME Check: Valid</text>
+      <text x="20" y="125" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#475569">SQL Injection: Blocked</text>
+      <text x="20" y="145" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#475569">XSS Sanitization: OK</text>
+
+      <rect x="20" y="175" width="155" height="65" rx="8" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1" />
+      <text x="97" y="200" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#065f46" text-anchor="middle">100% SECURE</text>
+      <text x="97" y="220" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="#047857" text-anchor="middle">Form Sanitasi Terverifikasi</text>
+    </g>
+  </g>
+</svg>

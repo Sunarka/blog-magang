@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad8" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ea580c" />
+      <stop offset="100%" stop-color="#c2410c" />
+    </linearGradient>
+    <linearGradient id="cardGrad8" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f8fafc" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="450" rx="16" fill="url(#bgGrad8)"/>
+  
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="90" x2="800" y2="90" /><line x1="0" y1="180" x2="800" y2="180" />
+    <line x1="0" y1="270" x2="800" y2="270" /><line x1="0" y1="360" x2="800" y2="360" />
+    <line x1="160" y1="0" x2="160" y2="450" /><line x1="320" y1="0" x2="320" y2="450" />
+    <line x1="480" y1="0" x2="480" y2="450" /><line x1="640" y1="0" x2="640" y2="450" />
+  </g>
+
+  <g transform="translate(70, 45)">
+    <rect width="660" height="360" rx="14" fill="url(#cardGrad8)" filter="drop-shadow(0 20px 25px rgba(0,0,0,0.25))" stroke="#e2e8f0" stroke-width="1" />
+    <rect width="660" height="42" rx="14" fill="#f8fafc" />
+    <circle cx="25" cy="21" r="5" fill="#ef4444"/><circle cx="41" cy="21" r="5" fill="#f59e0b"/><circle cx="57" cy="21" r="5" fill="#10b981"/>
+    <text x="330" y="26" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#64748b" text-anchor="middle">Bug Tracking & Regression Testing Log — Minggu 8</text>
+    <line x1="0" y1="42" x2="660" y2="42" stroke="#e2e8f0" stroke-width="1" />
+
+    <g transform="translate(30, 65)">
+      <!-- Table Header -->
+      <rect width="600" height="32" rx="6" fill="#f1f5f9" />
+      <text x="20" y="21" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#475569">BUG ID</text>
+      <text x="90" y="21" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#475569">MODUL / DESKRIPSI</text>
+      <text x="320" y="21" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#475569">SEVERITY</text>
+      <text x="440" y="21" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#475569">STATUS REGRESI</text>
+
+      <!-- Row 1 -->
+      <text x="20" y="60" font-family="monospace" font-size="11" font-weight="700" fill="#ea580c">BUG-01</text>
+      <text x="90" y="60" font-family="system-ui, sans-serif" font-size="10.5" fill="#1e293b">Dropdown prodi tidak reset saat ganti fakultas</text>
+      <rect x="320" y="47" width="65" height="18" rx="4" fill="#fee2e2" />
+      <text x="352" y="60" font-family="system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#b91c1c" text-anchor="middle">MEDIUM</text>
+      <rect x="440" y="47" width="120" height="18" rx="4" fill="#dcfce7" />
+      <text x="500" y="60" font-family="system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#15803d" text-anchor="middle">RESOLVED (TESTED)</text>
+      <line x1="0" y1="75" x2="600" y2="75" stroke="#f1f5f9" stroke-width="1" />
+
+      <!-- Row 2 -->
+      <text x="20" y="98" font-family="monospace" font-size="11" font-weight="700" fill="#ea580c">BUG-02</text>
+      <text x="90" y="98" font-family="system-ui, sans-serif" font-size="10.5" fill="#1e293b">Format nominal desimal terpotong pada ekspor PDF</text>
+      <rect x="320" y="85" width="65" height="18" rx="4" fill="#fef3c7" />
+      <text x="352" y="98" font-family="system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#b45309" text-anchor="middle">LOW</text>
+      <rect x="440" y="85" width="120" height="18" rx="4" fill="#dcfce7" />
+      <text x="500" y="98" font-family="system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#15803d" text-anchor="middle">RESOLVED (TESTED)</text>
+      <line x1="0" y1="113" x2="600" y2="113" stroke="#f1f5f9" stroke-width="1" />
+
+      <!-- Row 3 -->
+      <text x="20" y="136" font-family="monospace" font-size="11" font-weight="700" fill="#ea580c">BUG-03</text>
+      <text x="90" y="136" font-family="system-ui, sans-serif" font-size="10.5" fill="#1e293b">Sesi timeout tidak redirect ke landing login SSO</text>
+      <rect x="320" y="123" width="65" height="18" rx="4" fill="#fee2e2" />
+      <text x="352" y="136" font-family="system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#b91c1c" text-anchor="middle">HIGH</text>
+      <rect x="440" y="123" width="120" height="18" rx="4" fill="#dcfce7" />
+      <text x="500" y="136" font-family="system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#15803d" text-anchor="middle">RESOLVED (TESTED)</text>
+      <line x1="0" y1="151" x2="600" y2="151" stroke="#f1f5f9" stroke-width="1" />
+
+      <!-- Row 4 -->
+      <text x="20" y="174" font-family="monospace" font-size="11" font-weight="700" fill="#ea580c">BUG-04</text>
+      <text x="90" y="174" font-family="system-ui, sans-serif" font-size="10.5" fill="#1e293b">Paginasi riwayat transaksi reset ke halaman 1</text>
+      <rect x="320" y="161" width="65" height="18" rx="4" fill="#fef3c7" />
+      <text x="352" y="174" font-family="system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#b45309" text-anchor="middle">LOW</text>
+      <rect x="440" y="161" width="120" height="18" rx="4" fill="#dcfce7" />
+      <text x="500" y="174" font-family="system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#15803d" text-anchor="middle">RESOLVED (TESTED)</text>
+      <line x1="0" y1="189" x2="600" y2="189" stroke="#f1f5f9" stroke-width="1" />
+
+      <!-- Summary Banner -->
+      <rect x="0" y="205" width="600" height="35" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
+      <text x="300" y="227" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#1d4ed8" text-anchor="middle">Regression Testing Selesai: 4/4 Bug Berhasil Diperbaiki Tanpa Efek Samping</text>
+    </g>
+  </g>
+</svg>

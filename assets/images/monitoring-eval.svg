@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad9" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d6efd" />
+      <stop offset="100%" stop-color="#1e40af" />
+    </linearGradient>
+    <linearGradient id="cardGrad9" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f8fafc" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="450" rx="16" fill="url(#bgGrad9)"/>
+  
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="90" x2="800" y2="90" /><line x1="0" y1="180" x2="800" y2="180" />
+    <line x1="0" y1="270" x2="800" y2="270" /><line x1="0" y1="360" x2="800" y2="360" />
+    <line x1="160" y1="0" x2="160" y2="450" /><line x1="320" y1="0" x2="320" y2="450" />
+    <line x1="480" y1="0" x2="480" y2="450" /><line x1="640" y1="0" x2="640" y2="450" />
+  </g>
+
+  <g transform="translate(70, 45)">
+    <rect width="660" height="360" rx="14" fill="url(#cardGrad9)" filter="drop-shadow(0 20px 25px rgba(0,0,0,0.25))" stroke="#e2e8f0" stroke-width="1" />
+    <rect width="660" height="42" rx="14" fill="#f8fafc" />
+    <circle cx="25" cy="21" r="5" fill="#ef4444"/><circle cx="41" cy="21" r="5" fill="#f59e0b"/><circle cx="57" cy="21" r="5" fill="#10b981"/>
+    <text x="330" y="26" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#64748b" text-anchor="middle">Monitoring Sistem Berjalan & Evaluasi Mid-Period — Minggu 9</text>
+    <line x1="0" y1="42" x2="660" y2="42" stroke="#e2e8f0" stroke-width="1" />
+
+    <g transform="translate(35, 65)">
+      <!-- Left KPI Card -->
+      <rect width="280" height="240" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+      <text x="20" y="30" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#0f172a">Status Evaluasi Tengah Magang</text>
+      
+      <g transform="translate(20, 50)">
+        <text x="0" y="15" font-family="system-ui, sans-serif" font-size="10.5" font-weight="600" fill="#64748b">Capaian Minggu ke-9:</text>
+        <rect x="0" y="25" width="240" height="18" rx="4" fill="#eff6ff" />
+        <rect x="0" y="25" width="103" height="18" rx="4" fill="#0d6efd" />
+        <text x="120" y="38" font-family="system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#1e40af" text-anchor="middle">43% Periode Berjalan</text>
+      </g>
+
+      <text x="20" y="130" font-family="system-ui, sans-serif" font-size="10.5" fill="#475569">• Total Hari Aktif: 57 Hari</text>
+      <text x="20" y="155" font-family="system-ui, sans-serif" font-size="10.5" fill="#475569">• Modul Terverifikasi: 3 Sistem</text>
+      <text x="20" y="180" font-family="system-ui, sans-serif" font-size="10.5" fill="#475569">• Skenario Testing Passed: 100%</text>
+
+      <rect x="20" y="200" width="240" height="26" rx="6" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1" />
+      <text x="140" y="217" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#065f46" text-anchor="middle">STATUS: ON PROGRESS (ACTIVE)</text>
+    </g>
+
+    <g transform="translate(345, 65)">
+      <!-- Right Live Activities Card -->
+      <rect width="280" height="240" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" />
+      <text x="20" y="30" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#0f172a">Aktivitas Minggu Ini (19-23 Okt)</text>
+      
+      <circle cx="28" cy="65" r="8" fill="#0d6efd" />
+      <text x="45" y="68" font-family="system-ui, sans-serif" font-size="10.5" font-weight="600" fill="#1e293b">UAT Pendampingan Pengguna</text>
+
+      <circle cx="28" cy="105" r="8" fill="#0d6efd" />
+      <text x="45" y="108" font-family="system-ui, sans-serif" font-size="10.5" font-weight="600" fill="#1e293b">Observasi Respon Server Live</text>
+
+      <circle cx="28" cy="145" r="8" fill="#0d6efd" />
+      <text x="45" y="148" font-family="system-ui, sans-serif" font-size="10.5" font-weight="600" fill="#1e293b">Review Logika Transaksi Baru</text>
+
+      <circle cx="28" cy="185" r="8" fill="#0d6efd" />
+      <text x="45" y="188" font-family="system-ui, sans-serif" font-size="10.5" font-weight="600" fill="#1e293b">Penyusunan Logbook Mingguan</text>
+
+      <rect x="20" y="205" width="240" height="22" rx="4" fill="#f1f5f9" />
+      <text x="140" y="220" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="middle">PT Laksita Emi Saguna • Denpasar</text>
+    </g>
+  </g>
+</svg>

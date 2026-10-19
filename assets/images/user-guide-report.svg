@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#6d28d9" />
+    </linearGradient>
+    <linearGradient id="cardGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f8fafc" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="450" rx="16" fill="url(#bgGrad6)"/>
+  
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="90" x2="800" y2="90" /><line x1="0" y1="180" x2="800" y2="180" />
+    <line x1="0" y1="270" x2="800" y2="270" /><line x1="0" y1="360" x2="800" y2="360" />
+    <line x1="160" y1="0" x2="160" y2="450" /><line x1="320" y1="0" x2="320" y2="450" />
+    <line x1="480" y1="0" x2="480" y2="450" /><line x1="640" y1="0" x2="640" y2="450" />
+  </g>
+
+  <g transform="translate(70, 45)">
+    <rect width="660" height="360" rx="14" fill="url(#cardGrad6)" filter="drop-shadow(0 20px 25px rgba(0,0,0,0.25))" stroke="#e2e8f0" stroke-width="1" />
+    <rect width="660" height="42" rx="14" fill="#f8fafc" />
+    <circle cx="25" cy="21" r="5" fill="#ef4444"/><circle cx="41" cy="21" r="5" fill="#f59e0b"/><circle cx="57" cy="21" r="5" fill="#10b981"/>
+    <text x="330" y="26" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#64748b" text-anchor="middle">Dokumentasi User Guide: Ekspor Laporan & Cetak Bukti — Minggu 6</text>
+    <line x1="0" y1="42" x2="660" y2="42" stroke="#e2e8f0" stroke-width="1" />
+
+    <g transform="translate(40, 70)">
+      <rect width="280" height="250" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+      <text x="20" y="30" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#0f172a">Alur Ekspor Dokumen</text>
+      
+      <!-- Step 1 -->
+      <circle cx="25" cy="65" r="10" fill="#7c3aed"/>
+      <text x="25" y="69" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+      <text x="45" y="68" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#1e293b">Pilih Filter Periode Transaksi</text>
+
+      <!-- Step 2 -->
+      <circle cx="25" cy="110" r="10" fill="#7c3aed"/>
+      <text x="25" y="114" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+      <text x="45" y="113" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#1e293b">Pilih Format Cetak (PDF / Excel)</text>
+
+      <!-- Step 3 -->
+      <circle cx="25" cy="155" r="10" fill="#7c3aed"/>
+      <text x="25" y="159" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+      <text x="45" y="158" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#1e293b">Generate Lembar Pengesahan</text>
+
+      <!-- Step 4 -->
+      <circle cx="25" cy="200" r="10" fill="#7c3aed"/>
+      <text x="25" y="204" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+      <text x="45" y="203" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#1e293b">Arsip Digital Cloud Storage</text>
+    </g>
+
+    <g transform="translate(345, 70)">
+      <rect width="275" height="250" rx="10" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="1.5" />
+      <text x="20" y="30" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#5b21b6">Pratinjau Format Cetak</text>
+      
+      <rect x="20" y="50" width="235" height="45" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />
+      <text x="35" y="72" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#0f172a">Kuitansi Pembayaran (.PDF)</text>
+      <text x="35" y="86" font-family="system-ui, sans-serif" font-size="9.5" fill="#64748b">Format resmi A4 portrait berkop instansi</text>
+
+      <rect x="20" y="105" width="235" height="45" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />
+      <text x="35" y="127" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#0f172a">Rekap Realisasi Belanja (.XLSX)</text>
+      <text x="35" y="141" font-family="system-ui, sans-serif" font-size="9.5" fill="#64748b">Data tabular matriks pos anggaran & sisa pagu</text>
+
+      <rect x="20" y="165" width="235" height="60" rx="8" fill="#ede9fe" />
+      <text x="137" y="190" font-family="system-ui, sans-serif" font-size="10.5" font-weight="700" fill="#6d28d9" text-anchor="middle">USER GUIDE OPERASIONAL</text>
+      <text x="137" y="208" font-family="system-ui, sans-serif" font-size="9.5" fill="#4c1d95" text-anchor="middle">Siap digunakan oleh staf unit kerja</text>
+    </g>
+  </g>
+</svg>

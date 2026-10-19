@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0f766e" />
+    </linearGradient>
+    <linearGradient id="cardGrad7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f8fafc" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="450" rx="16" fill="url(#bgGrad7)"/>
+  
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="90" x2="800" y2="90" /><line x1="0" y1="180" x2="800" y2="180" />
+    <line x1="0" y1="270" x2="800" y2="270" /><line x1="0" y1="360" x2="800" y2="360" />
+    <line x1="160" y1="0" x2="160" y2="450" /><line x1="320" y1="0" x2="320" y2="450" />
+    <line x1="480" y1="0" x2="480" y2="450" /><line x1="640" y1="0" x2="640" y2="450" />
+  </g>
+
+  <g transform="translate(70, 45)">
+    <rect width="660" height="360" rx="14" fill="url(#cardGrad7)" filter="drop-shadow(0 20px 25px rgba(0,0,0,0.25))" stroke="#e2e8f0" stroke-width="1" />
+    <rect width="660" height="42" rx="14" fill="#f8fafc" />
+    <circle cx="25" cy="21" r="5" fill="#ef4444"/><circle cx="41" cy="21" r="5" fill="#f59e0b"/><circle cx="57" cy="21" r="5" fill="#10b981"/>
+    <text x="330" y="26" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#64748b" text-anchor="middle">Cross-Browser & Responsive UI Testing — Minggu 7</text>
+    <line x1="0" y1="42" x2="660" y2="42" stroke="#e2e8f0" stroke-width="1" />
+
+    <g transform="translate(40, 70)">
+      <!-- Browser 1: Chrome -->
+      <rect width="180" height="235" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+      <rect width="180" height="36" rx="10" fill="#f1f5f9" />
+      <text x="90" y="23" font-family="system-ui, sans-serif" font-size="11.5" font-weight="700" fill="#0f172a" text-anchor="middle">Google Chrome</text>
+      <text x="15" y="65" font-family="system-ui, sans-serif" font-size="10.5" fill="#475569">• Rendering CSS Grid: OK</text>
+      <text x="15" y="90" font-family="system-ui, sans-serif" font-size="10.5" fill="#475569">• JS Event Listener: OK</text>
+      <text x="15" y="115" font-family="system-ui, sans-serif" font-size="10.5" fill="#475569">• Form Autocomplete: OK</text>
+      <text x="15" y="140" font-family="system-ui, sans-serif" font-size="10.5" fill="#475569">• Modal Pop-up: Smooth</text>
+      <rect x="15" y="185" width="150" height="26" rx="6" fill="#dcfce7" />
+      <text x="90" y="202" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#15803d" text-anchor="middle">100% COMPLIANT</text>
+    </g>
+
+    <g transform="translate(240, 70)">
+      <!-- Browser 2: Firefox -->
+      <rect width="180" height="235" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+      <rect width="180" height="36" rx="10" fill="#f1f5f9" />
+      <text x="90" y="23" font-family="system-ui, sans-serif" font-size="11.5" font-weight="700" fill="#0f172a" text-anchor="middle">Mozilla Firefox</text>
+      <text x="15" y="65" font-family="system-ui, sans-serif" font-size="10.5" fill="#475569">• Flexbox Spacing: OK</text>
+      <text x="15" y="90" font-family="system-ui, sans-serif" font-size="10.5" fill="#475569">• Native Date Picker: OK</text>
+      <text x="15" y="115" font-family="system-ui, sans-serif" font-size="10.5" fill="#475569">• Scroll Behaviour: OK</text>
+      <text x="15" y="140" font-family="system-ui, sans-serif" font-size="10.5" fill="#475569">• Dark Mode Toggle: OK</text>
+      <rect x="15" y="185" width="150" height="26" rx="6" fill="#dcfce7" />
+      <text x="90" y="202" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#15803d" text-anchor="middle">100% COMPLIANT</text>
+    </g>
+
+    <g transform="translate(440, 70)">
+      <!-- Browser 3: Microsoft Edge -->
+      <rect width="180" height="235" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+      <rect width="180" height="36" rx="10" fill="#f1f5f9" />
+      <text x="90" y="23" font-family="system-ui, sans-serif" font-size="11.5" font-weight="700" fill="#0f172a" text-anchor="middle">Microsoft Edge</text>
+      <text x="15" y="65" font-family="system-ui, sans-serif" font-size="10.5" fill="#475569">• Chromium Engine: OK</text>
+      <text x="15" y="90" font-family="system-ui, sans-serif" font-size="10.5" fill="#475569">• File Download: Fast</text>
+      <text x="15" y="115" font-family="system-ui, sans-serif" font-size="10.5" fill="#475569">• Session Persistence: OK</text>
+      <text x="15" y="140" font-family="system-ui, sans-serif" font-size="10.5" fill="#475569">• Responsive Tablet: OK</text>
+      <rect x="15" y="185" width="150" height="26" rx="6" fill="#dcfce7" />
+      <text x="90" y="202" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#15803d" text-anchor="middle">100% COMPLIANT</text>
+    </g>
+  </g>
+</svg>
