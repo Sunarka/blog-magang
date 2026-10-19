@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d6efd" />
+      <stop offset="100%" stop-color="#0b5ed7" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f8fafc" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="450" rx="16" fill="url(#bgGrad1)"/>
+  
+  <!-- Decorative Grid Overlay -->
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <line x1="0" y1="90" x2="800" y2="90" />
+    <line x1="0" y1="180" x2="800" y2="180" />
+    <line x1="0" y1="270" x2="800" y2="270" />
+    <line x1="0" y1="360" x2="800" y2="360" />
+    <line x1="160" y1="0" x2="160" y2="450" />
+    <line x1="320" y1="0" x2="320" y2="450" />
+    <line x1="480" y1="0" x2="480" y2="450" />
+    <line x1="640" y1="0" x2="640" y2="450" />
+  </g>
+
+  <!-- Main Window Frame -->
+  <rect x="70" y="45" width="660" height="360" rx="14" fill="url(#cardGrad)" filter="drop-shadow(0 20px 25px rgba(0,0,0,0.25))" />
+  
+  <!-- Window Header -->
+  <rect x="70" y="45" width="660" height="42" rx="14" fill="#f1f5f9" />
+  <circle cx="100" cy="66" r="6" fill="#ef4444"/>
+  <circle cx="120" cy="66" r="6" fill="#f59e0b"/>
+  <circle cx="140" cy="66" r="6" fill="#10b981"/>
+  <text x="400" y="71" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="#64748b" text-anchor="middle">QA Testing Matrix — SIM Keuangan UNMAS</text>
+
+  <!-- Left Sidebar inside window -->
+  <rect x="90" y="105" width="180" height="280" rx="10" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" />
+  <text x="110" y="132" font-family="system-ui, sans-serif" font-size="12" font-weight="700" fill="#0f172a">14 Skenario Pengujian</text>
+  <rect x="105" y="148" width="150" height="26" rx="6" fill="#0d6efd" />
+  <text x="120" y="165" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#ffffff">Hak Akses Role (SN-01)</text>
+  <rect x="105" y="182" width="150" height="26" rx="6" fill="#e2e8f0" />
+  <text x="120" y="199" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#475569">Pos Pagu & Renstra</text>
+  <rect x="105" y="216" width="150" height="26" rx="6" fill="#e2e8f0" />
+  <text x="120" y="233" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#475569">Rincian Belanja</text>
+  <rect x="105" y="250" width="150" height="26" rx="6" fill="#e2e8f0" />
+  <text x="120" y="267" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#475569">Security URL 403</text>
+  <rect x="105" y="284" width="150" height="26" rx="6" fill="#e2e8f0" />
+  <text x="120" y="301" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#475569">Verifikasi Pejabat</text>
+  <rect x="105" y="318" width="150" height="26" rx="6" fill="#e2e8f0" />
+  <text x="120" y="335" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#475569">Submit Pengajuan</text>
+
+  <!-- Right Content Area: Testing Data Table -->
+  <g transform="translate(290, 105)">
+    <rect width="420" height="280" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+    
+    <!-- Table Header -->
+    <rect width="420" height="34" rx="10" fill="#f8fafc" />
+    <text x="20" y="22" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#64748b">KODE</text>
+    <text x="75" y="22" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#64748b">ROLE</text>
+    <text x="180" y="22" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#64748b">SKENARIO</text>
+    <text x="350" y="22" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#64748b">STATUS</text>
+    <line x1="0" y1="34" x2="420" y2="34" stroke="#e2e8f0" stroke-width="1" />
+
+    <!-- Row 1 -->
+    <text x="20" y="58" font-family="monospace" font-size="11" font-weight="700" fill="#0d6efd">SN-01</text>
+    <text x="75" y="58" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#0f172a">Rektor/WR</text>
+    <text x="180" y="58" font-family="system-ui, sans-serif" font-size="10.5" fill="#475569">Akses dropdown 3 tingkatan</text>
+    <rect x="340" y="44" width="60" height="20" rx="5" fill="#dcfce7" />
+    <text x="370" y="58" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#15803d" text-anchor="middle">PASSED</text>
+    <line x1="0" y1="72" x2="420" y2="72" stroke="#f1f5f9" stroke-width="1" />
+
+    <!-- Row 2 -->
+    <text x="20" y="96" font-family="monospace" font-size="11" font-weight="700" fill="#0d6efd">SN-03</text>
+    <text x="75" y="96" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#0f172a">Dekan/WD</text>
+    <text x="180" y="96" font-family="system-ui, sans-serif" font-size="10.5" fill="#475569">Fakultas terkunci otomatis</text>
+    <rect x="340" y="82" width="60" height="20" rx="5" fill="#dcfce7" />
+    <text x="370" y="96" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#15803d" text-anchor="middle">PASSED</text>
+    <line x1="0" y1="110" x2="420" y2="110" stroke="#f1f5f9" stroke-width="1" />
+
+    <!-- Row 3 -->
+    <text x="20" y="134" font-family="monospace" font-size="11" font-weight="700" fill="#0d6efd">SN-05</text>
+    <text x="75" y="134" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#0f172a">Koorprodi</text>
+    <text x="180" y="134" font-family="system-ui, sans-serif" font-size="10.5" fill="#475569">Prodi terkunci milik sendiri</text>
+    <rect x="340" y="120" width="60" height="20" rx="5" fill="#dcfce7" />
+    <text x="370" y="134" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#15803d" text-anchor="middle">PASSED</text>
+    <line x1="0" y1="148" x2="420" y2="148" stroke="#f1f5f9" stroke-width="1" />
+
+    <!-- Row 4 -->
+    <text x="20" y="172" font-family="monospace" font-size="11" font-weight="700" fill="#0d6efd">SN-09</text>
+    <text x="75" y="172" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#0f172a">Semua Role</text>
+    <text x="180" y="172" font-family="system-ui, sans-serif" font-size="10.5" fill="#475569">Uji URL beda prodi (HTTP 403)</text>
+    <rect x="340" y="158" width="60" height="20" rx="5" fill="#dcfce7" />
+    <text x="370" y="172" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#15803d" text-anchor="middle">PASSED</text>
+    <line x1="0" y1="186" x2="420" y2="186" stroke="#f1f5f9" stroke-width="1" />
+
+    <!-- Row 5 -->
+    <text x="20" y="210" font-family="monospace" font-size="11" font-weight="700" fill="#0d6efd">SN-14</text>
+    <text x="75" y="210" font-family="system-ui, sans-serif" font-size="11" font-weight="600" fill="#0f172a">Koorprodi</text>
+    <text x="180" y="210" font-family="system-ui, sans-serif" font-size="10.5" fill="#475569">Submit status "Menunggu"</text>
+    <rect x="340" y="196" width="60" height="20" rx="5" fill="#dcfce7" />
+    <text x="370" y="210" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#15803d" text-anchor="middle">PASSED</text>
+    <line x1="0" y1="224" x2="420" y2="224" stroke="#f1f5f9" stroke-width="1" />
+
+    <!-- Summary Box inside table -->
+    <rect x="15" y="235" width="390" height="32" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1" />
+    <text x="30" y="255" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#1d4ed8">14 / 14 Skenario Black Box Pengujian Berhasil Lolos (100% Passed)</text>
+  </g>
+</svg>
