@@ -95,6 +95,29 @@ img, svg, video {
   pointer-events: auto;
 }
 
+/* Header Dynamic Nav on Scroll */
+#desktop-nav, #mobile-menu-btn {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+#desktop-nav.nav-hidden, #mobile-menu-btn.nav-hidden {
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+}
+
+#desktop-nav.nav-visible, #mobile-menu-btn.nav-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+#desktop-nav:focus-within {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  pointer-events: auto !important;
+}
+
 /* Custom Clean Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;

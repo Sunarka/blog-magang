@@ -10,6 +10,7 @@ let currentPhotoIdx = 0;
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initMobileMenu();
+  initHeaderNavScroll();
   initSearchAndFilter();
   initKeyboardNav();
   initBackToTop();
@@ -61,6 +62,48 @@ function initMobileMenu() {
       toggleBtn.setAttribute('aria-expanded', 'false');
     });
   });
+}
+
+/* ========================================================
+   2.1. Header Dynamic Nav on Scroll
+   ======================================================== */
+function initHeaderNavScroll() {
+  const desktopNav = document.getElementById('desktop-nav');
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const heroNav = document.getElementById('hero-nav');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (!desktopNav || !heroNav) return;
+
+  function updateNavVisibility() {
+    const heroNavRect = heroNav.getBoundingClientRect();
+    // Muncul di header saat tombol navigasi hero di bawah sudah terscroll ke atas melewati navbar (tinggi navbar 56px)
+    const isPastHero = heroNavRect.bottom <= 56;
+
+    if (isPastHero) {
+      desktopNav.classList.remove('nav-hidden');
+      desktopNav.classList.add('nav-visible');
+      if (mobileMenuBtn) {
+        mobileMenuBtn.classList.remove('nav-hidden');
+        mobileMenuBtn.classList.add('nav-visible');
+      }
+    } else {
+      desktopNav.classList.add('nav-hidden');
+      desktopNav.classList.remove('nav-visible');
+      if (mobileMenuBtn) {
+        mobileMenuBtn.classList.add('nav-hidden');
+        mobileMenuBtn.classList.remove('nav-visible');
+        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        }
+      }
+    }
+  }
+
+  window.addEventListener('scroll', updateNavVisibility, { passive: true });
+  window.addEventListener('resize', updateNavVisibility, { passive: true });
+  updateNavVisibility();
 }
 
 /* ========================================================
