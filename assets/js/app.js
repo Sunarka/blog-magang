@@ -44,23 +44,57 @@ function initTheme() {
 /* ========================================================
    2. Mobile Drawer Menu Navigation
    ======================================================== */
+function openMobileMenu() {
+  const toggleBtn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  if (!toggleBtn || !menu) return;
+
+  toggleBtn.setAttribute('aria-expanded', 'true');
+  toggleBtn.classList.add('is-open');
+  menu.classList.remove('mobile-menu-closed');
+  menu.classList.add('mobile-menu-open');
+}
+
+function closeMobileMenu() {
+  const toggleBtn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  if (!toggleBtn || !menu) return;
+
+  toggleBtn.setAttribute('aria-expanded', 'false');
+  toggleBtn.classList.remove('is-open');
+  menu.classList.remove('mobile-menu-open');
+  menu.classList.add('mobile-menu-closed');
+}
+
 function initMobileMenu() {
   const toggleBtn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
   if (!toggleBtn || !menu) return;
 
-  toggleBtn.addEventListener('click', () => {
-    const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
-    toggleBtn.setAttribute('aria-expanded', !isExpanded);
-    menu.classList.toggle('hidden');
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = menu.classList.contains('mobile-menu-open');
+    if (isOpen) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
   });
 
   const links = menu.querySelectorAll('a');
   links.forEach(link => {
     link.addEventListener('click', () => {
-      menu.classList.add('hidden');
-      toggleBtn.setAttribute('aria-expanded', 'false');
+      closeMobileMenu();
     });
+  });
+
+  // Tutup menu jika user klik di luar area navbar/menu
+  document.addEventListener('click', (e) => {
+    if (!toggleBtn.contains(e.target) && !menu.contains(e.target)) {
+      if (menu.classList.contains('mobile-menu-open')) {
+        closeMobileMenu();
+      }
+    }
   });
 }
 
@@ -93,9 +127,8 @@ function initHeaderNavScroll() {
       if (mobileMenuBtn) {
         mobileMenuBtn.classList.add('nav-hidden');
         mobileMenuBtn.classList.remove('nav-visible');
-        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.add('hidden');
-          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        if (mobileMenu && mobileMenu.classList.contains('mobile-menu-open')) {
+          closeMobileMenu();
         }
       }
     }
