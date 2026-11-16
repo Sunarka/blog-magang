@@ -900,7 +900,7 @@ const BLOG_DATA = {
       "Userflow Proses Bisnis",
       "UNMAS"
     ],
-    "image": "assets/images/user-guide-report.svg",
+    "image": "assets/images/zoom-review-flowmap-sim-perencanaan.png",
     "summary": "Melanjutkan pembuatan dokumentasi, mengikuti pertemuan Zoom Meeting intensif untuk merevisi userflow dan flowmap bersama tim pengembang, serta menyusun userflow khusus proses bisnis SIM Penganggaran UNMAS.",
     "objective": "Melakukan evaluasi dan revisi flowmap berdasarkan masukan rapat koordinasi Zoom serta menajamkan userflow proses bisnis penganggaran.",
     "tasks": [
@@ -961,7 +961,7 @@ const BLOG_DATA = {
         "category": "Dokumentasi Sistem"
       }
     ],
-    "content": "\n      <div class=\"space-y-5\">\n        <div class=\"overflow-hidden rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm\">\n          <img src=\"assets/images/user-guide-report.svg\" alt=\"Review Zoom Meeting & Userflow Proses Bisnis\" class=\"w-full h-auto object-cover\">\n        </div>\n        <div class=\"prose dark:prose-invert max-w-none space-y-4\">\n          <p>Memasuki minggu ke-9, agenda magang berlangsung dinamis dengan diselenggarakannya sesi <strong>Zoom Meeting</strong> koordinasi teknis berturut-turut pada hari Rabu dan Kamis (21-22 Oktober 2026). Rapat daring ini membahas secara khusus koreksi terhadap diagram userflow dan flowmap yang telah dirancang sebelumnya.</p>\n          <p>Setelah mendapatkan arahan langsung dari mentor dan tim pengembang melalui Zoom, pada hari Jumat dibuat rancangan khusus <strong>Userflow Proses Bisnis</strong> yang memotret siklus hidup penganggaran dari kacamata tata kelola perguruan tinggi.</p>\n        </div>\n      </div>\n    "
+    "content": "\n      <div class=\"space-y-5\">\n        <div class=\"overflow-hidden rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm bg-slate-900 p-2 sm:p-4\">\n          <img src=\"assets/images/zoom-review-flowmap-sim-perencanaan.png\" alt=\"Sesi Zoom Meeting Review Flowmap Alur Proses SIM Perencanaan UNMAS\" class=\"w-full h-auto object-contain rounded-xl\">\n        </div>\n        <div class=\"prose dark:prose-invert max-w-none space-y-4\">\n          <p>Memasuki minggu ke-9, agenda magang berlangsung intensif dengan diselenggarakannya sesi <strong>Zoom Meeting</strong> koordinasi teknis bersama mentor dan tim pengembang pada hari Rabu (21/10/2026) pukul 13.17 WITA.</p>\n          <p>Pada rapat daring ini, dilakukan penelaahan bersama terhadap dokumen <em>User Guide Sistem Perencanaan</em> bab <strong>Alur Kerja Sistem</strong>, khususnya diagram swimlane <em>Alur Proses Penggunaan Sistem Perencanaan (SIM Perencanaan) - SATU UNMAS</em> yang memetakan keterkaitan peran antara <strong>Staff Prodi</strong>, <strong>Rektor</strong>, dan <strong>Wakil Dekan 2</strong> dalam siklus Renstra Universitas, Rancangan Pendapatan, Pagu Anggaran Subunit, hingga Monev Realisasi.</p>\n          <p>Hasil masukan dan evaluasi langsung dari forum Zoom ini menjadi acuan utama perbaikan bagan alur serta perumusan draf <strong>Userflow Proses Bisnis</strong> terintegrasi di akhir pekan.</p>\n        </div>\n      </div>\n    "
   },
   {
     "id": "minggu-08-pembuatan-userflow-flowmap-dan-glosarium-sim-anggaran",
@@ -1614,11 +1614,11 @@ const BLOG_DATA = {
     },
     {
       id: 6,
-      title: "Userflow, Flowmap & Glosarium SIM Penganggaran",
+      title: "Review Flowmap & Glosarium via Zoom Meeting",
       category: "Dokumentasi Sistem",
       date: "12 Oktober – 10 November 2026",
-      image: "assets/images/monitoring-eval.svg",
-      caption: "Perancangan komprehensif Userflow interaksi, Flowmap dokumen, sesi Zoom Meeting, dan pembakuan Glosarium istilah sistem penganggaran."
+      image: "assets/images/zoom-review-flowmap-sim-perencanaan.png",
+      caption: "Sesi Zoom Meeting evaluasi bagan Alur Kerja Sistem Perencanaan UNMAS (multi-role Staff Prodi, Rektor, WD 2) bersama pembimbing dan tim pengembang."
     },
     {
       id: 7,
