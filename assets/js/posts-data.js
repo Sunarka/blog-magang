@@ -1606,6 +1606,14 @@ const BLOG_DATA = {
     },
     {
       id: 5,
+      title: "Monitoring & Evaluasi Bersama Dosen Pembimbing Undiksha",
+      category: "Monev Magang",
+      date: "Oktober – November 2026",
+      image: "assets/images/monev-dosen-pembimbing.jpg",
+      caption: "Sesi Monitoring dan Evaluasi (Monev) kemajuan magang mahasiswa di kantor PT Laksita Emi Saguna bersama Dosen Pembimbing Lapangan dari Program Studi S1 Ilmu Komputer Undiksha."
+    },
+    {
+      id: 6,
       title: "Proyek Dashboard Visualisasi Data Kepegawaian SDM",
       category: "Project Dashboard",
       date: "30 September – 05 Oktober 2026",
@@ -1613,7 +1621,7 @@ const BLOG_DATA = {
       caption: "Analisis kebutuhan dan konsultasi pengembangan dashboard visualisasi data kepegawaian untuk monitoring administrasi SDM SIM Kepegawaian UNMAS."
     },
     {
-      id: 6,
+      id: 7,
       title: "Review Flowmap & Glosarium via Zoom Meeting",
       category: "Dokumentasi Sistem",
       date: "12 Oktober – 10 November 2026",
@@ -1621,7 +1629,7 @@ const BLOG_DATA = {
       caption: "Sesi Zoom Meeting evaluasi bagan Alur Kerja Sistem Perencanaan UNMAS (multi-role Staff Prodi, Rektor, WD 2) bersama pembimbing dan tim pengembang."
     },
     {
-      id: 7,
+      id: 8,
       title: "Flowmap Teknis per Prosedur SIM Penganggaran",
       category: "Dokumentasi Sistem",
       date: "11 – 16 November 2026",
