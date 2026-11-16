@@ -1291,7 +1291,7 @@ const BLOG_DATA = {
       "Role Staf Fakultas",
       "Testing"
     ],
-    "image": "assets/images/testing-form.svg",
+    "image": "assets/images/user-guide-staff-fakultas.png",
     "summary": "Mengerjakan penugasan WFH dan Onsite untuk pembuatan User Guide SIM Perencanaan dan Penganggaran UNMAS, mencakup panduan khusus serta testing untuk role Rektor dilanjutkan dengan role Staf Unit Fakultas.",
     "objective": "Menyusun panduan operasional dan melakukan pengujian fungsional modul penganggaran berdasarkan hak akses role Rektor dan Staf Unit Fakultas.",
     "tasks": [
@@ -1352,7 +1352,7 @@ const BLOG_DATA = {
         "category": "User Guide"
       }
     ],
-    "content": "\n      <div class=\"space-y-5\">\n        <div class=\"overflow-hidden rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm\">\n          <img src=\"assets/images/testing-form.svg\" alt=\"User Guide SIM Penganggaran Multi-Role\" class=\"w-full h-auto object-cover\">\n        </div>\n        <div class=\"prose dark:prose-invert max-w-none space-y-4\">\n          <p>Pada minggu ke-4, mahasiswa mulai menangani proyek inti sistem keuangan kampus: <strong>SIM Perencanaan dan Penganggaran Universitas Mahasaraswati</strong>. Penugasan diawali dengan kerja mandiri WFH untuk menyusun bab pengantar dan struktur navigasi modul.</p>\n          <p>Memasuki hari Kamis dan Jumat, fokus beralih ke pembuatan panduan khusus yang diiringi dengan <em>functional testing</em> untuk dua tingkatan pengguna utama: role <strong>Rektor</strong> (otorisasi, disposisi, dan evaluasi pagu) serta role <strong>Staf Unit Fakultas</strong> (pengusulan TOR, perincian mata anggaran belanja, dan unggah berkas pendukung).</p>\n        </div>\n      </div>\n    "
+    "content": "\n      <div class=\"space-y-5\">\n        <div class=\"overflow-hidden rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-900 p-2 sm:p-4\">\n          <img src=\"assets/images/user-guide-staff-fakultas.png\" alt=\"Dokumen Petunjuk Penggunaan Sistem Penganggaran User-Administrator Staff Fakultas UNMAS\" class=\"w-full h-auto object-contain rounded-xl\">\n        </div>\n        <div class=\"prose dark:prose-invert max-w-none space-y-4\">\n          <p>Pada minggu ke-4, mahasiswa mulai menangani proyek inti sistem keuangan kampus: <strong>SIM Perencanaan dan Penganggaran Universitas Mahasaraswati</strong>. Penugasan diawali dengan kerja mandiri WFH untuk menyusun bab pengantar dan struktur navigasi modul.</p>\n          <p>Memasuki hari Kamis dan Jumat, fokus beralih ke pembuatan panduan khusus yang diiringi dengan <em>functional testing</em> untuk dua tingkatan pengguna utama: role <strong>Rektor</strong> (otorisasi, disposisi, dan evaluasi pagu) serta role <strong>Staf Unit Fakultas (User-Administrator)</strong> melalui integrasi portal <em>SATU UNMAS</em> (pengusulan TOR, perincian mata anggaran belanja, dan unggah berkas pendukung).</p>\n        </div>\n      </div>\n    "
   },
   {
     "id": "minggu-03-finalisasi-user-guide-sim-prestasi-dan-konseling",
@@ -1593,8 +1593,8 @@ const BLOG_DATA = {
       title: "User Guide & Testing SIM Penganggaran Role Rektor & Staf",
       category: "User Guide",
       date: "14 – 18 September 2026",
-      image: "assets/images/testing-form.svg",
-      caption: "Penugasan WFH dan onsite penyusunan panduan serta pengujian fungsional modul penganggaran untuk role Rektor dan Staf Unit Fakultas."
+      image: "assets/images/user-guide-staff-fakultas.png",
+      caption: "Penyusunan dokumen User Guide SIM Penganggaran UNMAS untuk role Staff Fakultas (User-Administrator) versi 1.3 serta integrasi menu layanan portal SATU UNMAS."
     },
     {
       id: 4,
