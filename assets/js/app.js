@@ -126,11 +126,19 @@ function initHeaderNavScroll() {
         desktopNav.classList.remove('nav-hidden');
         desktopNav.classList.add('nav-visible');
       }
+      if (mobileMenuBtn) {
+        mobileMenuBtn.classList.remove('nav-hidden');
+        mobileMenuBtn.classList.add('nav-visible');
+      }
     } else if (isNavVisible && heroNavRect.bottom > hideThreshold) {
       isNavVisible = false;
       if (desktopNav) {
         desktopNav.classList.add('nav-hidden');
         desktopNav.classList.remove('nav-visible');
+      }
+      if (mobileMenuBtn) {
+        mobileMenuBtn.classList.add('nav-hidden');
+        mobileMenuBtn.classList.remove('nav-visible');
       }
       closeMobileMenu();
     }
