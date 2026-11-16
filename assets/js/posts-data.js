@@ -1213,7 +1213,7 @@ const BLOG_DATA = {
       "Laporan Progres",
       "Review"
     ],
-    "image": "assets/images/user-guide-report.svg",
+    "image": "assets/images/demo-sim-penganggaran-unmas.png",
     "summary": "Mengikuti pertemuan demo sistem bersama mentor dan pihak UNMAS, mempelajari modul alur proses SIM Perencanaan dan Penganggaran, serta menyusun dan merevisi laporan progres User Guide multi-role.",
     "objective": "Memahami ekspektasi stakeholder UNMAS secara langsung lewat sesi demo serta menyusun laporan progres user guide yang komprehensif.",
     "tasks": [
@@ -1274,7 +1274,7 @@ const BLOG_DATA = {
         "category": "User Guide"
       }
     ],
-    "content": "\n      <div class=\"space-y-5\">\n        <div class=\"overflow-hidden rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm\">\n          <img src=\"assets/images/user-guide-report.svg\" alt=\"Demo SIM Penganggaran & Laporan Progres\" class=\"w-full h-auto object-cover\">\n        </div>\n        <div class=\"prose dark:prose-invert max-w-none space-y-4\">\n          <p>Minggu ke-5 diawali dengan agenda penting: mengikuti pertemuan tatap muka/daring demo sistem <strong>SIM Penganggaran dan Perencanaan</strong> bersama mentor lapangan dan pihak perwakilan Universitas Mahasaraswati Denpasar pada hari Senin (21/09).</p>\n          <p>Setelah sesi demo, mentor memberikan modul pemahaman mendalam terkait alur proses bisnis penganggaran. Hari-hari berikutnya difokuskan pada penyusunan dan revisi dokumen <em>Laporan Progres User Guide</em> yang mencakup panduan untuk role Rektor, Petinggi Unit, dan Staf Fakultas.</p>\n        </div>\n      </div>\n    "
+    "content": "\n      <div class=\"space-y-5\">\n        <div class=\"overflow-hidden rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm bg-slate-900 p-2 sm:p-4\">\n          <img src=\"assets/images/demo-sim-penganggaran-unmas.png\" alt=\"Sesi Demo Daring SIM Penganggaran UNMAS via Video Conference Bersama Pihak Kampus dan Tim Pengembang\" class=\"w-full h-auto object-contain rounded-xl\">\n        </div>\n        <div class=\"prose dark:prose-invert max-w-none space-y-4\">\n          <p>Minggu ke-5 diawali dengan agenda penting: mengikuti pertemuan demo sistem <strong>SIM Penganggaran dan Perencanaan</strong> bersama mentor industri dan delegasi Universitas Mahasaraswati Denpasar.</p>\n          <p>Dalam sesi pertemuan virtual tersebut, ditampilkan simulasi langsung modul <em>Review & Approval</em> usulan anggaran berjenjang (mulai dari Sekretaris Lembaga, Wakil Dekan II, hingga persetujuan final Wakil Rektor II) yang dipetakan terhadap pagu <strong>Rencana Strategis (RENSTRA) UNMAS 2022–2026</strong>. Sesi ini turut dihadiri dosen pembimbing dan rekan-rekan mahasiswa magang lintas universitas.</p>\n          <p>Setelah sesi demo, mentor memberikan modul pemahaman mendalam terkait alur proses bisnis penganggaran. Hari-hari berikutnya difokuskan pada penyusunan dan revisi dokumen <em>Laporan Progres User Guide</em> yang mencakup panduan untuk role Rektor, Petinggi Unit, dan Staf Fakultas.</p>\n        </div>\n      </div>\n    "
   },
   {
     "id": "minggu-04-user-guide-sim-perencanaan-penganggaran-multi-role",
@@ -1601,8 +1601,8 @@ const BLOG_DATA = {
       title: "Sesi Demo SIM Penganggaran Bersama Pihak UNMAS",
       category: "Verifikasi Modul",
       date: "21 September – 07 Oktober 2026",
-      image: "assets/images/user-guide-report.svg",
-      caption: "Mengikuti pertemuan berkala demo sistem penganggaran dan perencanaan bersama mentor industri dan delegasi Universitas Mahasaraswati."
+      image: "assets/images/demo-sim-penganggaran-unmas.png",
+      caption: "Pertemuan daring demo fitur Review & Approval SIM Penganggaran UNMAS berbasis RENSTRA bersama tim pengembang PT Laksita Emi Saguna dan pimpinan universitas."
     },
     {
       id: 5,
