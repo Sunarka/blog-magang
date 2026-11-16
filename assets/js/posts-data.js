@@ -1524,7 +1524,7 @@ const BLOG_DATA = {
       "Sistem Anggaran",
       "UNMAS"
     ],
-    "image": "assets/images/testing-simkeu.svg",
+    "image": "assets/images/testcase-minggu-01.png",
     "summary": "Memulai program magang di PT Laksita Emi Saguna dengan orientasi perdana, pemahaman ruang lingkup sistem, serta penugasan pembuatan testcase dan laporan hasil pengujian sistem biaya anggaran Universitas Mahasaraswati Denpasar.",
     "objective": "Melaksanakan adaptasi lingkungan industri serta menyelesaikan rancangan dan laporan testcase pengujian modul sistem anggaran UNMAS.",
     "tasks": [
@@ -1566,7 +1566,7 @@ const BLOG_DATA = {
         "category": "Testing Web"
       }
     ],
-    "content": "\n      <div class=\"space-y-5\">\n        <div class=\"overflow-hidden rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm\">\n          <img src=\"assets/images/testing-simkeu.svg\" alt=\"Orientasi & Testcase Sistem Anggaran\" class=\"w-full h-auto object-cover\">\n        </div>\n        <div class=\"prose dark:prose-invert max-w-none space-y-4\">\n          <p>Program magang reguler di PT Laksita Emi Saguna resmi dimulai pada minggu pertama (24 – 28 Agustus 2026). Pada hari Rabu (26/08), mahasiswa mengikuti <strong>orientasi hari pertama</strong> yang dipandu oleh pimpinan dan mentor perusahaan, memperkenalkan alur kerja profesional, struktur organisasi tim, dan pengenalan produk perangkat lunak institusional.</p>\n          <p>Tugas teknis perdana yang diberikan adalah menyusun <strong>testcase pengujian sistem biaya anggaran Universitas Mahasaraswati</strong>. Eksekusi pengujian diselesaikan pada hari Kamis dan laporan komprehensif hasil pengujian diserahkan secara resmi pada hari Jumat (28/08/2026).</p>\n        </div>\n      </div>\n    "
+    "content": "\n      <div class=\"space-y-5\">\n        <div class=\"overflow-hidden rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm\">\n          <img src=\"assets/images/testcase-minggu-01.png\" alt=\"Pengujian Sistem Perencanaan - Testcase Sunarka (14/14 Selesai)\" class=\"w-full h-auto object-cover\">\n        </div>\n        <div class=\"prose dark:prose-invert max-w-none space-y-4\">\n          <p>Program magang reguler di PT Laksita Emi Saguna resmi dimulai pada minggu pertama (24 – 28 Agustus 2026). Pada hari Rabu (26/08), mahasiswa mengikuti <strong>orientasi hari pertama</strong> yang dipandu oleh pimpinan dan mentor perusahaan, memperkenalkan alur kerja profesional, struktur organisasi tim, dan pengenalan produk perangkat lunak institusional.</p>\n          <p>Tugas teknis perdana yang diberikan adalah menyusun dan mengeksekusi <strong>testcase pengujian sistem biaya anggaran (Sistem Perencanaan) Universitas Mahasaraswati</strong>. Eksekusi pengujian diselesaikan sebanyak 14 skenario (14/14 Lulus) mencakup validasi tingkatan role pimpinan (Rektor/WR, Dekan/WD) hingga unit pelaksana (Staff Universitas, Staff Fakultas, Koprodi/Staff Prodi) dengan laporan hasil pengujian diserahkan secara resmi pada hari Jumat (28/08/2026).</p>\n        </div>\n      </div>\n    "
   }
 ],
 
@@ -1574,11 +1574,11 @@ const BLOG_DATA = {
   gallery: [
     {
       id: 1,
-      title: "Orientasi & Testcase Sistem Anggaran UNMAS",
+      title: "Pengujian Sistem Perencanaan / Testcase Anggaran UNMAS",
       category: "Testing Web",
       date: "24 – 28 Agustus 2026",
-      image: "assets/images/testing-simkeu.svg",
-      caption: "Orientasi magang perdana di PT Laksita Emi Saguna dan penyelesaian dokumen testcase pengujian sistem biaya anggaran Universitas Mahasaraswati."
+      image: "assets/images/testcase-minggu-01.png",
+      caption: "Dokumentasi eksekusi pengujian sistem perencanaan dan anggaran UNMAS: 14/14 testcase lulus pengujian hak akses multi-role (Rektor, Dekan, Staff, Koprodi)."
     },
     {
       id: 2,
