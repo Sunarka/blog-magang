@@ -296,6 +296,7 @@ function renderPosts() {
       ${post.category} 
       minggu ${post.week} 
       ${post.tags ? post.tags.join(' ') : ''} 
+      ${post.dailyLogs ? post.dailyLogs.map(d => `${d.activity} ${d.day} ${d.date}`).join(' ') : ''}
     `.toLowerCase();
 
     return combinedText.includes(searchQuery);
@@ -334,6 +335,17 @@ function renderPosts() {
             <span class="text-slate-500 dark:text-slate-400 font-mono">${post.date}</span>
             <span class="text-slate-400">•</span>
             <span class="text-slate-600 dark:text-slate-300 font-medium">${post.category}</span>
+            ${post.dailyLogs ? `
+              <span class="text-slate-400">•</span>
+              <span class="px-1.5 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/70 text-emerald-600 dark:text-emerald-400 font-semibold font-mono text-[10px]">
+                ${post.dailyLogs.length} Catatan Harian
+              </span>
+            ` : ''}
+            ${post.status === 'On Progress' ? `
+              <span class="px-1.5 py-0.5 rounded bg-amber-50 dark:bg-amber-950/70 text-amber-600 dark:text-amber-400 font-bold text-[10px]">
+                On Progress
+              </span>
+            ` : ''}
           </div>
 
           <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white leading-snug hover:text-brand-blue transition-colors break-words">
