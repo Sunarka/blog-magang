@@ -1368,7 +1368,7 @@ const BLOG_DATA = {
       "Sistem Konseling",
       "Review Teknis"
     ],
-    "image": "assets/images/user-guide-review.svg",
+    "image": "assets/images/flowchart-sistem-konseling.png",
     "summary": "Melanjutkan penyempurnaan dokumen panduan pengguna SIM Prestasi dan Sistem Konseling UNMAS, melengkapi skenario khusus, serta memvalidasi kesesuaian petunjuk dengan update sistem terbaru.",
     "objective": "Menuntaskan draf akhir User Guide SIM Prestasi dan Sistem Konseling secara komprehensif.",
     "tasks": [
@@ -1429,7 +1429,7 @@ const BLOG_DATA = {
         "category": "User Guide"
       }
     ],
-    "content": "\n      <div class=\"space-y-5\">\n        <div class=\"overflow-hidden rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm\">\n          <img src=\"assets/images/user-guide-review.svg\" alt=\"Penyempurnaan Panduan SIM Prestasi & Konseling\" class=\"w-full h-auto object-cover\">\n        </div>\n        <div class=\"prose dark:prose-invert max-w-none space-y-4\">\n          <p>Minggu ke-3 difokuskan untuk menuntaskan seluruh bab panduan pada <strong>SIM Prestasi dan Sistem Konseling Universitas Mahasaraswati</strong>. Setiap alur operasional diuji kembali untuk memastikan tidak ada langkah navigasi yang terlewat.</p>\n          <p>Dokumen panduan ini dilengkapi dengan anotasi visual penunjuk tombol, format pengisian formulir prestasi akademik/non-akademik, serta prosedur reservasi bimbingan konseling mahasiswa. Di akhir pekan, naskah panduan berhasil difinalisasi dan diserahkan kepada mentor lapangan.</p>\n        </div>\n      </div>\n    "
+    "content": "\n      <div class=\"space-y-5\">\n        <div class=\"overflow-hidden rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-900 p-2 sm:p-4\">\n          <img src=\"assets/images/flowchart-sistem-konseling.png\" alt=\"Flowchart Alur Bimbingan Konseling Mahasiswa UNMAS\" class=\"w-full h-auto object-contain rounded-xl\">\n        </div>\n        <div class=\"prose dark:prose-invert max-w-none space-y-4\">\n          <p>Minggu ke-3 difokuskan untuk menuntaskan seluruh bab panduan pada <strong>SIM Prestasi dan Sistem Konseling Universitas Mahasaraswati</strong>. Setiap alur operasional diuji kembali untuk memastikan tidak ada langkah navigasi yang terlewat.</p>\n          <p>Dokumen panduan ini dilengkapi dengan diagram alur (flowchart) konseling berjenjang mulai dari pengajuan mahasiswa ke Pembimbing Akademik (PA), evaluasi Kaprodi, eskalasi ke Unit Layanan Konseling dan Inklusi (ULKI), hingga rujukan profesional ke Psikiater. Di akhir pekan, naskah panduan berhasil difinalisasi dan diserahkan kepada mentor lapangan.</p>\n        </div>\n      </div>\n    "
   },
   {
     "id": "minggu-02-pembuatan-user-guide-sim-prestasi-dan-konseling",
@@ -1446,7 +1446,7 @@ const BLOG_DATA = {
       "UNMAS",
       "Dokumentasi"
     ],
-    "image": "assets/images/user-guide-feeder.svg",
+    "image": "assets/images/flowchart-sistem-konseling.png",
     "summary": "Fokus penugasan pada penyusunan dokumen panduan pengguna (User Guide) untuk modul SIM Prestasi Mahasiswa dan Sistem Konseling Universitas Mahasaraswati Denpasar.",
     "objective": "Menghasilkan draf awal panduan teknis operasional SIM Prestasi dan Sistem Konseling secara terstruktur dan mudah dipahami pengguna.",
     "tasks": [
@@ -1507,7 +1507,7 @@ const BLOG_DATA = {
         "category": "User Guide"
       }
     ],
-    "content": "\n      <div class=\"space-y-5\">\n        <div class=\"overflow-hidden rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm\">\n          <img src=\"assets/images/user-guide-feeder.svg\" alt=\"Penyusunan User Guide SIM Prestasi & Konseling\" class=\"w-full h-auto object-cover\">\n        </div>\n        <div class=\"prose dark:prose-invert max-w-none space-y-4\">\n          <p>Memasuki minggu ke-2, mahasiswa mendapatkan penugasan teknis baru berupa penyusunan dokumen <strong>User Guide</strong> pada dua sistem layanan mahasiswa Universitas Mahasaraswati Denpasar: <strong>SIM Prestasi</strong> dan <strong>Sistem Konseling Kampus</strong>.</p>\n          <p>Pekerjaan dimulai dari eksplorasi langsung terhadap fitur pencatatan prestasi akademik/non-akademik mahasiswa serta modul bimbingan konseling. Setiap tahapan pengisian data diabadikan dalam bentuk tangkapan layar beranotasi agar mudah dipelajari oleh seluruh sivitas akademika.</p>\n        </div>\n      </div>\n    "
+    "content": "\n      <div class=\"space-y-5\">\n        <div class=\"overflow-hidden rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-900 p-2 sm:p-4\">\n          <img src=\"assets/images/flowchart-sistem-konseling.png\" alt=\"Alur Bimbingan & Sistem Konseling Mahasiswa UNMAS\" class=\"w-full h-auto object-contain rounded-xl\">\n        </div>\n        <div class=\"prose dark:prose-invert max-w-none space-y-4\">\n          <p>Memasuki minggu ke-2, mahasiswa mendapatkan penugasan teknis baru berupa penyusunan dokumen <strong>User Guide</strong> pada dua sistem layanan mahasiswa Universitas Mahasaraswati Denpasar: <strong>SIM Prestasi</strong> dan <strong>Sistem Konseling Kampus</strong>.</p>\n          <p>Pekerjaan dimulai dari eksplorasi langsung terhadap fitur pencatatan prestasi akademik/non-akademik mahasiswa serta modul bimbingan konseling. Seluruh alur dipetakan ke dalam bagan alir (flowchart) terpadu yang memuat alur penanganan masalah mahasiswa melalui Pembimbing Akademik, Kaprodi, hingga Unit Layanan Konseling dan Inklusi (ULKI).</p>\n        </div>\n      </div>\n    "
   },
   {
     "id": "minggu-01-orientasi-dan-testcase-sistem-anggaran",
@@ -1582,11 +1582,11 @@ const BLOG_DATA = {
     },
     {
       id: 2,
-      title: "Penyusunan User Guide SIM Prestasi & Konseling",
+      title: "Flowchart & User Guide SIM Prestasi & Konseling",
       category: "User Guide",
       date: "31 Agustus – 11 September 2026",
-      image: "assets/images/user-guide-feeder.svg",
-      caption: "Penyusunan panduan operasional pengguna untuk modul pencatatan prestasi mahasiswa dan reservasi bimbingan konseling UNMAS."
+      image: "assets/images/flowchart-sistem-konseling.png",
+      caption: "Pemodelan flowchart alur bimbingan konseling berjenjang (Mahasiswa, PA, Kaprodi, ULKI, Psikiater) dan dokumen User Guide SIM Prestasi UNMAS."
     },
     {
       id: 3,
