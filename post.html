@@ -118,7 +118,7 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="assets/js/posts-data.js?v=24"></script>
+  <script src="assets/js/posts-data.js?v=25"></script>
   <script src="assets/js/app.js?v=19"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -139,46 +139,6 @@
       }
 
       document.title = `${post.title} — Logbook Magang`;
-
-      // Build Testing Table HTML if any
-      let testingTableHtml = '';
-      if (post.testing && post.testing.length > 0) {
-        testingTableHtml = `
-          <div class="my-5 space-y-2.5">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-              <h3 class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">Tabel Matriks Skenario Pengujian (${post.testing.length} Skenario)</h3>
-              <span class="text-[11px] font-bold text-emerald-600 dark:text-emerald-400 font-mono">100% Passed</span>
-            </div>
-            
-            <div class="bg-slate-50 dark:bg-slate-950 rounded-xl sm:rounded-2xl border border-slate-200/80 dark:border-slate-800 overflow-hidden">
-              <div class="overflow-x-auto">
-                <table class="w-full text-left text-xs border-collapse min-w-[580px]">
-                  <thead>
-                    <tr class="bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-bold border-b border-slate-200/80 dark:border-slate-700">
-                      <th class="p-3 pl-4 w-16">Kode</th>
-                      <th class="p-3 w-28">Role</th>
-                      <th class="p-3">Aksi / Skenario</th>
-                      <th class="p-3">Hasil yang Diharapkan</th>
-                      <th class="p-3 pr-4 text-right w-20">Status</th>
-                    </tr>
-                  </thead>
-                  <tbody class="divide-y divide-slate-200/60 dark:divide-slate-800 text-slate-700 dark:text-slate-300">
-                    ${post.testing.map(t => `
-                      <tr class="hover:bg-white dark:hover:bg-slate-900/60 transition-colors">
-                        <td class="p-3 pl-4 font-mono font-bold text-brand-blue">${t.code}</td>
-                        <td class="p-3 font-semibold text-slate-900 dark:text-white">${t.role}</td>
-                        <td class="p-3 leading-relaxed">${t.action}</td>
-                        <td class="p-3 text-slate-600 dark:text-slate-400 leading-relaxed">${t.expected}</td>
-                        <td class="p-3 pr-4 text-right"><span class="px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold text-[11px]">${t.status}</span></td>
-                      </tr>
-                    `).join('')}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        `;
-      }
 
       document.getElementById('article-content').innerHTML = `
         <!-- Meta Tags & Category Header -->
@@ -224,44 +184,9 @@
           ${post.content || ''}
         </div>
 
-        <!-- Structured Logbook Breakdown (Cards) -->
-        <div class="mt-8 pt-8 border-t border-slate-100 dark:border-slate-800 space-y-6 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
-          <h3 class="text-sm sm:text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-brand-blue"></span>
-            <span>Rincian Struktur Aktivitas Magang</span>
-          </h3>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <!-- 1. Tujuan -->
-            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/70 dark:border-slate-700/70">
-              <span class="text-[11px] font-bold text-brand-blue dark:text-blue-400 block mb-1 uppercase tracking-wide">1. Tujuan Kegiatan</span>
-              <p class="text-slate-700 dark:text-slate-300">${post.objective || 'Pelaksanaan kegiatan magang sesuai target operasional industri.'}</p>
-            </div>
-
-            <!-- 2. Hasil & Dampak -->
-            <div class="p-4 rounded-xl bg-emerald-50/60 dark:bg-emerald-950/40 border border-emerald-200/80 dark:border-emerald-900/40">
-              <span class="text-[11px] font-bold text-emerald-700 dark:text-emerald-300 block mb-1 uppercase tracking-wide">2. Hasil & Dampak</span>
-              <p class="text-slate-700 dark:text-slate-300">${post.results || 'Target terselesaikan dengan baik sesuai spesifikasi.'}</p>
-            </div>
-          </div>
-
-          <!-- Pekerjaan Dilakukan List -->
-          ${post.tasks && post.tasks.length > 0 ? `
-            <div class="p-4 sm:p-5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/70 dark:border-slate-700/70">
-              <span class="text-[11px] font-bold text-brand-blue dark:text-blue-400 block mb-2 uppercase tracking-wide">Aktivitas & Pekerjaan yang Dilakukan:</span>
-              <ul class="space-y-2">
-                ${post.tasks.map(task => `
-                  <li class="flex items-start gap-2">
-                    <svg class="w-4 h-4 text-emerald-600 dark:text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                    <span>${task}</span>
-                  </li>
-                `).join('')}
-              </ul>
-            </div>
-          ` : ''}
-
-          <!-- Jadwal Kegiatan Harian Resmi Table -->
-          ${post.dailyLogs && post.dailyLogs.length > 0 ? `
+        <!-- Jadwal Kegiatan Harian Resmi Table -->
+        ${post.dailyLogs && post.dailyLogs.length > 0 ? `
+          <div class="mt-8 pt-8 border-t border-slate-100 dark:border-slate-800">
             <div class="p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 shadow-sm space-y-3">
               <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 pb-2 border-b border-slate-100 dark:border-slate-800">
                 <div class="flex items-center gap-2">
@@ -295,29 +220,8 @@
                 </table>
               </div>
             </div>
-          ` : ''}
-
-          <!-- Testing Table if present -->
-          ${testingTableHtml}
-
-          <!-- Kendala & Solusi -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div class="p-3.5 sm:p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700">
-              <span class="text-slate-400 font-bold block text-[10px] uppercase tracking-wider mb-1">Kendala Dihadapi:</span>
-              <p class="text-slate-700 dark:text-slate-300">${post.challenges || 'Tidak ditemukan kendala mayor.'}</p>
-            </div>
-            <div class="p-3.5 sm:p-4 rounded-xl bg-blue-50/60 dark:bg-blue-950/40 border border-blue-200/80 dark:border-blue-900/40">
-              <span class="text-brand-blue dark:text-blue-300 font-bold block text-[10px] uppercase tracking-wider mb-1">Tindakan / Solusi:</span>
-              <p class="text-slate-700 dark:text-slate-300">${post.solutions || 'Koordinasi berkala bersama mentor lapangan.'}</p>
-            </div>
           </div>
-
-          <!-- Pembelajaran -->
-          <div class="p-3.5 sm:p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/60">
-            <span class="text-brand-blue dark:text-blue-400 font-bold block text-[10px] uppercase tracking-wider mb-1">Pembelajaran & Wawasan Baru:</span>
-            <p class="text-slate-700 dark:text-slate-300">${post.learnings || 'Mendapatkan wawasan mengenai standar kualitas dan dokumentasi sistem skala enterprise.'}</p>
-          </div>
-        </div>
+        ` : ''}
 
         <!-- Tags Row -->
         <div class="mt-8 pt-5 border-t border-slate-100 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
