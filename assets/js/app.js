@@ -24,7 +24,16 @@ document.addEventListener('DOMContentLoaded', () => {
    ======================================================== */
 function initTheme() {
   const btn = document.getElementById('theme-btn');
-  const saved = localStorage.getItem('clean_theme');
+
+  // Bersihkan key lama jika sebelumnya tersimpan 'dark' padahal preferensi sistem saat ini adalah cerah
+  try {
+    const legacy = localStorage.getItem('clean_theme');
+    if (legacy === 'dark' && !window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      localStorage.removeItem('clean_theme');
+    }
+  } catch (e) {}
+
+  const saved = localStorage.getItem('blog_theme');
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
   if (saved === 'dark' || (!saved && prefersDark)) {
@@ -33,10 +42,21 @@ function initTheme() {
     document.documentElement.classList.remove('dark');
   }
 
+  // Listener perubahan tema sistem secara real-time
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('blog_theme')) {
+      if (e.matches) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
+  });
+
   if (btn) {
     btn.addEventListener('click', () => {
       const isDark = document.documentElement.classList.toggle('dark');
-      localStorage.setItem('clean_theme', isDark ? 'dark' : 'light');
+      localStorage.setItem('blog_theme', isDark ? 'dark' : 'light');
     });
   }
 }

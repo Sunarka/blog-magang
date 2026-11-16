@@ -9,6 +9,25 @@
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d6efd'/><path d='M9 13.5L16 9l7 4.5-7 4.5-7-4.5z M10 16.5v3.5c0 1.5 2.7 3 6 3s6-1.5 6-3v-3.5l-6 3.5-6-3.5z' fill='white'/></svg>">
 
+  <!-- Theme Init (Prevent FOUT & Sync with System Theme) -->
+  <script>
+    (function() {
+      try {
+        const legacy = localStorage.getItem('clean_theme');
+        if (legacy === 'dark' && !window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          localStorage.removeItem('clean_theme');
+        }
+        const saved = localStorage.getItem('blog_theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -29,7 +48,7 @@
   </script>
 
   <!-- Google Fonts & Custom CSS -->
-  <link rel="stylesheet" href="assets/css/style.css?v=18">
+  <link rel="stylesheet" href="assets/css/style.css?v=19">
 </head>
 <body class="bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col selection:bg-brand-blue selection:text-white antialiased">
 
@@ -696,8 +715,8 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="assets/js/posts-data.js?v=18"></script>
-  <script src="assets/js/app.js?v=18"></script>
+  <script src="assets/js/posts-data.js?v=19"></script>
+  <script src="assets/js/app.js?v=19"></script>
   <script>
     function handleContactSubmit(e) {
       e.preventDefault();
