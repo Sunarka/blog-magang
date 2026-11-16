@@ -118,7 +118,7 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="assets/js/posts-data.js?v=23"></script>
+  <script src="assets/js/posts-data.js?v=24"></script>
   <script src="assets/js/app.js?v=19"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -331,9 +331,9 @@
         </div>
       `;
 
-      // Previous and Next navigation
-      const prev = postIndex > 0 ? BLOG_DATA.posts[postIndex - 1] : null;
-      const next = postIndex < BLOG_DATA.posts.length - 1 ? BLOG_DATA.posts[postIndex + 1] : null;
+      // Previous (earlier in time, e.g. Minggu 10) and Next (later in time, e.g. Minggu 12) navigation
+      const prev = postIndex < BLOG_DATA.posts.length - 1 ? BLOG_DATA.posts[postIndex + 1] : null;
+      const next = postIndex > 0 ? BLOG_DATA.posts[postIndex - 1] : null;
 
       document.getElementById('post-nav').innerHTML = `
         ${prev ? `
