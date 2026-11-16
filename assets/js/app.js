@@ -51,7 +51,6 @@ function openMobileMenu() {
 
   toggleBtn.setAttribute('aria-expanded', 'true');
   toggleBtn.classList.add('is-open');
-  menu.classList.remove('mobile-menu-closed');
   menu.classList.add('mobile-menu-open');
 }
 
@@ -63,7 +62,6 @@ function closeMobileMenu() {
   toggleBtn.setAttribute('aria-expanded', 'false');
   toggleBtn.classList.remove('is-open');
   menu.classList.remove('mobile-menu-open');
-  menu.classList.add('mobile-menu-closed');
 }
 
 function initMobileMenu() {
@@ -99,44 +97,89 @@ function initMobileMenu() {
 }
 
 /* ========================================================
-   2.1. Header Dynamic Nav on Scroll
+   2.1. Header Dynamic Nav on Scroll & Scrollspy
    ======================================================== */
 function initHeaderNavScroll() {
   const desktopNav = document.getElementById('desktop-nav');
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const heroNav = document.getElementById('hero-nav');
-  const mobileMenu = document.getElementById('mobile-menu');
 
-  if (!desktopNav || !heroNav) return;
+  if (!heroNav) return;
 
-  function updateNavVisibility() {
+  let isNavVisible = false;
+  let ticking = false;
+
+  // Sections for Scrollspy
+  const sectionIds = ['home', 'skills', 'projects', 'blog', 'dokumentasi', 'contact'];
+  const navLinks = desktopNav ? desktopNav.querySelectorAll('.nav-link') : [];
+
+  function updateScrollState() {
     const heroNavRect = heroNav.getBoundingClientRect();
-    // Muncul di header saat tombol navigasi hero di bawah sudah terscroll ke atas melewati navbar (tinggi navbar 56px)
-    const isPastHero = heroNavRect.bottom <= 56;
 
-    if (isPastHero) {
-      desktopNav.classList.remove('nav-hidden');
-      desktopNav.classList.add('nav-visible');
+    // Hysteresis threshold to prevent rapid flickering near the edge
+    const showThreshold = 56;
+    const hideThreshold = 76;
+
+    if (!isNavVisible && heroNavRect.bottom <= showThreshold) {
+      isNavVisible = true;
+      if (desktopNav) {
+        desktopNav.classList.remove('nav-hidden');
+        desktopNav.classList.add('nav-visible');
+      }
       if (mobileMenuBtn) {
         mobileMenuBtn.classList.remove('nav-hidden');
         mobileMenuBtn.classList.add('nav-visible');
       }
-    } else {
-      desktopNav.classList.add('nav-hidden');
-      desktopNav.classList.remove('nav-visible');
+    } else if (isNavVisible && heroNavRect.bottom > hideThreshold) {
+      isNavVisible = false;
+      if (desktopNav) {
+        desktopNav.classList.add('nav-hidden');
+        desktopNav.classList.remove('nav-visible');
+      }
       if (mobileMenuBtn) {
         mobileMenuBtn.classList.add('nav-hidden');
         mobileMenuBtn.classList.remove('nav-visible');
-        if (mobileMenu && mobileMenu.classList.contains('mobile-menu-open')) {
-          closeMobileMenu();
+        closeMobileMenu();
+      }
+    }
+
+    // Scrollspy: highlight active section in desktop nav
+    if (isNavVisible && navLinks.length > 0) {
+      const scrollPos = window.scrollY + 120;
+      let currentSectionId = '';
+
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const sec = document.getElementById(sectionIds[i]);
+        if (sec && sec.offsetTop <= scrollPos) {
+          currentSectionId = sectionIds[i];
+          break;
         }
       }
+
+      navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === '#' + currentSectionId) {
+          link.classList.add('active-nav-link');
+        } else {
+          link.classList.remove('active-nav-link');
+        }
+      });
     }
   }
 
-  window.addEventListener('scroll', updateNavVisibility, { passive: true });
-  window.addEventListener('resize', updateNavVisibility, { passive: true });
-  updateNavVisibility();
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        updateScrollState();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  updateScrollState();
 }
 
 /* ========================================================

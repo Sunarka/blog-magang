@@ -95,14 +95,20 @@ img, svg, video {
   pointer-events: auto;
 }
 
-/* Header Dynamic Nav on Scroll */
+/* ========================================================
+   Header Dynamic Nav on Scroll (Ultra-Smooth Animation)
+   ======================================================== */
+
+/* Desktop Nav Capsule */
 #desktop-nav {
-  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 #desktop-nav.nav-hidden {
   opacity: 0;
-  transform: translateY(-12px) scale(0.96);
+  transform: translateY(-8px) scale(0.96);
   pointer-events: none;
 }
 
@@ -112,63 +118,49 @@ img, svg, video {
   pointer-events: auto;
 }
 
-#desktop-nav.nav-visible a {
-  animation: desktopNavEntrance 0.35s cubic-bezier(0.16, 1, 0.3, 1) backwards;
-}
-#desktop-nav.nav-visible a:nth-child(1) { animation-delay: 0.03s; }
-#desktop-nav.nav-visible a:nth-child(2) { animation-delay: 0.06s; }
-#desktop-nav.nav-visible a:nth-child(3) { animation-delay: 0.09s; }
-#desktop-nav.nav-visible a:nth-child(4) { animation-delay: 0.12s; }
-#desktop-nav.nav-visible a:nth-child(5) { animation-delay: 0.15s; }
-#desktop-nav.nav-visible a:nth-child(6) { animation-delay: 0.18s; }
-
-@keyframes desktopNavEntrance {
-  0% {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 #desktop-nav:focus-within {
   opacity: 1 !important;
   transform: translateY(0) scale(1) !important;
   pointer-events: auto !important;
 }
 
+/* Active Nav Link (Scrollspy) */
+#desktop-nav .nav-link.active-nav-link {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
 /* Mobile Menu Button on Scroll */
 #mobile-menu-btn {
-  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
-              max-width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              padding 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              margin 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 #mobile-menu-btn.nav-hidden {
   opacity: 0;
-  transform: translateY(-10px) scale(0.85);
+  transform: scale(0.85) translateY(-4px);
   pointer-events: none;
-  max-width: 0;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  margin-left: 0 !important;
-  border-color: transparent !important;
-  overflow: hidden;
+  visibility: hidden;
 }
 
 #mobile-menu-btn.nav-visible {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  transform: scale(1) translateY(0);
   pointer-events: auto;
-  max-width: 120px;
-  overflow: visible;
+  visibility: visible;
 }
 
 /* Mobile Menu Icon Morphing (Hamburger to X) */
+#mobile-menu-btn .icon-hamburger,
+#mobile-menu-btn .icon-close {
+  will-change: transform, opacity;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), 
+              opacity 0.2s ease;
+}
+
 #mobile-menu-btn.is-open .icon-hamburger {
   opacity: 0;
   transform: rotate(90deg) scale(0.5);
@@ -179,45 +171,51 @@ img, svg, video {
   transform: rotate(0) scale(1);
 }
 
-/* Mobile Drawer Menu Animation */
-#mobile-menu {
-  max-height: 0;
+/* ========================================================
+   Mobile Drawer Menu (Native CSS Grid Accordion)
+   ======================================================== */
+.mobile-menu-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
   opacity: 0;
-  transform: translateY(-8px);
-  overflow: hidden;
+  will-change: grid-template-rows, opacity;
+  transition: grid-template-rows 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.25s ease;
   pointer-events: none;
-  transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 0.25s ease,
-              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              padding 0.3s ease;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
 }
 
-#mobile-menu.mobile-menu-open {
-  max-height: 420px;
+.mobile-menu-wrapper.mobile-menu-open {
+  grid-template-rows: 1fr;
   opacity: 1;
-  transform: translateY(0);
   pointer-events: auto;
-  padding-top: 0.625rem !important;
-  padding-bottom: 0.75rem !important;
+}
+
+.mobile-menu-inner {
+  overflow: hidden;
+  transform: translateY(-8px);
+  will-change: transform;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-menu-wrapper.mobile-menu-open .mobile-menu-inner {
+  transform: translateY(0);
 }
 
 /* Staggered Links in Mobile Menu */
-#mobile-menu.mobile-menu-open a {
-  animation: mobileMenuItemIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+.mobile-menu-wrapper.mobile-menu-open a {
+  animation: mobileMenuItemIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) backwards;
 }
-#mobile-menu.mobile-menu-open a:nth-child(1) { animation-delay: 0.04s; }
-#mobile-menu.mobile-menu-open a:nth-child(2) { animation-delay: 0.08s; }
-#mobile-menu.mobile-menu-open a:nth-child(3) { animation-delay: 0.12s; }
-#mobile-menu.mobile-menu-open a:nth-child(4) { animation-delay: 0.16s; }
-#mobile-menu.mobile-menu-open a:nth-child(5) { animation-delay: 0.20s; }
-#mobile-menu.mobile-menu-open a:nth-child(6) { animation-delay: 0.24s; }
+.mobile-menu-wrapper.mobile-menu-open a:nth-child(1) { animation-delay: 0.03s; }
+.mobile-menu-wrapper.mobile-menu-open a:nth-child(2) { animation-delay: 0.06s; }
+.mobile-menu-wrapper.mobile-menu-open a:nth-child(3) { animation-delay: 0.09s; }
+.mobile-menu-wrapper.mobile-menu-open a:nth-child(4) { animation-delay: 0.12s; }
+.mobile-menu-wrapper.mobile-menu-open a:nth-child(5) { animation-delay: 0.15s; }
+.mobile-menu-wrapper.mobile-menu-open a:nth-child(6) { animation-delay: 0.18s; }
 
 @keyframes mobileMenuItemIn {
   from {
     opacity: 0;
-    transform: translateX(-14px);
+    transform: translateX(-10px);
   }
   to {
     opacity: 1;
