@@ -163,16 +163,36 @@ function initHeaderNavScroll() {
       closeMobileMenu();
     }
 
-    // Scrollspy: highlight active section in desktop nav
+    // Scrollspy: highlight active section in desktop nav & mobile menu
     if (isNavVisible && navLinks.length > 0) {
-      const scrollPos = window.scrollY + 120;
+      const scrollY = window.scrollY || document.documentElement.scrollTop;
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      const docHeight = document.documentElement.scrollHeight;
+
       let currentSectionId = '';
 
-      for (let i = sectionIds.length - 1; i >= 0; i--) {
-        const sec = document.getElementById(sectionIds[i]);
-        if (sec && sec.offsetTop <= scrollPos) {
-          currentSectionId = sectionIds[i];
-          break;
+      // 1. Prioritas paling bawah: Jika user telah scroll mendekati/mencapai dasar halaman (Contact Me)
+      if (scrollY + viewportHeight >= docHeight - 80) {
+        currentSectionId = sectionIds[sectionIds.length - 1]; // 'contact'
+      } else {
+        // 2. Deteksi posisi section yang sedang aktif di viewport (garis picu dinamis)
+        const triggerPoint = Math.min(220, viewportHeight * 0.35);
+
+        for (let i = sectionIds.length - 1; i >= 0; i--) {
+          const sec = document.getElementById(sectionIds[i]);
+          if (sec) {
+            const rect = sec.getBoundingClientRect();
+            // Section aktif jika bagian atasnya telah mencapai atau melewati garis picu dan belum keluar layar
+            if (rect.top <= triggerPoint && rect.bottom > 80) {
+              currentSectionId = sectionIds[i];
+              break;
+            }
+          }
+        }
+
+        // Fallback default ke 'home' jika di area paling atas
+        if (!currentSectionId) {
+          currentSectionId = sectionIds[0];
         }
       }
 
@@ -184,6 +204,20 @@ function initHeaderNavScroll() {
           link.classList.remove('active-nav-link');
         }
       });
+
+      // Sinkronkan juga penanda aktif pada menu mobile jika terbuka
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileMenu) {
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href === '#' + currentSectionId) {
+            link.classList.add('bg-white/20', 'font-bold');
+          } else {
+            link.classList.remove('bg-white/20', 'font-bold');
+          }
+        });
+      }
     }
   }
 
