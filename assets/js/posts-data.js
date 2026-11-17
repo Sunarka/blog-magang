@@ -575,7 +575,7 @@ const BLOG_DATA = {
     "day": "Rabu",
     "date": "11/11/2026",
     "time": "09.00-17.00",
-    "activity": "Mendapatkan tugas membuat Flowmap Teknis per prosedur dari SIM Penganggaran Universitas Mahasaraswati",
+    "activity": "Melakukan revisi tugas membuat Flowmap Teknis per prosedur dari SIM Penganggaran Universitas Mahasaraswati",
     "week": 12,
     "category": "Dokumentasi Sistem"
   },
@@ -584,7 +584,7 @@ const BLOG_DATA = {
     "day": "Kamis",
     "date": "12/11/2026",
     "time": "09.00-17.00",
-    "activity": "Melanjutkan tugas membuat Flowmap Teknis per prosedur dari SIM Penganggaran Universitas Mahasaraswati",
+    "activity": "Melanjutkan revisi tugas membuat Flowmap Teknis per prosedur dari SIM Penganggaran Universitas Mahasaraswati",
     "week": 12,
     "category": "Dokumentasi Sistem"
   },
@@ -593,7 +593,7 @@ const BLOG_DATA = {
     "day": "Jumat",
     "date": "13/11/2026",
     "time": "09.00-17.00",
-    "activity": "Melanjutkan tugas membuat Flowmap Teknis per prosedur dari SIM Penganggaran Universitas Mahasaraswati",
+    "activity": "Melanjutkan revisi tugas membuat Flowmap Teknis per prosedur dari SIM Penganggaran Universitas Mahasaraswati",
     "week": 12,
     "category": "Dokumentasi Sistem"
   },
@@ -602,7 +602,7 @@ const BLOG_DATA = {
     "day": "Senin",
     "date": "16/11/2026",
     "time": "09.00-17.00",
-    "activity": "Melanjutkan tugas membuat Flowmap Teknis per prosedur dari SIM Penganggaran Universitas Mahasaraswati",
+    "activity": "Melanjutkan revisi tugas membuat Flowmap Teknis per prosedur dari SIM Penganggaran Universitas Mahasaraswati",
     "week": 13,
     "category": "Dokumentasi Sistem"
   }
@@ -614,21 +614,22 @@ const BLOG_DATA = {
     "id": "minggu-13-melanjutkan-pembuatan-flowmap-teknis-per-prosedur",
     "week": 13,
     "category": "Dokumentasi Sistem",
-    "title": "Minggu 13: Melanjutkan Pembuatan Flowmap Teknis per Prosedur SIM Penganggaran UNMAS",
+    "title": "Minggu 13: Melanjutkan Revisi Tugas Flowmap Teknis per Prosedur SIM Penganggaran UNMAS",
     "date": "16 – 20 November 2026",
     "status": "On Progress",
-    "tag": "Flowmap Teknis Prosedur",
+    "tag": "Revisi Flowmap Teknis",
     "tags": [
       "Dokumentasi Sistem",
       "Flowmap Teknis",
-      "Prosedur Sistem",
+      "Revisi Prosedur",
       "SIM Penganggaran",
       "On Progress"
     ],
     "image": "assets/images/evaluasi-integrasi.svg",
-    "summary": "Memasuki minggu ke-13 (hari kerja ke-59), aktivitas difokuskan pada kelanjutan penugasan pembuatan Flowmap Teknis per Prosedur SIM Penganggaran UNMAS, merinci alur validasi pencairan dana, verifikasi bukti SPJ, dan mekanisme pelaporan anggaran.",
-    "objective": "Melanjutkan dan menyempurnakan penggambaran diagram alir teknis (flowmap) per prosedur operasional pada SIM Penganggaran Universitas Mahasaraswati.",
+    "summary": "Memasuki minggu ke-13 (hari kerja ke-59), aktivitas difokuskan pada kelanjutan revisi tugas membuat Flowmap Teknis per Prosedur SIM Penganggaran UNMAS, merinci alur validasi pencairan dana, verifikasi bukti SPJ, dan mekanisme pelaporan anggaran.",
+    "objective": "Melanjutkan dan menyempurnakan revisi diagram alir teknis (flowmap) per prosedur operasional pada SIM Penganggaran Universitas Mahasaraswati.",
     "tasks": [
+      "Melanjutkan revisi tugas membuat Flowmap Teknis per prosedur dari SIM Penganggaran UNMAS (Senin, 16/11).",
       "Menganalisis alur data dan dokumen pada prosedur pencairan dana kegiatan fakultas.",
       "Melanjutkan pemetaan swimlane diagram teknis untuk prosedur validasi Surat Pertanggungjawaban (SPJ) pada unit keuangan.",
       "Mengidentifikasi kondisi penolakan berkas dan cabang pengembalian sisa anggaran (silpa) ke kas universitas.",
@@ -644,7 +645,7 @@ const BLOG_DATA = {
         "day": "Senin",
         "date": "16/11/2026",
         "time": "09.00-17.00",
-        "activity": "Melanjutkan tugas membuat Flowmap Teknis per prosedur dari SIM Penganggaran Universitas Mahasaraswati",
+        "activity": "Melanjutkan revisi tugas membuat Flowmap Teknis per prosedur dari SIM Penganggaran Universitas Mahasaraswati",
         "week": 13,
         "category": "Dokumentasi Sistem"
       }
@@ -655,26 +656,26 @@ const BLOG_DATA = {
     "id": "minggu-12-penugasan-flowmap-teknis-per-prosedur-sim-anggaran",
     "week": 12,
     "category": "Dokumentasi Sistem",
-    "title": "Minggu 12: Penyelesaian Dokumen & Penugasan Baru Flowmap Teknis per Prosedur SIM Anggaran",
+    "title": "Minggu 12: Penyelesaian Dokumen & Revisi Tugas Flowmap Teknis per Prosedur SIM Anggaran",
     "date": "09 – 13 November 2026",
     "status": "Terverifikasi",
-    "tag": "Flowmap Teknis Prosedur",
+    "tag": "Revisi Flowmap Teknis",
     "tags": [
       "Dokumentasi Sistem",
       "Flowmap Teknis",
-      "Prosedur Sistem",
+      "Revisi Prosedur",
       "SIM Penganggaran",
-      "Penugasan Baru"
+      "UNMAS"
     ],
     "image": "assets/images/testing-simkeu.svg",
-    "summary": "Menunggu dan menuntaskan feedback akhir mentor atas glosarium dan flowmap, kemudian menerima penugasan baru yang lebih mendalam: Pembuatan Flowmap Teknis per Prosedur dari SIM Penganggaran Universitas Mahasaraswati.",
-    "objective": "Menyelesaikan seluruh catatan revisi dokumen sebelumnya dan memulai perancangan flowmap teknis modular untuk setiap prosedur operasional sistem.",
+    "summary": "Menunggu dan menuntaskan feedback akhir mentor atas glosarium dan flowmap, kemudian melakukan serta melanjutkan revisi tugas membuat Flowmap Teknis per Prosedur dari SIM Penganggaran Universitas Mahasaraswati.",
+    "objective": "Menyelesaikan seluruh catatan revisi dokumen sebelumnya dan melakukan revisi flowmap teknis modular untuk setiap prosedur operasional sistem.",
     "tasks": [
       "Menunggu arahan dan masukan tambahan dari mentor lapangan terkait revisi flowmap dan glosarium (Senin, 09/11).",
       "Menyelesaikan dan mengunci draf final Glosarium dan Flowmap penganggaran (Selasa, 10/11).",
-      "Menerima penugasan baru: Pembuatan Flowmap Teknis per Prosedur SIM Penganggaran UNMAS (Rabu, 11/11).",
-      "Merancang modul flowmap untuk prosedur pengajuan TOR dan RAB kegiatan (Kamis, 12/11).",
-      "Melanjutkan penyusunan flowmap untuk prosedur verifikasi dan telaah anggaran fakultas (Jumat, 13/11)."
+      "Melakukan revisi tugas membuat Flowmap Teknis per prosedur dari SIM Penganggaran UNMAS (Rabu, 11/11).",
+      "Melanjutkan revisi tugas membuat Flowmap Teknis per prosedur dari SIM Penganggaran UNMAS (Kamis, 12/11).",
+      "Melanjutkan revisi tugas membuat Flowmap Teknis per prosedur dari SIM Penganggaran UNMAS (Jumat, 13/11)."
     ],
     "results": "Terselesaikannya dokumen Glosarium resmi serta terbitnya draf awal Flowmap Teknis Prosedur Pengajuan & Verifikasi Anggaran UNMAS.",
     "challenges": "Banyaknya detail kondisi validasi nominal anggaran per akun belanja mata anggaran yang harus divisualisasikan tanpa membuat diagram menjadi ruwet.",
@@ -704,7 +705,7 @@ const BLOG_DATA = {
         "day": "Rabu",
         "date": "11/11/2026",
         "time": "09.00-17.00",
-        "activity": "Mendapatkan tugas membuat Flowmap Teknis per prosedur dari SIM Penganggaran Universitas Mahasaraswati",
+        "activity": "Melakukan revisi tugas membuat Flowmap Teknis per prosedur dari SIM Penganggaran Universitas Mahasaraswati",
         "week": 12,
         "category": "Dokumentasi Sistem"
       },
@@ -713,7 +714,7 @@ const BLOG_DATA = {
         "day": "Kamis",
         "date": "12/11/2026",
         "time": "09.00-17.00",
-        "activity": "Melanjutkan tugas membuat Flowmap Teknis per prosedur dari SIM Penganggaran Universitas Mahasaraswati",
+        "activity": "Melanjutkan revisi tugas membuat Flowmap Teknis per prosedur dari SIM Penganggaran Universitas Mahasaraswati",
         "week": 12,
         "category": "Dokumentasi Sistem"
       },
@@ -722,7 +723,7 @@ const BLOG_DATA = {
         "day": "Jumat",
         "date": "13/11/2026",
         "time": "09.00-17.00",
-        "activity": "Melanjutkan tugas membuat Flowmap Teknis per prosedur dari SIM Penganggaran Universitas Mahasaraswati",
+        "activity": "Melanjutkan revisi tugas membuat Flowmap Teknis per prosedur dari SIM Penganggaran Universitas Mahasaraswati",
         "week": 12,
         "category": "Dokumentasi Sistem"
       }
@@ -1630,11 +1631,11 @@ const BLOG_DATA = {
     },
     {
       id: 8,
-      title: "Flowmap Teknis per Prosedur SIM Penganggaran",
+      title: "Revisi Flowmap Teknis per Prosedur SIM Penganggaran",
       category: "Dokumentasi Sistem",
       date: "11 – 16 November 2026",
       image: "assets/images/testing-simkeu.svg",
-      caption: "Penugasan tingkat lanjut pembuatan diagram alir teknis (flowmap) modular per prosedur operasional penganggaran kampus (Minggu 13 Berjalan)."
+      caption: "Melakukan dan melanjutkan revisi penugasan pembuatan Flowmap Teknis per prosedur dari SIM Penganggaran Universitas Mahasaraswati (Minggu 13 Berjalan)."
     }
   ]
 };
