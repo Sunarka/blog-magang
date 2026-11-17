@@ -614,31 +614,32 @@ const BLOG_DATA = {
     "id": "minggu-13-melanjutkan-pembuatan-flowmap-teknis-per-prosedur",
     "week": 13,
     "category": "Dokumentasi Sistem",
-    "title": "Minggu 13: Melanjutkan Revisi Tugas Flowmap Teknis per Prosedur SIM Penganggaran UNMAS",
+    "title": "Minggu 13: Melanjutkan Revisi Tugas Flowmap Teknis SIM Penganggaran & Monev Ke-2 Dosen Pembimbing",
     "date": "16 – 20 November 2026",
     "status": "On Progress",
     "tag": "Revisi Flowmap Teknis",
     "tags": [
+      "Monev Magang",
+      "Dosen Pembimbing",
       "Dokumentasi Sistem",
       "Flowmap Teknis",
-      "Revisi Prosedur",
       "SIM Penganggaran",
       "On Progress"
     ],
-    "image": "assets/images/evaluasi-integrasi.svg",
-    "summary": "Memasuki minggu ke-13 (hari kerja ke-59), aktivitas difokuskan pada kelanjutan revisi tugas membuat Flowmap Teknis per Prosedur SIM Penganggaran UNMAS, merinci alur validasi pencairan dana, verifikasi bukti SPJ, dan mekanisme pelaporan anggaran.",
-    "objective": "Melanjutkan dan menyempurnakan revisi diagram alir teknis (flowmap) per prosedur operasional pada SIM Penganggaran Universitas Mahasaraswati.",
+    "image": "assets/images/monev-kedua-dosen-pembimbing.jpg",
+    "summary": "Memasuki minggu ke-13, aktivitas diisi dengan pelaksanaan sesi Monitoring dan Evaluasi (Monev) ke-2 bersama Dosen Pembimbing Lapangan Undiksha serta kelanjutan revisi tugas membuat Flowmap Teknis per Prosedur SIM Penganggaran UNMAS.",
+    "objective": "Melanjutkan dan menyempurnakan revisi diagram alir teknis (flowmap) per prosedur operasional SIM Penganggaran UNMAS serta mengikuti Monev tahap ke-2 bersama dosen pembimbing.",
     "tasks": [
       "Melanjutkan revisi tugas membuat Flowmap Teknis per prosedur dari SIM Penganggaran UNMAS (Senin, 16/11).",
-      "Menganalisis alur data dan dokumen pada prosedur pencairan dana kegiatan fakultas.",
-      "Melanjutkan pemetaan swimlane diagram teknis untuk prosedur validasi Surat Pertanggungjawaban (SPJ) pada unit keuangan.",
-      "Mengidentifikasi kondisi penolakan berkas dan cabang pengembalian sisa anggaran (silpa) ke kas universitas.",
-      "Menyelaraskan penomoran kode prosedur dengan dokumen arsitektur alur kerja global."
+      "Mengikuti sesi Monitoring dan Evaluasi (Monev) Tahap Ke-2 bersama Dosen Pembimbing Lapangan Undiksha di kantor PT Laksita Emi Saguna (Selasa, 17/11).",
+      "Mempresentasikan progres revisi draf Flowmap Teknis dan diagram swimlane per prosedur kepada dosen pembimbing.",
+      "Menerima arahan dan feedback akademik dari dosen pembimbing terkait penyusunan laporan magang dan capaian kompetensi industri.",
+      "Melanjutkan pemetaan alur data prosedur validasi Surat Pertanggungjawaban (SPJ) pada unit keuangan."
     ],
-    "results": "Terselesaikannya pemetaan prosedur validasi pencairan dan verifikasi SPJ pada lembar kerja Flowmap Teknis per tanggal 16 November 2026.",
+    "results": "Terlaksananya sesi Monev ke-2 bersama Dosen Pembimbing Undiksha serta terselesaikannya pemetaan prosedur validasi pencairan dan verifikasi SPJ pada lembar kerja Flowmap Teknis.",
     "challenges": "Menjaga konsistensi simbol dan granularitas diagram agar tetap informatif bagi pengembang backend maupun staf keuangan.",
     "solutions": "Menerapkan standar notasi BPMN/ANSI dengan pembagian jalur peran (swimlane) terpisah antara Pemohon, Verifikator, dan Bendahara.",
-    "learnings": "Ketelitian dalam merinci setiap titik pengambilan keputusan (decision point) sangat penting untuk mencegah terjadinya kebocoran logika alur operasional.",
+    "learnings": "Ketelitian dalam merinci setiap titik pengambilan keputusan (decision point) sangat penting untuk mencegah terjadinya kebocoran logika alur operasional, serta masukan dari dosen pembimbing memperkaya kualitas dokumentasi akademik.",
     "dailyLogs": [
       {
         "no": 59,
@@ -650,7 +651,7 @@ const BLOG_DATA = {
         "category": "Dokumentasi Sistem"
       }
     ],
-    "content": "\n      <div class=\"space-y-5\">\n        <div class=\"overflow-hidden rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm\">\n          <img src=\"assets/images/evaluasi-integrasi.svg\" alt=\"Flowmap Teknis Prosedur SIM Penganggaran\" class=\"w-full h-auto object-cover\">\n        </div>\n        <div class=\"prose dark:prose-invert max-w-none space-y-4\">\n          <p>Pada awal minggu ke-13 (Senin, 16 November 2026), kegiatan magang difokuskan pada kelanjutan tugas strategis yang diberikan oleh mentor industri: <strong>Pembuatan Flowmap Teknis per Prosedur dari SIM Penganggaran Universitas Mahasaraswati</strong>.</p>\n          <p>Tugas ini merupakan kelanjutan dari standardisasi dokumentasi sistem setelah rampungnya penyusunan Glosarium istilah dan diagram alur kerja global di minggu-minggu sebelumnya. Melalui flowmap teknis per prosedur, setiap tahapan transaksi anggaran dipecah menjadi prosedur granular yang siap dijadikan acuan pengkodean oleh tim programmer serta panduan operasional bagi para staf unit dan biro keuangan UNMAS.</p>\n          <div class=\"p-4 rounded-xl bg-blue-50/70 dark:bg-blue-950/40 border border-blue-200/80 dark:border-blue-900/40\">\n            <h4 class=\"font-bold text-xs text-brand-blue dark:text-blue-300 uppercase tracking-wider mb-1\">Fokus Aktivitas Hari Ini (Senin, 16/11/2026)</h4>\n            <p class=\"text-xs text-slate-700 dark:text-slate-300\">Merinci prosedur validasi berkas Surat Pertanggungjawaban (SPJ) anggaran dan mekanisme pengembalian sisa dana riil belanja kegiatan ke rekening kas universitas.</p>\n          </div>\n        </div>\n      </div>\n    "
+    "content": "\n      <div class=\"space-y-5\">\n        <div class=\"overflow-hidden rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm bg-slate-900 p-2 sm:p-4\">\n          <img src=\"assets/images/monev-kedua-dosen-pembimbing.jpg\" alt=\"Sesi Monitoring dan Evaluasi Ke-2 Bersama Dosen Pembimbing Lapangan Undiksha di PT Laksita Emi Saguna\" class=\"w-full h-auto object-contain rounded-xl max-h-[520px] mx-auto\">\n        </div>\n        <div class=\"prose dark:prose-invert max-w-none space-y-4\">\n          <p>Pada minggu ke-13 (Selasa, 17 November 2026), mahasiswa magang di PT Laksita Emi Saguna mengikuti agenda penting yaitu <strong>Monitoring dan Evaluasi (Monev) Tahap Ke-2</strong> bersama Dosen Pembimbing Lapangan dari Program Studi S1 Ilmu Komputer, Universitas Pendidikan Ganesha (Undiksha).</p>\n          <p>Dalam pertemuan tatap muka di kantor mitra ini, mahasiswa mempresentasikan perkembangan penugasan proyek dan dokumentasi teknis yang telah dikerjakan, khususnya kelanjutan <strong>Revisi Tugas Pembuatan Flowmap Teknis per Prosedur SIM Penganggaran Universitas Mahasaraswati</strong>. Pembahasan mencakup perincian alur validasi pengajuan dana, pemisahan swimlane hak akses, mekanisme verifikasi Surat Pertanggungjawaban (SPJ), hingga integrasi laporan realisasi anggaran.</p>\n          <p>Dosen pembimbing memberikan apresiasi dan arahan strategis terkait penyusunan laporan akhir magang serta penyelarasan luaran teknis dengan capaian pembelajaran program magang industri. Agenda dilanjutkan dengan sesi foto bersama dan diskusi lanjutan pengerjaan modul sistem.</p>\n          <div class=\"p-4 rounded-xl bg-blue-50/70 dark:bg-blue-950/40 border border-blue-200/80 dark:border-blue-900/40\">\n            <h4 class=\"font-bold text-xs text-brand-blue dark:text-blue-300 uppercase tracking-wider mb-1\">Fokus Aktivitas Minggu ke-13 (16 – 20 November 2026)</h4>\n            <p class=\"text-xs text-slate-700 dark:text-slate-300\">Pelaksanaan Monev ke-2 bersama Dosen Pembimbing Lapangan Undiksha serta merinci prosedur validasi berkas Surat Pertanggungjawaban (SPJ) anggaran dan penyesuaian alur teknis SIM Penganggaran UNMAS.</p>\n          </div>\n        </div>\n      </div>\n    "
   },
   {
     "id": "minggu-12-penugasan-flowmap-teknis-per-prosedur-sim-anggaran",
@@ -1607,11 +1608,11 @@ const BLOG_DATA = {
     },
     {
       id: 5,
-      title: "Monitoring & Evaluasi Bersama Dosen Pembimbing Undiksha",
+      title: "Monitoring & Evaluasi Ke-1 Bersama Dosen Pembimbing Undiksha",
       category: "Monev Magang",
-      date: "Oktober – November 2026",
+      date: "Oktober 2026",
       image: "assets/images/monev-dosen-pembimbing.jpg",
-      caption: "Sesi Monitoring dan Evaluasi (Monev) kemajuan magang mahasiswa di kantor PT Laksita Emi Saguna bersama Dosen Pembimbing Lapangan dari Program Studi S1 Ilmu Komputer Undiksha."
+      caption: "Sesi Monitoring dan Evaluasi (Monev) tahap pertama kemajuan magang mahasiswa di kantor PT Laksita Emi Saguna bersama Dosen Pembimbing Lapangan dari Program Studi S1 Ilmu Komputer Undiksha."
     },
     {
       id: 6,
@@ -1636,6 +1637,14 @@ const BLOG_DATA = {
       date: "11 – 16 November 2026",
       image: "assets/images/testing-simkeu.svg",
       caption: "Melakukan dan melanjutkan revisi penugasan pembuatan Flowmap Teknis per prosedur dari SIM Penganggaran Universitas Mahasaraswati (Minggu 13 Berjalan)."
+    },
+    {
+      id: 9,
+      title: "Monitoring & Evaluasi Ke-2 Bersama Dosen Pembimbing Undiksha",
+      category: "Monev Magang",
+      date: "17 November 2026",
+      image: "assets/images/monev-kedua-dosen-pembimbing.jpg",
+      caption: "Sesi Monitoring dan Evaluasi (Monev) tahap kedua kemajuan pelaksanaan program magang mahasiswa di kantor PT Laksita Emi Saguna bersama Dosen Pembimbing Lapangan dari Program Studi S1 Ilmu Komputer Undiksha."
     }
   ]
 };
