@@ -123,6 +123,7 @@ function initHeaderNavScroll() {
   const desktopNav = document.getElementById('desktop-nav');
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const heroNav = document.getElementById('hero-nav');
+  const brandAvatar = document.getElementById('nav-brand-avatar');
 
   if (!heroNav) return;
 
@@ -150,6 +151,10 @@ function initHeaderNavScroll() {
         mobileMenuBtn.classList.remove('nav-hidden');
         mobileMenuBtn.classList.add('nav-visible');
       }
+      if (brandAvatar) {
+        brandAvatar.classList.remove('nav-avatar-hidden');
+        brandAvatar.classList.add('nav-avatar-visible');
+      }
     } else if (isNavVisible && heroNavRect.bottom > hideThreshold) {
       isNavVisible = false;
       if (desktopNav) {
@@ -159,6 +164,10 @@ function initHeaderNavScroll() {
       if (mobileMenuBtn) {
         mobileMenuBtn.classList.add('nav-hidden');
         mobileMenuBtn.classList.remove('nav-visible');
+      }
+      if (brandAvatar) {
+        brandAvatar.classList.add('nav-avatar-hidden');
+        brandAvatar.classList.remove('nav-avatar-visible');
       }
       closeMobileMenu();
     }
